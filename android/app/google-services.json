@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "106502357756",
+    "project_id": "adventurist-8972a",
+    "storage_bucket": "adventurist-8972a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106502357756:android:e0e2d27b52109ff2190d79",
+        "android_client_info": {
+          "package_name": "com.example.adventurist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106502357756-r9gjfmsjgva0hlie9dicvo6nn53rfaqh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4F3nFxINtX4NcQKOGJysFvRapr_zphFs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106502357756-r9gjfmsjgva0hlie9dicvo6nn53rfaqh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
