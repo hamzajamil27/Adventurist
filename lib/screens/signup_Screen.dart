@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:adventurist/BottomNavigationBar/navigationbar.dart';
 import 'package:adventurist/Utilities/flutterToastUtilities.dart';
 import 'package:adventurist/constants/buttons.dart';
 import 'package:adventurist/screens/signin_Screen.dart';
@@ -14,6 +15,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  bool loading = false;
   bool isChecked = false;
   final _formKey = GlobalKey<FormState>();
    final passwordController = TextEditingController();
@@ -27,16 +29,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
     emailController.dispose();      
     passwordController.dispose();
     } 
+    void login(){
+     
+     setState(() {
+      loading = true;
+      });
+                          
+      _auth.createUserWithEmailAndPassword(
+       email: emailController.text.toString(), 
+       password: passwordController.text.toString()).then((value){   //  these 10 lines of code
+                                                                    //  is used for showing the error on the UI to handle the errors easily
+                                                                    //  To showing error on UI we use FlutterToast by making a class and paste the code on that class 
+       Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => const NavigatorBar()),),); 
+        setState((){
+         loading = false;  
+        });
+        
+        }).onError((error, stackTrace) {
+        FlutterToastUtils().toastMessage(error.toString());
+        setState(() {
+         loading = false;
+       });
+      },);
+    }
    @override 
   Widget build(BuildContext context) {
     
     final height = MediaQuery.of(context).size.height * 1;
     final width = MediaQuery.of(context).size.width * 1;
 
-    return  WillPopScope(
-      onWillPop: () async{
-        SystemNavigator.pop();
-        return true;
+    return  PopScope(
+      canPop: true,
+  onPopInvoked: (didPop) async {
+    SystemNavigator.pop();
+    
       },
 
       child: Scaffold( backgroundColor: Colors.white,
@@ -61,7 +87,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 fontSize: 24,
                 fontWeight: FontWeight.bold),),
         
-               SizedBox(height: height* .04,),
+               SizedBox(height: height* .01  ,),
              
       Form(                                     // Email and Password Textfields are in this Widget
                   key : _formKey,
@@ -142,7 +168,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     SizedBox(height: height* .01,),
     
               const Align( alignment: Alignment.topLeft,
-                child: Text("At least 10 Characters \nContains a special Character", 
+                child: Text("At least 6 Characters required", 
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 14, 
@@ -176,17 +202,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                              backgroundColor: Colors.black,
                              text: 'Sign up',
                              textColor: Colors.white,
+                             loading: loading, 
                              onPressed: () {
                              if(_formKey.currentState!.validate()){
-                              _auth.createUserWithEmailAndPassword(
-                                email: emailController.text.toString(), 
-                                password: passwordController.text.toString()).then((value){   //  from line 182, 185
-                                                                                              //  is used for showing the error on the UI to handle the errors easily
-                                                                                              //  To showing error on UI we use FlutterToast by making a class and paste the code on that class 
-                                }).onError((error, stackTrace) {
-                                  FlutterToastUtils().toastMessage(error.toString());
-
-                                },);
+                              login();
     
                               }
                                 },

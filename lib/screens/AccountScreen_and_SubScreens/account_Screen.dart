@@ -75,7 +75,7 @@ class _AccountScreenState extends State<AccountScreen> {
           SizedBox(height: height*.05,),
           
                  Container(                       // See whats Good Near By
-                          height: height * .2,
+                          height: height * .23,
                           width: width * .9,
                           decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(10),), 
@@ -86,7 +86,7 @@ class _AccountScreenState extends State<AccountScreen> {
                             children:  [ 
                              SizedBox(height: height* .03,),
                             const Text("Sign in to manage your booking and easily plan your next plan trip", 
-                             style: TextStyle( fontSize: 18, color: Colors.black), textAlign: TextAlign.center,),
+                             style: TextStyle( fontSize: 16, color: Colors.black), textAlign: TextAlign.center,),
                      
                           SizedBox(height: height*.04,),
                      
@@ -99,7 +99,7 @@ class _AccountScreenState extends State<AccountScreen> {
                           Navigator.push(context, MaterialPageRoute(builder: ((context) => const SignInScreen()),),
                 );
                             },
-                             buttonWidth: 300, // Set the desired width for the button
+                             buttonWidth: 250, // Set the desired width for the button
                              buttonHeight: 50, // Set the desired height for the button
                             ),
                             ],

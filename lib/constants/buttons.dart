@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomButton extends StatefulWidget {
   final String text;
   final VoidCallback onPressed;
@@ -8,9 +9,10 @@ class CustomButton extends StatefulWidget {
   final double buttonWidth;
   final double buttonHeight;
   final Color? borderColor;
-   final Color? backgroundColor; 
+   final Color? backgroundColor;
+   bool loading ;
 
-  const CustomButton({
+   CustomButton({
     Key? key, // Use Key instead of super.key
     required this.text,
     required this.onPressed,
@@ -20,6 +22,7 @@ class CustomButton extends StatefulWidget {
     this.buttonHeight = 60,
     this.borderColor,
     this.backgroundColor,
+    this.loading = false,
   }) : super(key: key); // Pass the key to the superclass constructor
 
   @override
@@ -43,9 +46,13 @@ class _CustomButtonState extends State<CustomButton> {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (widget.icon != null) widget.icon!, // Use widget.icon
-          const SizedBox(width: 10),
+        children: [ 
+          
+          widget.loading ? CircularProgressIndicator() :
+          
+          Row(children: [
+            if (widget.icon != null) widget.icon!,  // Use widget.icon
+           SizedBox(width: 10),
           Text(
             widget.text,
             style: TextStyle(
@@ -54,8 +61,30 @@ class _CustomButtonState extends State<CustomButton> {
               color: widget.textColor,
             ),
           ),
+          ],)
+           
         ],
       ),
+
+
+      // Previous One in any casse if the upper one not work
+      // Row(
+      //   mainAxisSize: MainAxisSize.min,
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: [ 
+      //     if (widget.icon != null) widget.icon!,  // Use widget.icon
+      //      SizedBox(width: 10),
+      //     Text(
+      //       widget.text,
+      //       style: TextStyle(
+      //         fontSize: 17.0,
+      //         fontWeight: FontWeight.bold,
+      //         color: widget.textColor,
+      //       ),
+      //     ),
+      //   ],
+      // ),
+      
     );
   }
 }

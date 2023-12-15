@@ -53,41 +53,50 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               alignment: Alignment.topLeft, 
             child:Padding(                     // Sign in to start planning
               padding: EdgeInsets.all(20.0),
-              child: Text("Sign in to start \nplanning your trip.", 
+              child: Text("Sign in to start planning your trip.", 
               style: TextStyle(fontFamily: Bold ,fontSize: 34, fontWeight: FontWeight.bold, color: Colors.black),),
             ),),
       
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: Row(
-                children: [
-                  const Text("By proceeding you agree, to our", style: TextStyle(fontFamily: Regular, color: blackColor),),
-                  InkWell(onTap:(){}, 
-                  child: const Text("Term of Use", 
-                  style: TextStyle(fontFamily: Bold, color: fullblack, decoration: TextDecoration.underline,
-                decorationColor: Colors.black, // Customize the underline color
-                decorationThickness: 2.0, // Customize the underline thickness
-                ),)),
-                 const Text(" and",style: TextStyle(fontFamily: Regular, color: blackColor),),
+            Align(alignment: Alignment.topLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Wrap(
+                  children: [
+                    const Text("By proceeding you agree, to our ", style: TextStyle(fontFamily: Regular, color: blackColor),),
+                    InkWell(onTap:(){}, 
+                    child: const Text("Term of Use ", 
+                    style: TextStyle(fontFamily: Bold, color: fullblack, decoration: TextDecoration.underline,
+                  decorationColor: Colors.black, // Customize the underline color
+                  decorationThickness: 2.0, // Customize the underline thickness
+                  ),)),
+                   const Text("and confirm you have read our ",style: TextStyle(fontFamily: Regular, color: blackColor),),
+                     InkWell(onTap:(){}, 
+                    child: const Text("Privacy and Cookie statement", 
+                    style: TextStyle(fontFamily: Bold, color: fullblack,
+                     decoration: TextDecoration.underline,
+                  decorationColor: Colors.black, // Customize the underline color
+                  decorationThickness: 2.0, // Customize the underline thickness
+                  ),)),
                   
-                ],
+                  ],
+                ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: Row(
-                children: [
-                const  Text("confirm you have read our",style: TextStyle(fontFamily: Regular, color: blackColor),),
-                  InkWell(onTap:(){}, 
-                  child: const Text(" Privacy and Cookie statement", 
-                  style: TextStyle(fontFamily: Bold, color: fullblack,
-                   decoration: TextDecoration.underline,
-                decorationColor: Colors.black, // Customize the underline color
-                decorationThickness: 2.0, // Customize the underline thickness
-                ),)),
-                ],
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 20.0),
+            //   child: Wrap(
+            //     children: [
+            //    // const  Text("confirm you have read our",style: TextStyle(fontFamily: Regular, color: blackColor),),
+            //       InkWell(onTap:(){}, 
+            //       child: const Text(" Privacy and Cookie statement", 
+            //       style: TextStyle(fontFamily: Bold, color: fullblack,
+            //        decoration: TextDecoration.underline,
+            //     decorationColor: Colors.black, // Customize the underline color
+            //     decorationThickness: 2.0, // Customize the underline thickness
+            //     ),)),
+            //     ],
+            //   ),
+            // ),
             
           const  SizedBox(height: 40,),
          

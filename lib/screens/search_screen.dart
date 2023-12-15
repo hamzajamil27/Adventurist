@@ -77,64 +77,64 @@ class _SearchScreenState extends State<SearchScreen> {
         child: Column(
           children:  [
           
-          SizedBox(height: height * .06),
+          SizedBox(height: height * .04),
             
-          const Padding(
-         padding:  EdgeInsets.only(left: 20),
-         child:   Align( alignment: Alignment.topLeft,
-             child:  Text("Your Recent Searches", style: TextStyle(
-                fontFamily: Medium,
-                fontSize: 26,
-                color: fullblack,
-                fontWeight: FontWeight.bold,
-              ),
-              ),
-           ),
-           ),
+        //   const Padding(
+        //  padding:  EdgeInsets.only(left: 20),
+        //  child:   Align( alignment: Alignment.topLeft,
+        //      child:  Text("Your Recent Searches", style: TextStyle(
+        //         fontFamily: Medium,
+        //         fontSize: 26,
+        //         color: fullblack,
+        //         fontWeight: FontWeight.bold,
+        //       ),
+        //       ),
+        //    ),
+        //    ),
       
-      SizedBox(
-        height: height*.04),
+      // SizedBox(
+      //   height: height*.04),
       
       
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Align(alignment: Alignment.topLeft,
-              child: Container(  height: height*.09, width: width* .5,
-                decoration: BoxDecoration(
-                   borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                     color: Colors.grey,
-                      width: 2.0,
-                ),
+          // Padding(
+          //   padding: const EdgeInsets.only(left: 20),
+          //   child: Align(alignment: Alignment.topLeft,
+          //     child: Container(  height: height*.09, width: width* .5,
+          //       decoration: BoxDecoration(
+          //          borderRadius: BorderRadius.circular(30),
+          //           border: Border.all(
+          //            color: Colors.grey,
+          //             width: 2.0,
+          //       ),
             
-              ),
-                child: const Padding(
-                  padding:  EdgeInsets.all(8.0),
-                  child: Column(
-                    children:  [ 
-                        Text("New York City", style: TextStyle(
-                  fontFamily: Medium,
-                  fontSize: 22,
-                  color: fullblack,
-                  fontWeight: FontWeight.bold,
-                            ),
-                            ),
+          //     ),
+          //       child: const Padding(
+          //         padding:  EdgeInsets.all(8.0),
+          //         child: Column(
+          //           children:  [ 
+          //               Text("New York City", style: TextStyle(
+          //         fontFamily: Medium,
+          //         fontSize: 22,
+          //         color: fullblack,
+          //         fontWeight: FontWeight.bold,
+          //                   ),
+          //                   ),
                           
-                            SizedBox(height: 5,),
+          //                   SizedBox(height: 5,),
                             
-                  Text("New York", style: TextStyle(
-                  fontFamily: Medium,
-                  fontSize: 14,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.bold,
-                            ),
-                            ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
+          //         Text("New York", style: TextStyle(
+          //         fontFamily: Medium,
+          //         fontSize: 14,
+          //         color: Colors.grey,
+          //         fontWeight: FontWeight.bold,
+          //                   ),
+          //                   ),
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
       
       SizedBox(height: height*.03,),
           

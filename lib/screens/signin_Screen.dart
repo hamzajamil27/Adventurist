@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:adventurist/BottomNavigationBar/navigationbar.dart';
 import 'package:adventurist/Utilities/flutterToastUtilities.dart';
 import 'package:adventurist/constants/buttons.dart';
 import 'package:adventurist/screens/signup_Screen.dart';
@@ -15,6 +16,7 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  bool loading = false;
   final _formKey = GlobalKey<FormState>();
     final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -28,13 +30,25 @@ class _SignInScreenState extends State<SignInScreen> {
     passwordController.dispose();
 
   }                       
-  void Login (){                           // here i make a Function for Login. i call this function into sing-in button. this is the same procedure like we did in sign-up but there we make a function inside the button and in Login screen we make a function outside the button and wil call inside the button
+  void signup (){      
+    setState((){
+      loading =true;
+    });                     // here i make a Function for Login. i call this function into sing-in button. this is the same procedure like we did in sign-up but there we make a function inside the button and in Login screen we make a function outside the button and wil call inside the button
     _auth.signInWithEmailAndPassword(
       email: emailController.text, 
       password: passwordController.text).then((value){
+        FlutterToastUtils().toastMessage(value.user!.toString());
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => const NavigatorBar()),),);
+
+        setState((){
+      loading =false;
+    }); 
 
       }).onError((error, stackTrace){
         FlutterToastUtils().toastMessage(error.toString());
+        setState((){
+      loading =false;
+    }); 
       });
 
   }
@@ -162,9 +176,10 @@ class _SignInScreenState extends State<SignInScreen> {
                            backgroundColor: Colors.black,
                            text: 'Sign in',
                            textColor: Colors.white,
+                           loading: loading,
                            onPressed: () {
                             if(_formKey.currentState!.validate()){
-                              Login();
+                              signup();
                         
                             }
                            },

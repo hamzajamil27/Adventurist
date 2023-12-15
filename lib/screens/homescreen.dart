@@ -279,7 +279,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Padding(                  // Listview Builder
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: SizedBox(  
-          height: height *.4,                 // ListView.Builder for Summer
+          height: height *.44,                 // ListView.Builder for Summer
          
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -298,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ), 
       ),
     
-      SizedBox(height: height*.05,),
+      SizedBox(height: height*.02,),
       
         const Center(                         // Text
          child: Text("Easy Labor Day getaways", 
@@ -352,7 +352,7 @@ class _HomeScreenState extends State<HomeScreen> {
          Padding(                 // A summer Weekend in the Catskills
             padding: const EdgeInsets.only(top: 20),
             child: Container(
-              height: height * .7,
+              height: height * .73,
             width: double.infinity,
             decoration: const BoxDecoration( 
             image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/3743492/pexels-photo-3743492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
@@ -362,7 +362,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children:  [ 
     
-                  SizedBox(height: height*.3,),
+                  SizedBox(height: height*.25,),
     
                   const Padding(              // Text
                     padding: EdgeInsets.only( left: 30, right: 30),
@@ -397,7 +397,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         
-        SizedBox(height: height * .08,),
+        SizedBox(height: height * .05,),
     
            const Center(                         // Text A beach day for the books
          child: Text("A beach day for the books", 
@@ -416,7 +416,7 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Center(
            child: Align( alignment: Alignment.center,
-             child:  Text("spend the summer on the European Island", 
+             child:  Text("Spend the summer on the European Island", 
              style: TextStyle(
               fontFamily: Medium,
               fontSize: 18, 
@@ -427,26 +427,24 @@ class _HomeScreenState extends State<HomeScreen> {
            ),
          ),
       ),
+      SizedBox(height: height*.05,),
         
-            Padding(                  // Listview Builder for Beach day for books
-        padding: const EdgeInsets.symmetric(vertical: 30),
-        child: SizedBox(  
-          height: height *.4,
-          
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: Beachdayitemmodeldata .itemCount,
-            itemBuilder: (context, index){
-            Beachdayitemmodel model = Beachdayitemmodeldata .getStatusItem(index);
-           
-            return BeachDay(
-              imagebeach:model.imagebeach, 
-              beachname: model.beachname,  
-              ); 
-            }
+            SizedBox(  
+              height: height *.4,
+              
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: Beachdayitemmodeldata .itemCount,
+                itemBuilder: (context, index){
+                Beachdayitemmodel model = Beachdayitemmodeldata .getStatusItem(index);
+               
+                return BeachDay(
+                  imagebeach:model.imagebeach, 
+                  beachname: model.beachname,  
+                  ); 
+                }
+                ),
             ),
-        ), 
-      ),
           
          // SizedBox(height: height * .02,),
 
@@ -461,7 +459,7 @@ class _HomeScreenState extends State<HomeScreen> {
                child: Column(
                  children:  [ 
           
-                   SizedBox(height: height*.3,),
+                   SizedBox(height: height*.2,),
           
                    const Padding(              // Text
                      padding: EdgeInsets.only( left: 30, right: 30),
@@ -498,7 +496,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           
          
-             SizedBox(height: height*.05,),
+             SizedBox(height: height*.03,),
       
         const Center(                         // Text
          child: Text("Beyond the Beach", 
@@ -511,7 +509,7 @@ class _HomeScreenState extends State<HomeScreen> {
          ),
        ),
          
-          SizedBox(height: height * .02,),
+          SizedBox(height: height * .01,),
          
            const Padding(                     // Text
         padding: EdgeInsets.only(left: 20, right: 20),
@@ -522,7 +520,7 @@ class _HomeScreenState extends State<HomeScreen> {
               fontFamily: Medium,
               fontSize: 18, 
               color: Colors.black,
-              fontWeight: FontWeight.bold,
+             // fontWeight: FontWeight.bold,
              ),
              ),
            ),
