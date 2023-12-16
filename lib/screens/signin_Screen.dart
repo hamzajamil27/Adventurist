@@ -30,7 +30,7 @@ class _SignInScreenState extends State<SignInScreen> {
     passwordController.dispose();
 
   }                       
-  void signup (){      
+  void Login (){      
     setState((){
       loading =true;
     });                     // here i make a Function for Login. i call this function into sing-in button. this is the same procedure like we did in sign-up but there we make a function inside the button and in Login screen we make a function outside the button and wil call inside the button
@@ -70,10 +70,7 @@ class _SignInScreenState extends State<SignInScreen> {
         child: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column( children: [
-
-
-         
-            SizedBox(height: height* .02,),
+           SizedBox(height: height* .02,),
             
             const Text("Sign in here if you have already registered", 
             style: TextStyle( 
@@ -154,10 +151,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   
             ],
           )),
-
-        
-      
-             
+           
                   SizedBox(height: height* .01,),
             
              Align( alignment: Alignment.topLeft,
@@ -179,7 +173,7 @@ class _SignInScreenState extends State<SignInScreen> {
                            loading: loading,
                            onPressed: () {
                             if(_formKey.currentState!.validate()){
-                              signup();
+                              Login();
                         
                             }
                            },

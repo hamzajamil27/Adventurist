@@ -29,7 +29,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     emailController.dispose();      
     passwordController.dispose();
     } 
-    void login(){
+    void Signup(){              // Function for Signup
      
      setState(() {
       loading = true;
@@ -205,7 +205,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                              loading: loading, 
                              onPressed: () {
                              if(_formKey.currentState!.validate()){
-                              login();
+                              Signup();
     
                               }
                                 },

@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 
+import 'package:adventurist/BottomNavigationBar/navigationbar.dart';
 import 'package:adventurist/welcomescreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,12 +16,27 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
    void initState() {
     super.initState();
-    // Introduce a delay and then navigate to the home screen
-    Future.delayed(const Duration(seconds: 5), () {
+    isLogin();
+    // Introduce a delay and then navigate to the home screen  
+  }
+
+  void isLogin(){
+      final auth = FirebaseAuth.instance;
+      final user = auth.currentUser;
+
+      if(user != null){                                       // If user is Signin then naviagate to NavigatorBar
+         Future.delayed(const Duration(seconds: 5), () {
+       Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => const NavigatorBar()),),
+                );
+    });
+      }
+      else {                                                // If user is not signin then naviagate to WelcomeScreen
+        Future.delayed(const Duration(seconds: 5), () {
        Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => const WelcomeScreen()),),
                 );
     });
-  }
+      }
+    }
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,10 @@
 // ignore_for_file: file_names
 
+import 'package:adventurist/Utilities/flutterToastUtilities.dart';
 import 'package:adventurist/constants/buttons.dart';
 import 'package:adventurist/screens/AccountScreen_and_SubScreens/support_Screen.dart';
 import 'package:adventurist/screens/signin_Screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -13,6 +15,10 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
+  
+  final auth = FirebaseAuth.instance;
+  bool user = false;
+
   @override
   Widget build(BuildContext context) {
     
@@ -41,40 +47,17 @@ class _AccountScreenState extends State<AccountScreen> {
       backgroundColor: Colors.white,
       
       body: SingleChildScrollView(
+
+        
         child: Padding(
           padding: const EdgeInsets.only(left: 20, right : 20),
-          child: Column( mainAxisAlignment: MainAxisAlignment.start,
+          child:  (user==true ) ? Column( mainAxisAlignment: MainAxisAlignment.start,                // Making a condition. If user is Signin then show this complete column
                          crossAxisAlignment: CrossAxisAlignment.center,
             children: [
           
-              //  SizedBox(height: height * .05),
-             
-            //  Row(  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //        crossAxisAlignment: CrossAxisAlignment.center,
-              
-            //   children: [
-          
-            // const Text("Account",  style: TextStyle(color: Colors.black, fontSize:36, fontWeight: FontWeight.bold ),),
-          
-            //    Container(
-            //      height: 50,      // creating a container for circle avatar to give black borders
-            //           decoration: BoxDecoration(
-            //             shape: BoxShape.circle,
-            //             border: Border.all(
-            //               color: Colors.black, 
-            //               width: 2.0,
-                          
-            //               // Set the border width
-            //             ),
-            //           ),
-            //           child: const CircleAvatar( 
-            //               backgroundImage: NetworkImage("https://images.pexels.com/photos/5384445/pexels-photo-5384445.jpeg?auto=compress&cs=tinysrgb&w=600"),
-            //             ),
-            //           ),],),
-          
           SizedBox(height: height*.05,),
           
-                 Container(                       // See whats Good Near By
+               Container(                       // See whats Good Near By
                           height: height * .23,
                           width: width * .9,
                           decoration: const BoxDecoration(
@@ -93,6 +76,7 @@ class _AccountScreenState extends State<AccountScreen> {
                   CustomButton(      //  calling a button from buttons.dart
                         borderColor: Colors.black,
                          backgroundColor: Colors.black,
+                         icon: Icon(Icons.login_outlined),
                          text: 'Sign in',
                          textColor: Colors.white,
                          onPressed: () {
@@ -106,6 +90,7 @@ class _AccountScreenState extends State<AccountScreen> {
                     
                           ),
                          ),
+              
                          
            SizedBox(height: height * .02 ),
           
@@ -142,9 +127,75 @@ class _AccountScreenState extends State<AccountScreen> {
           
             ],
           
-          ),
+          ):
+          //  Otherwise show this Column
+          Column( mainAxisAlignment: MainAxisAlignment.start,                // Making a condition. If user is Signin then show this complete column
+                         crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+          
+          SizedBox(height: height*.05,),
+          
+           ListTile(
+              leading: const Icon(Icons.settings, color: Colors.black, ),
+              title: const Text("Prefrences", style:TextStyle(
+            fontSize: 18, fontWeight: FontWeight.bold) ,),
+              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.black, ),
+              onTap: (){},
+             ),
+              
+             SizedBox(height: height * .02 ),
+          
+              ListTile(
+              leading:const Icon(Icons.headset_mic_outlined, color: Colors.black,),
+              title: const Text("Support", style:TextStyle(
+            fontSize: 18, fontWeight: FontWeight.bold),),
+              trailing:const Icon(Icons.arrow_forward_ios, color: Colors.black,),
+            onTap: (){
+               Navigator.push(context, MaterialPageRoute(builder: ((context) => const SupportScreen()),),
+                );
+            },
+             ),
+              
+             SizedBox(height: height * .02 ),
+          
+              ListTile( 
+              leading: const Icon(Icons.place_outlined, color: Colors.black, ),
+              title: const Text("Adventurist Plus", style:TextStyle(
+            fontSize: 18, fontWeight: FontWeight.bold) ,),
+              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.black,),
+              onTap: (){},
+             ),
+             SizedBox(
+              height: height*.2,
+             ),
+
+               CustomButton(      //  calling a button from buttons.dart
+                        borderColor: Colors.black,
+                         backgroundColor: Colors.black,
+                         icon: Icon(Icons.logout_outlined, color: Colors.white,),
+                         text: 'Signout',
+                         textColor: Colors.white,
+                         onPressed: () {
+                          auth.signOut().then((value){
+                            Navigator.push(context, MaterialPageRoute(builder: ((context) => const SignInScreen()),),
+                ); 
+                          }).onError((error, stackTrace) {
+                            FlutterToastUtils().toastMessage(error.toString());
+                          });
+                          
+                            },
+                             buttonWidth: 250, // Set the desired width for the button
+                             buttonHeight: 50, // Set the desired height for the button
+                            ),
+          
+            ],
+          
+          )
+
+
         ),
       ),
-    );
+    ); 
+
   }
 }
