@@ -1,3 +1,4 @@
+import 'package:adventurist/constants/buttons.dart';
 import 'package:adventurist/constants/colors/fontcolors.dart';
 import 'package:flutter/material.dart';
 import 'BottomNavigationBar/navigationbar.dart';
@@ -41,25 +42,18 @@ class _PageTwoState extends State<PageTwo> {
             ),
             ),
              
-              SizedBox(height: height * .2,),
+              SizedBox(height: height * .1,),
         
-             InkWell( onTap: () {},               // allow location button
-             child: Center(
-               child: Container( 
-                height: height * .07, width: width * .80,
-                decoration: const BoxDecoration(
-                 color: Colors.black,
-                 borderRadius: BorderRadius.all(Radius.circular(30),),
-                  ),
-                  child: const Center(child: Text("Allow Location Data", 
-                  style: TextStyle(fontFamily: Medium, fontSize: 16, color: Colors.white,
-        
-                  ),
-                  ),
-                  ),
-                  ),
-             ),
-             ),
+             CustomButton(      //  calling a button from buttons.dart
+                          borderColor: Colors.black,
+                           backgroundColor: Colors.black,
+                           text: 'Allow Location Data',
+                           textColor: Colors.white,
+                           onPressed: (){},
+                               buttonWidth: width*0.8, // Set the desired width for the button
+                               buttonHeight: 60, // Set the desired height for the button
+                              
+                              ),
              SizedBox(height: height *.02,),
             
              InkWell( onTap: () {

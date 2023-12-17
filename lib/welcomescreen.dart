@@ -1,7 +1,14 @@
+import 'package:adventurist/BottomNavigationBar/navigationbar.dart';
+import 'package:adventurist/constants/buttons.dart';
 import 'package:adventurist/constants/colors/fontcolors.dart';
 import 'package:adventurist/pagetwo.dart';
+import 'package:adventurist/screens/AccountScreen_and_SubScreens/auth_service.dart';
 import 'package:adventurist/screens/signin_Screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -13,9 +20,47 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) { 
+    bool loading= false;
+    // final auth = FirebaseAuth.instance;
+      final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+
+
 
     final height = MediaQuery.of(context).size.height * 1;
-   
+    final width = MediaQuery.of(context).size.width * 1;
+    Future<void> _GoogleSignin() async {
+      setState(() {
+        loading= true;
+      });
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if (googleUser != null) {
+        final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
+        final UserCredential userCredential = await _auth.signInWithCredential(credential);
+        final User? user = userCredential.user;
+        // Handle user data (e.g., display user info).
+         Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const NavigatorBar()),
+    );
+    setState(() {
+        loading= false;
+      });
+    
+      }
+    } catch (error) {
+      print('Error signing in with Google: $error');
+      setState(() {
+        loading= false;
+      });
+    }
+  }
 
     return Scaffold( 
       body: SingleChildScrollView(
@@ -98,66 +143,41 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             //   ),
             // ),
             
-          const  SizedBox(height: 40,),
+            SizedBox(height: height*0.1,),
          
-            SizedBox(  width: 340,                    // continue with google button
-              child: TextButton( onPressed: (){}, 
-                  style: TextButton.styleFrom(
-                    
-                     backgroundColor: Colors.white, // Button background color
-                    padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-                    shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
-               side: const BorderSide(
-                color: Colors.black, // Change the border color here
-                width: 2.0, // Set the border width
-              ),
-                    ),
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children:  [
-              Icon(Icons.android), // Replace with the Google icon or any other icon
-              SizedBox(width: 10), // Add some space between the icon and text
-              Text("Continue with Google",
-                style: TextStyle(fontFamily:Medium, fontWeight: FontWeight.bold, fontSize: 20, color: fullblack),
-              ),
-                    ],
-                  ),
-                  ),
-            ),
+            CustomButton(      //  calling a button from buttons.dart
+                          borderColor: Colors.black,
+                           backgroundColor: Colors.white,
+                           icon: Icon(FontAwesomeIcons.google),
+                           text: 'Sign in',
+                           textColor: Colors.black,
+                           loading: loading,
+                           onPressed: _GoogleSignin,
+                               buttonWidth: width*0.8, // Set the desired width for the button
+                               buttonHeight: 60, // Set the desired height for the button
+                              
+                              ),
               
            const   SizedBox(height: 20,),
+
+           CustomButton(      //  calling a button from buttons.dart
+                          borderColor: Colors.black,
+                           backgroundColor: Colors.white,
+                           icon: Icon(Icons.mail_outline, color: blackColor,),
+                           text: 'Continue with email',
+                           textColor: Colors.black,
+                           loading: loading,
+                           onPressed: (){
+                             Navigator.push(
+                              context, 
+                              MaterialPageRoute(builder: ((context) => const SignInScreen()),),);
+                           },
+                               buttonWidth: width*0.8, // Set the desired width for the button
+                               buttonHeight: 60, // Set the desired height for the button
+                              
+                              ),
       
-             SizedBox(  width: 340,                    // Continue with E-mail
-              child: TextButton( onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: ((context) => const SignInScreen()),),
-                );
-              }, 
-                  style: TextButton.styleFrom(
-                    
-                     backgroundColor: Colors.white, // Button background color
-                    padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-                    shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
-               side: const BorderSide(
-                color: Colors.black, // Change the border color here
-                width: 2.0, // Set the border width
-              ),
-                    ),
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children:  [
-              Icon(Icons.mail_outline, color: blackColor,), // Replace with the Google icon or any other icon
-              SizedBox(width: 10), // Add some space between the icon and text
-              Text("Continue with email",
-                style: TextStyle(fontFamily:Medium, fontWeight: FontWeight.bold, fontSize: 20, color: fullblack),
-              ),
-                    ],
-                  ),
-                  ),
-            ),
+           
           ],
         ),
       ),

@@ -191,7 +191,7 @@ class _SignInScreenState extends State<SignInScreen> {
                            onPressed: () {
                             Navigator.push(context, MaterialPageRoute(builder: ((context) => const SignUpScreen()),),
                   );
-                              },
+                              },   
                                buttonWidth: double.infinity, // Set the desired width for the button
                                buttonHeight: 60, // Set the desired height for the button
                               ),

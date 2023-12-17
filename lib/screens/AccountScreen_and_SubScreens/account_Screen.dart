@@ -17,7 +17,8 @@ class AccountScreen extends StatefulWidget {
 class _AccountScreenState extends State<AccountScreen> {
   
   final auth = FirebaseAuth.instance;
-  bool user = false;
+  final user = FirebaseAuth.instance.currentUser;
+ // bool user = false;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class _AccountScreenState extends State<AccountScreen> {
         
         child: Padding(
           padding: const EdgeInsets.only(left: 20, right : 20),
-          child:  (user==true ) ? Column( mainAxisAlignment: MainAxisAlignment.start,                // Making a condition. If user is Signin then show this complete column
+          child:  (user==null ) ? Column( mainAxisAlignment: MainAxisAlignment.start,                // Making a condition. If user is Signin then show this complete column
                          crossAxisAlignment: CrossAxisAlignment.center,
             children: [
           
@@ -59,7 +60,7 @@ class _AccountScreenState extends State<AccountScreen> {
           
                Container(                       // See whats Good Near By
                           height: height * .23,
-                          width: width * .9,
+                          width: width * .93,
                           decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(10),), 
                          color: Color.fromARGB(255, 221, 219, 219),
@@ -76,7 +77,7 @@ class _AccountScreenState extends State<AccountScreen> {
                   CustomButton(      //  calling a button from buttons.dart
                         borderColor: Colors.black,
                          backgroundColor: Colors.black,
-                         icon: Icon(Icons.login_outlined),
+                         icon: Icon(Icons.login_outlined, color: Colors.white,),
                          text: 'Sign in',
                          textColor: Colors.white,
                          onPressed: () {

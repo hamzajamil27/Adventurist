@@ -167,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column( 
             children:  [
              const Padding(
-               padding: EdgeInsets.only(top: 30),
+               padding: EdgeInsets.only(top: 20),
                child: Align(
                   alignment:Alignment.center, 
                 child:Text("Discover More in\nDubai", 
@@ -175,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
              ),
        
                Padding(
-                 padding: const EdgeInsets.only(top: 30),
+                 padding: const EdgeInsets.only(top: 20),
                  child: Align(alignment: Alignment.center,
                    child: CustomButton(                   //  calling a button from buttons.dart
                          icon: const Icon(Icons.explore, color: Colors.black,),
@@ -244,7 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
     
-       SizedBox(height: height * .08,),
+       SizedBox(height: height * .035,),
     
       const Center(                         // Text
          child: Text("Soak up the end of Summer", 
@@ -265,9 +265,9 @@ class _HomeScreenState extends State<HomeScreen> {
              child:  Text("Outdore adventures to make every second count", 
              style: TextStyle(
               fontFamily: Medium,
-              fontSize: 18, 
+              fontSize: 16, 
               color: Colors.black,
-              fontWeight: FontWeight.bold,
+              // fontWeight: FontWeight.bold,
              ),
              ),
            ),
@@ -275,27 +275,24 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
        
     //   SizedBox(height: height * .03),
-    
-      Padding(                  // Listview Builder
-        padding: const EdgeInsets.symmetric(vertical: 30),
-        child: SizedBox(  
-          height: height *.44,                 // ListView.Builder for Summer
+    SizedBox(height: height* .02,),
+      SizedBox(  
+        height: height *.44,                 // ListView.Builder for Summer
+       
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: SummerVacationItemModeldata.itemCount,
+          itemBuilder: (context, index){
+          SummervacationItemModel model = SummerVacationItemModeldata.getStatusItem(index);
          
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: SummerVacationItemModeldata.itemCount,
-            itemBuilder: (context, index){
-            SummervacationItemModel model = SummerVacationItemModeldata.getStatusItem(index);
-           
-            return Summervacation(
-              imagePath: model.imagePath, 
-              placeName: model.placeName, 
-              companyName: model.companyName, 
-              price: model.price,
-              ); 
-            }
-            ),
-        ), 
+          return Summervacation(
+            imagePath: model.imagePath, 
+            placeName: model.placeName, 
+            companyName: model.companyName, 
+            price: model.price,
+            ); 
+          }
+          ),
       ),
     
       SizedBox(height: height*.02,),
@@ -320,9 +317,9 @@ class _HomeScreenState extends State<HomeScreen> {
              child:  Text("Trip ideas for summer's last big weekend", 
              style: TextStyle(
               fontFamily: Medium,
-              fontSize: 18, 
+              fontSize: 16, 
               color: Colors.black,
-              fontWeight: FontWeight.bold,
+              // fontWeight: FontWeight.bold,
              ),
              ),
            ),
@@ -419,9 +416,9 @@ class _HomeScreenState extends State<HomeScreen> {
              child:  Text("Spend the summer on the European Island", 
              style: TextStyle(
               fontFamily: Medium,
-              fontSize: 18, 
+              fontSize: 16, 
               color: Colors.black,
-              fontWeight: FontWeight.bold,
+              // fontWeight: FontWeight.bold,
              ),
              ),
            ),
@@ -515,10 +512,10 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Center(
            child: Align( alignment: Alignment.center,
-             child:  Text("Triopical experiences to travel up your tripS", 
+             child:  Text("Triopical experiences to travel up your trips", 
              style: TextStyle(
               fontFamily: Medium,
-              fontSize: 18, 
+              fontSize: 16, 
               color: Colors.black,
              // fontWeight: FontWeight.bold,
              ),
@@ -564,7 +561,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column( 
             children:  [
              const Padding(
-               padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+               padding: EdgeInsets.only(top: 15, left: 20, right: 20),
                child: Align(
                   alignment:Alignment.center, 
                 child:Text("Is Adventurist Missing a Place?", 
@@ -572,7 +569,7 @@ class _HomeScreenState extends State<HomeScreen> {
              ),
        
                Padding(
-                 padding: const EdgeInsets.only(top: 30,),
+                 padding: const EdgeInsets.only(top: 20,),
                  child: Align(alignment: Alignment.center,
                    child: CustomButton(                   //  calling a button from buttons.dart
                          
