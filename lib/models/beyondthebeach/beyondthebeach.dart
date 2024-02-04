@@ -23,6 +23,7 @@ class BeyondTheBeach extends StatefulWidget {
 }
 
 class _BeyondTheBeachState extends State<BeyondTheBeach> {
+  bool isPressed = false;
   @override
   Widget build(BuildContext context) {
 
@@ -51,17 +52,32 @@ class _BeyondTheBeachState extends State<BeyondTheBeach> {
 
                   ),
 
-                  Align(alignment: Alignment.topRight,
-                    child: Container(
-                      height: height * .08,
-                      width: width * .08,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color.fromARGB(255, 223, 222, 222),
-                      ),
-                      child: const Icon(Icons.favorite_border),
-                    ),
-                  ),
+                  Align(
+        alignment: Alignment.topRight,
+        child: Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: GestureDetector(
+            onTap: () {
+              // Toggle the pressed state
+              setState(() {
+                isPressed = !isPressed;
+              });
+            },
+            child: Container(
+              height: height * 0.08,
+              width: width * 0.08,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isPressed ? Colors.red : Color.fromARGB(255, 223, 222, 222),
+              ),
+              child: Icon(
+                Icons.favorite_border,
+                color: isPressed ? Colors.white : Colors.black,
+              ),
+            ),
+          ),
+        ),
+        ),
                 ],
               ),
            

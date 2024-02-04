@@ -1,3 +1,4 @@
+import 'package:adventurist/Tour%20Pages/tourpagelist.dart';
 import 'package:adventurist/screens/Hotels_ThingsToDo_Restaurant_Forums_Screens%20and%20Subscreens/firstSimpleScreen.dart';
 
 import '../models/WeekendTripIdeas/tripideasweekenditemdata.dart';
@@ -246,14 +247,28 @@ class _HomeScreenState extends State<HomeScreen> {
     
        SizedBox(height: height * .035,),
     
-      const Center(                         // Text
-         child: Text("Soak up the end of Summer", 
-         style: TextStyle(
-          fontFamily: Medium,
-          fontSize: 24,
-          color: Colors.black,
-          fontWeight: FontWeight.bold,
-         ),),
+       Center(                         // Text
+         child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+           children: [
+             Text("Soak up the end of Summer", 
+             style: TextStyle(
+              fontFamily: Medium,
+              fontSize: 22,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+             ),),
+
+             InkWell (
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TourPageListScreen()),
+                );
+              },
+              
+              child: Text("See more \nTours", )),
+           ],
+         ),
        ),
         
         SizedBox(height: height* .02,),

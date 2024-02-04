@@ -111,7 +111,27 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   decorationThickness: 2.0, // Customize the underline thickness
                   ),)),
                    const Text("and confirm you have read our ",style: TextStyle(fontFamily: Regular, color: blackColor),),
-                     InkWell(onTap:(){}, 
+                     InkWell(onTap:(){
+              //          showDialog(
+              //   context: context,
+              //   builder: (BuildContext context) {
+              //     return AlertDialog(
+              //       title: Text('Privacy Policy'),
+              //       content: Text('This is a simple alert dialog.'),
+              //       actions: [
+              //         TextButton(
+              //           onPressed: () {
+              //             // Close the dialog
+              //             Navigator.of(context).pop();
+              //           },
+              //           child: Text('OK'),
+              //         ),
+              //       ],
+              //     );
+              //   },
+              // );
+    
+                     }, 
                     child: const Text("Privacy and Cookie statement", 
                     style: TextStyle(fontFamily: Bold, color: fullblack,
                      decoration: TextDecoration.underline,

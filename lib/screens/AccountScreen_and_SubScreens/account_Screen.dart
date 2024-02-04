@@ -8,6 +8,8 @@ import 'package:adventurist/screens/signin_Screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
@@ -22,7 +24,7 @@ class _AccountScreenState extends State<AccountScreen> {
   final user = FirebaseAuth.instance.currentUser;
  // bool user = false;
 
-
+ final String link = 'https://shoparonline.com/contact-us';
   @override
   Widget build(BuildContext context) {
     
@@ -159,7 +161,9 @@ SizedBox(height: height * .02 ),
               title: const Text("Prefrences", style:TextStyle(
             fontSize: 18, fontWeight: FontWeight.bold) ,),
               trailing: const Icon(Icons.arrow_forward_ios, color: Colors.black, ),
-              onTap: (){},
+              onTap: (){
+                // _launchURL(support@shoparonline.com);
+              },
              ),
               
              SizedBox(height: height * .02 ),
@@ -182,7 +186,9 @@ SizedBox(height: height * .02 ),
               title: const Text("Adventurist Plus", style:TextStyle(
             fontSize: 18, fontWeight: FontWeight.bold) ,),
               trailing: const Icon(Icons.arrow_forward_ios, color: Colors.black,),
-              onTap: (){},
+              onTap: (){
+               _launchURL(link);
+              },
              ),
              SizedBox(
               height: height*.2,
@@ -233,5 +239,12 @@ SizedBox(height: height * .02 ),
       ),
     ); 
 
+  }
+   Future<void> _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
