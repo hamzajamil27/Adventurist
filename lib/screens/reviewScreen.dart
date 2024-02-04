@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:adventurist/constants/buttons.dart';
+import 'package:adventurist/screens/Firebase_Practice_Screens/visitReiew.dart';
 import 'package:adventurist/screens/ReviewSubScreens/writeAReview_Sub_Screen1.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +51,7 @@ backgroundColor: Colors.white,
             SizedBox(height: height *.02,),
           const  Padding(
               padding:  EdgeInsets.only(left: 20),
-              child: Text("You have not written any reviews yet, get started!",style: TextStyle( fontSize: 18, color: Colors.black),),
+              child: Text("If you have not written any reviews yet, get started!",style: TextStyle( fontSize: 18, color: Colors.black),),
             ),
       
             SizedBox(height: height* .05,),
@@ -84,7 +85,7 @@ backgroundColor: Colors.white,
           ]
           ),
       
-           SizedBox(height: height*.07,),
+           SizedBox(height: height*.04,),
           
              Container(
                height: height * .7,
@@ -121,6 +122,7 @@ backgroundColor: Colors.white,
                     child: CustomButton(
                            text: "What to know",
                            onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) =>const WriteReviewSubScreen1()),);
                               },
                                buttonWidth: 170, 
                                buttonHeight: 50, 
@@ -150,6 +152,21 @@ SizedBox(height: height* .07,),
                                  buttonHeight: 60, 
                                 ),
           ),
+
+          SizedBox(height: height* .02,), 
+
+           // Center(
+           //   child: CustomButton(
+           //               text: 'Visit your reviews',
+           //               textColor: Colors.white,
+           //               backgroundColor: Colors.black,
+           //               onPressed: () {
+           //                Navigator.push(context, MaterialPageRoute(builder: (context) => VisitReviewScreen(),));
+           //                  },
+           //                   buttonWidth: 190, // Set the desired width for the button
+           //                   buttonHeight: 60, // Set the desired height for the button
+           //                  ),
+           // ),
         SizedBox(height: height* .1,),
           ],
         ),

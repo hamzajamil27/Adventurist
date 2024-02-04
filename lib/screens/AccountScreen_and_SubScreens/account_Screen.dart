@@ -3,8 +3,10 @@
 import 'package:adventurist/Utilities/flutterToastUtilities.dart';
 import 'package:adventurist/constants/buttons.dart';
 import 'package:adventurist/screens/AccountScreen_and_SubScreens/support_Screen.dart';
+import 'package:adventurist/screens/Firebase_Practice_Screens/post_screen.dart';
 import 'package:adventurist/screens/signin_Screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -19,6 +21,7 @@ class _AccountScreenState extends State<AccountScreen> {
   final auth = FirebaseAuth.instance;
   final user = FirebaseAuth.instance.currentUser;
  // bool user = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -124,8 +127,23 @@ class _AccountScreenState extends State<AccountScreen> {
             fontSize: 18, fontWeight: FontWeight.bold) ,),
               trailing: const Icon(Icons.arrow_forward_ios, color: Colors.black,),
               onTap: (){},
-             )
-          
+             ),
+//Extra button just for practice
+
+SizedBox(height: height * .02 ),
+              // CustomButton(      //  calling a button from buttons.dart
+              //           borderColor: Colors.black,
+              //            backgroundColor: Colors.blue,
+              //            text: 'PostScreen',
+              //            textColor: Colors.white,
+              //            onPressed: () {
+              //             Navigator.push(context, MaterialPageRoute(builder: ((context) => const PostScreen()),),
+              //   );
+              //               },
+              //                buttonWidth: width*.4,   // Set the desired width for the button
+              //                buttonHeight: 50, // Set the desired height for the button
+              //               ),
+              //
             ],
           
           ):
@@ -188,6 +206,23 @@ class _AccountScreenState extends State<AccountScreen> {
                              buttonWidth: 250, // Set the desired width for the button
                              buttonHeight: 50, // Set the desired height for the button
                             ),
+
+// Extra Button For Practice
+
+              SizedBox(height: height * .02 ),
+              // CustomButton(      //  calling a button from buttons.dart
+              //           borderColor: Colors.black,
+              //            backgroundColor: Colors.blue,
+              //            text: 'PostScreen',
+              //            textColor: Colors.white,
+              //            onPressed: () {
+              //             Navigator.push(context, MaterialPageRoute(builder: ((context) => const PostScreen()),),
+              //   );
+              //               },
+              //                buttonWidth: width*.4, // Set the desired width for the button
+              //                buttonHeight: 50, // Set the desired height for the button
+              //               ),
+          
           
             ],
           

@@ -93,11 +93,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   key : _formKey,
                    child: Column(
               children: [
-                SizedBox(height: height* .04,),
+                SizedBox(height: height* .02,),
              
     
                const Align( alignment: Alignment.topLeft,
-                child: Text("Email address", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),)),
+                child: Text("Email address", style: TextStyle(
+                  fontSize: 12, 
+                  fontWeight: FontWeight.bold
+                  ),)),
                   
                   SizedBox(height: height* .01,),
                     SizedBox( height: height * .07,      // Cupertino Text Field
@@ -130,7 +133,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                      SizedBox(height: height* .03,),
              
                const Align( alignment: Alignment.topLeft,
-                child: Text("Password", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),)),
+                child: Text("Password", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),)),
                   
                   SizedBox(height: height* .01,),
                     SizedBox( height: height * .07,      // Cupertino Text Field
@@ -171,7 +174,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Text("At least 6 Characters required", 
                 style: TextStyle(
                   color: Colors.grey,
-                  fontSize: 14, 
+                  fontSize: 12, 
                   fontWeight: FontWeight.bold),)),
         
               SizedBox(height: height* .03,),
@@ -187,11 +190,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
               });
             },
           ),
-                 const Text("Yes, inform me on deals and\nFeatures.  I can opt out at any time", 
+                 const Text("Yes, inform me on deals and Features.\nI can opt out at any time", 
                    style: TextStyle(
                      color: Colors.black,
-                     fontSize: 18, 
-                     fontWeight: FontWeight.bold),),
+                     fontSize: 14, 
+                  //   fontWeight: FontWeight.bold
+                  ),),
                  ],
                ),
     
@@ -209,7 +213,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     
                               }
                                 },
-                                 buttonWidth: double.infinity, // Set the desired width for the button
+                                 buttonWidth: width*.7, // Set the desired width for the button
                                  buttonHeight: 60, // Set the desired height for the button
                                 ),
              
@@ -224,7 +228,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Navigator.push(context, MaterialPageRoute(builder: ((context) => const SignInScreen()),),
                     );
                                 },
-                                 buttonWidth: double.infinity, // Set the desired width for the button
+                                 buttonWidth: width*.7, // Set the desired width for the button
                                  buttonHeight: 60, // Set the desired height for the button
                                 ),
             ],

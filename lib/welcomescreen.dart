@@ -2,7 +2,6 @@ import 'package:adventurist/BottomNavigationBar/navigationbar.dart';
 import 'package:adventurist/constants/buttons.dart';
 import 'package:adventurist/constants/colors/fontcolors.dart';
 import 'package:adventurist/pagetwo.dart';
-import 'package:adventurist/screens/AccountScreen_and_SubScreens/auth_service.dart';
 import 'package:adventurist/screens/signin_Screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -24,11 +23,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     // final auth = FirebaseAuth.instance;
       final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
-
-
-
-    final height = MediaQuery.of(context).size.height * 1;
+  final height = MediaQuery.of(context).size.height * 1;
     final width = MediaQuery.of(context).size.width * 1;
     Future<void> _GoogleSignin() async {
       setState(() {
@@ -63,6 +58,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 
     return Scaffold( 
+      
       body: SingleChildScrollView(
         child: Column(
           children: [
