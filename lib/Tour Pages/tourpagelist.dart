@@ -1,3 +1,5 @@
+import 'package:adventurist/BottomNavigationBar/navigationbar.dart';
+import 'package:adventurist/Tour%20Pages/detailProductScreen.dart';
 import 'package:flutter/material.dart';
 
 class Product {
@@ -33,7 +35,15 @@ class _TourPageListScreenState extends State<TourPageListScreen> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.arrow_back_ios_sharp),
+          leading: InkWell(
+            onTap: (){
+              Navigator.pop(
+          context,
+          MaterialPageRoute(
+            builder: (context) => NavigatorBar(),
+          ));
+            },
+            child: Icon(Icons.arrow_back_ios_sharp)),
           title: Center(child: Text('Soak up the Summer')),
           actions: [
             Padding(
@@ -84,60 +94,72 @@ class _GridItemState extends State<GridItem> {
     final height = MediaQuery.of(context).size.height * 1;
     final width = MediaQuery.of(context).size.width * 1;
 
-    return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 0 ),
-      child: Container(
-        
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
-            widget.product.imageUrl,
-            height: height* 0.17,
-           width: width * 0.43,
-            fit: BoxFit.cover,
+    return GestureDetector(
+
+      onTap: () {
+          Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailProductScreen(product: widget.product),
           ),
-                  
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 30),
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isPressed = !isPressed;
-                        });
-                      },
-                      child: Container(
-                        height: height * 0.08,
-                        width: width * 0.08,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: isPressed
-                              ? Colors.red
-                              : Color.fromARGB(255, 223, 222, 222),
-                        ),
-                        child: Icon(
-                          Icons.favorite_border,
-                          color: isPressed ? Colors.white : Colors.black,
+        );
+      },
+
+      child: Padding(
+        padding: const EdgeInsets.only(left: 10, right: 0 ),
+        child: Container(
+          
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.network(
+              widget.product.imageUrl,
+              height: height* 0.17,
+             width: width * 0.43,
+              fit: BoxFit.cover,
+            ),
+                    
+                  ),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 30),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isPressed = !isPressed;
+                          });
+                        },
+                        child: Container(
+                          height: height * 0.08,
+                          width: width * 0.08,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: isPressed
+                                ? Colors.red
+                                : Color.fromARGB(255, 223, 222, 222),
+                          ),
+                          child: Icon(
+                            Icons.favorite_border,
+                            color: isPressed ? Colors.white : Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 8.0),
-            Text(widget.product.name),
-            SizedBox(height: 4.0),
-            Text('\$${widget.product.price.toStringAsFixed(2)}'),
-          ],
+                ],
+              ),
+              SizedBox(height: 8.0),
+              Text(widget.product.name),
+              SizedBox(height: 4.0),
+              Text('\$${widget.product.price.toStringAsFixed(2)}'),
+            ],
+          ),
         ),
       ),
     );
