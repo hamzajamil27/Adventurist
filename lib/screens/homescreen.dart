@@ -1,6 +1,8 @@
+import 'package:adventurist/RestaurantsCard/restaurants.dart';
 import 'package:adventurist/Tour%20Pages/tourpagelist.dart';
 import 'package:adventurist/screens/Hotels_ThingsToDo_Restaurant_Forums_Screens%20and%20Subscreens/firstSimpleScreen.dart';
 
+import '../RestaurantsCard/RestaurantCityDetailsScreen.dart';
 import '../models/WeekendTripIdeas/tripideasweekenditemdata.dart';
 import '../models/WeekendTripIdeas/tripideaweekenditemmodel.dart';
 import '../models/WeekendTripIdeas/weekendtripideas.dart';
@@ -194,9 +196,87 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
          ),
        ),
+SizedBox(height: height*.04,),
+
+Padding(
+  padding: const EdgeInsets.only(left: 20, right: 20),
+  child: Divider(color: Colors.black,),
+),
+       SizedBox(height: height*.02,),
+      
+        const Center(                         // Text
+         child: Text("Looking for Food?", 
+         style: TextStyle(
+          fontFamily: Medium,
+          fontSize: 24,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+         ),
+         ),
+       ),
+         
+          SizedBox(height: height * .01,),
+         
+           const Padding(                     // Text
+        padding: EdgeInsets.only(left: 20, right: 20),
+        child: Center(
+           child: Align( alignment: Alignment.center,
+             child:  Text("Check out the top dining spots in town", 
+             style: TextStyle(
+              fontFamily: Medium,
+              fontSize: 16, 
+              color: Colors.black,
+              // fontWeight: FontWeight.bold,
+             ),
+             ),
+           ),
+         ),
+      ),
+
+       Padding(                  // Looking for Food
+        padding: const EdgeInsets.only(top: 30),
+        child: SizedBox(  
+          height: height *.33,
+          
+          child:
+          ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: RestaurantModelsdata().restaurants.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Restaurantcards(
+                restaurant : RestaurantModelsdata().restaurants[index]
+
+              );
+            },
+          ),
+        ),
+          // ListView.builder(
+          //   scrollDirection: Axis.horizontal,
+          //   itemCount: RestaurantModelsdata.itemCount,
+          //   itemBuilder: (context, index){
+          //   RestaurantModels model = RestaurantModelsdata.getStatusItem(index);
+          //
+          //   return GestureDetector(
+          //     onTap: () {
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //           builder: (context) => RestaurantCityDetailsScreen(restaurants: widget.restaurants),
+          //         ),
+          //       );
+          //     },
+          //     child: Restaurantcards(
+          //       imageI: model.imageI,
+          //       cityname: model.cityname,
+          //       ),
+          //   );
+          //   }
+          //   ),
+        ), 
+
         
           Padding(                 // Island pic and buuton and text
-            padding: const EdgeInsets.only(top: 50),
+            padding: const EdgeInsets.only(top: 20),
             child: Container(
               height: height * .7,
             width: double.infinity,
@@ -266,7 +346,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
               
-              child: Text("See more \nTours", )),
+              child: Text("See more\nTours", )),
            ],
          ),
        ),
@@ -344,7 +424,7 @@ class _HomeScreenState extends State<HomeScreen> {
          Padding(                  // Listview Builder for Weekend Trip Ideas
         padding: const EdgeInsets.only(top: 30),
         child: SizedBox(  
-          height: height *.4,
+          height: height *.33,
           
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -542,7 +622,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(                  // Listview Builder Beyond the Beach
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: SizedBox(  
-          height: height *.45,
+          height: height *.48 ,
           
           child: ListView.builder(
             scrollDirection: Axis.horizontal,

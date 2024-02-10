@@ -27,7 +27,7 @@ class _WeekEndTripIdeasState extends State<WeekEndTripIdeas> {
       padding: const EdgeInsets.only(left: 20),
       child: InkWell( onTap: (){},
         child: SizedBox( 
-          height: height * .4,
+          height: height * .30,
           width: width* .6,
                 child: Column(
                   children: [
@@ -36,7 +36,7 @@ class _WeekEndTripIdeasState extends State<WeekEndTripIdeas> {
                         ClipRRect( borderRadius: BorderRadius.circular(10),
                           child: Image(image: NetworkImage(widget.imageI),
                           fit: BoxFit.cover,
-                           height: height * .35),
+                           height: height * .30),
                         ),
                         Positioned(bottom: 10,left: 10,
                           child: Align( alignment: Alignment.center,
