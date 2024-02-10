@@ -3,25 +3,59 @@
 import 'package:adventurist/constants/colors/fontcolors.dart';
 import 'package:flutter/material.dart';
 
-class Summervacation extends StatefulWidget {
+class SummervacationItemModel{
   final String imagePath;
   final String placeName;
   final String companyName;
   final String price;
- 
 
-  const Summervacation({super.key, 
+  SummervacationItemModel({
     required this.imagePath,
     required this.placeName,
     required this.companyName,
     required this.price,
+  }
+      );
+}
+/////////////
+
+class SummerVacationItemModeldata {
+
+  final List<SummervacationItemModel> summerVacations= [
+
+    SummervacationItemModel(
+      imagePath: "https://images.pexels.com/photos/1628086/pexels-photo-1628086.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'French beach', companyName: 'Daewoo', price: '\$999',
+    ),
+
+    SummervacationItemModel(
+      imagePath: "https://images.pexels.com/photos/61109/pexels-photo-61109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'San-Fransisco', companyName: 'Faisal Mover', price: '\$1499',
+    ),
+
+    SummervacationItemModel (
+      imagePath: "https://images.pexels.com/photos/13849369/pexels-photo-13849369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'Palermo', companyName: 'Night Travelers', price: '\$560',
+    ),
+    // Add more travel data entries
+  ];
+
+}
+
+////////////////
+
+class SummervacationCards extends StatefulWidget {
+  // final String imagePath; // final String placeName;  // final String companyName; // final String price;
+ final SummervacationItemModel summerVacation;
+
+  const SummervacationCards({super.key,
+
+  required this.summerVacation
+    // required this.imagePath, // required this.placeName,    // required this.companyName, // required this.price,
   });
 
   @override
-  State<Summervacation> createState() => _SummervacationState();
+  State<SummervacationCards> createState() => _SummervacationCardsState();
 }
 
-class _SummervacationState extends State<Summervacation> {
+class _SummervacationCardsState extends State<SummervacationCards> {
   bool isPressed = false;
   @override
   Widget build(BuildContext context) {
@@ -30,7 +64,10 @@ class _SummervacationState extends State<Summervacation> {
 
     return Padding( 
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: InkWell(onTap: (){},
+      child: InkWell(
+        onTap: (){
+
+      },
         child: SizedBox( 
           height: height * .5,
           width: width * .6,
@@ -44,7 +81,7 @@ class _SummervacationState extends State<Summervacation> {
               Stack(
                 children: [
                   ClipRRect( borderRadius: BorderRadius.circular(10),
-                    child: Image(image: NetworkImage(widget.imagePath),
+                    child: Image(image: NetworkImage(widget.summerVacation.imagePath),
                     fit: BoxFit.fill,
                     height: height * .3,),
 
@@ -81,19 +118,19 @@ class _SummervacationState extends State<Summervacation> {
            
             Padding(
                     padding: const EdgeInsets.only(top: 10),
-                    child: Text(widget.placeName, 
+                    child: Text(widget.summerVacation.placeName,
                     style: const TextStyle(fontFamily: Medium, fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),),
                   ),
 
                   Padding(
                     padding: const EdgeInsets.only(top: 2),
-                    child: Text(widget.companyName, 
+                    child: Text(widget.summerVacation.companyName,
                     style: const TextStyle(fontFamily: Medium, fontSize: 14, color: blackColor),),
                   ),
 
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
-                    child: Text(widget.price,
+                    child: Text(widget.summerVacation.price,
                     style: const TextStyle(fontFamily: Medium, fontSize: 18,fontWeight: FontWeight.bold, color: blackColor), 
                                   ),
                   

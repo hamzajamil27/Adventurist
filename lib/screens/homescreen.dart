@@ -376,15 +376,13 @@ Padding(
        
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: SummerVacationItemModeldata.itemCount,
-          itemBuilder: (context, index){
-          SummervacationItemModel model = SummerVacationItemModeldata.getStatusItem(index);
-         
-          return Summervacation(
-            imagePath: model.imagePath, 
-            placeName: model.placeName, 
-            companyName: model.companyName, 
-            price: model.price,
+          itemCount: SummerVacationItemModeldata().summerVacations.length,
+          itemBuilder: (BuildContext context, int index){
+          //SummervacationItemModel model = SummerVacationItemModeldata.getStatusItem(index);
+          return SummervacationCards(
+              summerVacation : SummerVacationItemModeldata().summerVacations[index]
+
+            // imagePath: model.imagePath,  // placeName: model.placeName,  // companyName: model.companyName,  // price: model.price,
             ); 
           }
           ),
@@ -428,13 +426,14 @@ Padding(
           
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: Tripideaweekenditemmodeldata.itemCount,
+            itemCount: Tripideaweekenditemmodeldata().tripIdeas.length,
             itemBuilder: (context, index){
-            Tripideaweekenditemmodel model = Tripideaweekenditemmodeldata.getStatusItem(index);
-           
-            return WeekEndTripIdeas(
-              imageI: model.imageI, 
-              cityname: model.cityname, 
+            //Tripideaweekenditemmodel model = Tripideaweekenditemmodeldata.getStatusItem(index);
+            return WeekEndTripIdeasCard(
+              tripIdea : Tripideaweekenditemmodeldata().tripIdeas[index]
+
+              // imageI: model.imageI,
+              // cityname: model.cityname,
               ); 
             }
             ),
@@ -526,13 +525,13 @@ Padding(
               
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: Beachdayitemmodeldata .itemCount,
+                itemCount: Beachdayitemmodeldata().beachDayItems.length,
                 itemBuilder: (context, index){
-                Beachdayitemmodel model = Beachdayitemmodeldata .getStatusItem(index);
+              //  Beachdayitemmodel model = Beachdayitemmodeldata .getStatusItem(index);
                
-                return BeachDay(
-                  imagebeach:model.imagebeach, 
-                  beachname: model.beachname,  
+                return BeachDayCard(
+                    beachDayItem: Beachdayitemmodeldata().beachDayItems[index]
+                  // imagebeach:model.imagebeach,  // beachname: model.beachname,
                   ); 
                 }
                 ),
@@ -626,15 +625,13 @@ Padding(
           
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: Beyondthebeachitemdata .itemCount,
+            itemCount: Beyondthebeachitemdata().beachItems.length,
             itemBuilder: (context, index){
-            Beyondthebeachitemmodel model = Beyondthebeachitemdata .getStatusItem(index);
+           // Beyondthebeachitemmodel model = Beyondthebeachitemdata .getStatusItem(index);
            
-            return BeyondTheBeach(
-              beyondbeachimage:model.beyondbeachimage, 
-              beyondbeachplaceName: model.beyondbeachplaceName,  
-              beyondbeachcompanyName: model.beyondbeachcompanyName,
-              beyondbeachprice: model.beyondbeachprice,
+            return BeyondTheBeachCard(
+              beachitem: Beyondthebeachitemdata().beachItems[index],
+              // beyondbeachimage:model.beyondbeachimage, // beyondbeachplaceName: model.beyondbeachplaceName,  // beyondbeachcompanyName: model.beyondbeachcompanyName, // beyondbeachprice: model.beyondbeachprice,
               ); 
             }
             ),

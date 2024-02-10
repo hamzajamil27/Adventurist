@@ -1,28 +1,59 @@
 import 'package:adventurist/constants/colors/fontcolors.dart';
 import 'package:flutter/material.dart';
 
-class BeyondTheBeach extends StatefulWidget {
+class Beyondthebeachitemmodel{
+  final String image;
+  final String placeName;
+  final String companyName;
+  final String price;
 
-   final String beyondbeachimage;
-  final String beyondbeachplaceName;
-  final String beyondbeachcompanyName;
-  final String beyondbeachprice;
+  Beyondthebeachitemmodel({
+    required this.image,
+    required this.placeName,
+    required this.companyName,
+    required this.price,
+  }
+      );
+}
+///////
 
-  
-    
-  const BeyondTheBeach({super.key,
-   
-    required this.beyondbeachimage,
-    required this.beyondbeachplaceName,
-    required this.beyondbeachcompanyName,
-    required this.beyondbeachprice,
+class Beyondthebeachitemdata {
+  // static var statusList = [
+  final List<Beyondthebeachitemmodel> beachItems =[
+
+    Beyondthebeachitemmodel(
+      image: "https://images.pexels.com/photos/1559388/pexels-photo-1559388.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'Horse riding ', companyName: 'Daewoo', price: '\$999',
+    ),
+
+    Beyondthebeachitemmodel(
+      image: "https://images.pexels.com/photos/831056/pexels-photo-831056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'beautiful view side in Iceland', companyName: 'Faisal Mover', price: '\$1499',
+    ),
+
+    Beyondthebeachitemmodel (
+      image: "https://images.pexels.com/photos/3098970/pexels-photo-3098970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'seadiving in Dubais', companyName: 'Night Travelers', price: '\$560',
+    ),
+    // Add more travel data entries
+  ];
+
+
+}
+
+//////
+
+class BeyondTheBeachCard extends StatefulWidget {
+ final Beyondthebeachitemmodel beachitem;
+  //  final String beyondbeachimage;  // final String beyondbeachplaceName;  // final String beyondbeachcompanyName; // final String beyondbeachprice;
+
+  const BeyondTheBeachCard({super.key,
+   required this.beachitem
+    // required this.beyondbeachimage,   // required this.beyondbeachplaceName, // required this.beyondbeachcompanyName, // required this.beyondbeachprice,
   });
 
   @override
-  State<BeyondTheBeach> createState() => _BeyondTheBeachState();
+  State<BeyondTheBeachCard> createState() => _BeyondTheBeachCardState();
 }
 
-class _BeyondTheBeachState extends State<BeyondTheBeach> {
+class _BeyondTheBeachCardState extends State<BeyondTheBeachCard> {
   bool isPressed = false;
   @override
   Widget build(BuildContext context) {
@@ -46,7 +77,7 @@ class _BeyondTheBeachState extends State<BeyondTheBeach> {
               Stack(
                 children: [
                   ClipRRect( borderRadius: BorderRadius.circular(10),
-                    child: Image(image: NetworkImage(widget.beyondbeachimage),
+                    child: Image(image: NetworkImage(widget.beachitem.image),
                     fit: BoxFit.fill,
                     height: height * .3,),
 
@@ -83,19 +114,19 @@ class _BeyondTheBeachState extends State<BeyondTheBeach> {
            
             Padding(
                     padding: const EdgeInsets.only(top: 10),
-                    child: Text(widget.beyondbeachplaceName, 
+                    child: Text(widget.beachitem.placeName,
                     style: const TextStyle(fontFamily: Medium, fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),),
                   ),
 
                   Padding(
                     padding: const EdgeInsets.only(top: 2),
-                    child: Text(widget.beyondbeachcompanyName, 
+                    child: Text(widget.beachitem.companyName,
                     style: const TextStyle(fontFamily: Medium, fontSize: 14, color: blackColor),),
                   ),
 
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
-                    child: Text(widget.beyondbeachprice,
+                    child: Text(widget.beachitem.price,
                     style: const TextStyle(fontFamily: Medium, fontSize: 18,fontWeight: FontWeight.bold, color: blackColor), 
                                   ),
                   

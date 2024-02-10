@@ -1,24 +1,62 @@
 import 'package:adventurist/constants/colors/fontcolors.dart';
 import 'package:flutter/material.dart';
 
-class TopExperience extends StatefulWidget {
-   final String imagePath;
+class TopExperienceItemModel{
+  final String imagePath;
   final String placeName;
   final String companyName;
   final String price;
- 
-  const TopExperience({super.key,
-  required this.imagePath,
+
+  TopExperienceItemModel ({
+    required this.imagePath,
     required this.placeName,
     required this.companyName,
     required this.price,
+  });
+}
+
+/////////////////
+
+class TopExperienceItemModeldata{
+  // static var statusList =[
+
+  final List<TopExperienceItemModel> topExperiences =[
+    TopExperienceItemModel(
+      imagePath: "https://images.pexels.com/photos/17687401/pexels-photo-17687401/free-photo-of-hotel-on-island-in-montenegro.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'Beautufil Island with beatutiful views', companyName: 'Daewoo', price: '\$999',
+    ),
+    TopExperienceItemModel(
+      imagePath: "https://images.pexels.com/photos/17809559/pexels-photo-17809559/free-photo-of-people-riding-on-camels-in-giza.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'Enjoy your picnic somewhere in Desrt', companyName: 'Daewoo', price: '\$999',
+    ),
+    TopExperienceItemModel(
+      imagePath: "https://images.pexels.com/photos/3776847/pexels-photo-3776847.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'Forest Picnics', companyName: 'Daewoo', price: '\$999',
+    ),
+    TopExperienceItemModel(
+      imagePath: "https://images.pexels.com/photos/3810798/pexels-photo-3810798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'Make your self feel Special in Fivestar Hotels', companyName: 'Daewoo', price: '\$999',
+    ),
+    TopExperienceItemModel(
+      imagePath: "https://images.pexels.com/photos/1021073/pexels-photo-1021073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'Beautufil Island with beatutiful views', companyName: 'Daewoo', price: '\$999',
+    ),
+
+  ];
+
+}
+
+///////////
+
+class TopExperienceCards extends StatefulWidget {
+  final TopExperienceItemModel topExperience;
+  //  final String imagePath;  // final String placeName;   // final String companyName; // final String price;
+ 
+  const TopExperienceCards({super.key,
+    required this.topExperience
+    // required this.imagePath,  //   required this.placeName,  //   required this.companyName, //   required this.price,
     });
 
   @override
-  State<TopExperience> createState() => _TopExperienceState();
+  State<TopExperienceCards> createState() => _TopExperienceCardsState();
 }
 
-class _TopExperienceState extends State<TopExperience> {
+class _TopExperienceCardsState extends State<TopExperienceCards> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height* 1;
@@ -39,7 +77,7 @@ class _TopExperienceState extends State<TopExperience> {
               Stack(
                 children: [
                   ClipRRect( borderRadius: BorderRadius.circular(10),
-                    child: Image(image: NetworkImage(widget.imagePath),
+                    child: Image(image: NetworkImage(widget.topExperience.imagePath),
                     fit: BoxFit.fill,
                     height: height * .3,),
 
@@ -61,19 +99,19 @@ class _TopExperienceState extends State<TopExperience> {
            
             Padding(
                     padding: const EdgeInsets.only(top: 10),
-                    child: Text(widget.placeName, 
+                    child: Text(widget.topExperience.placeName,
                     style: const TextStyle(fontFamily: Medium, fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),),
                   ),
 
                   Padding(
                     padding: const EdgeInsets.only(top: 2),
-                    child: Text(widget.companyName, 
+                    child: Text(widget.topExperience.companyName,
                     style: const TextStyle(fontFamily: Medium, fontSize: 14, color: blackColor),),
                   ),
 
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
-                    child: Text(widget.price,
+                    child: Text(widget.topExperience.price,
                     style: const TextStyle(fontFamily: Medium, fontSize: 18,fontWeight: FontWeight.bold, color: blackColor), 
                                   ),
                   
