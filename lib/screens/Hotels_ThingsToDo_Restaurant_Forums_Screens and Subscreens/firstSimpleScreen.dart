@@ -55,6 +55,7 @@ class _FirstSimpleScreenState extends State<FirstSimpleScreen> {
          iconTheme: const IconThemeData(color: Colors.black),
         title:  Padding(
           padding: const EdgeInsets.only(right: 20),
+          // Search Bar
           child: CupertinoTextField(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 10),

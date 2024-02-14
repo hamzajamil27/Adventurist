@@ -19,19 +19,19 @@ class Beachdayitemmodeldata {
  // static var statusList = [
   final List<Beachdayitemmodel> beachDayItems = [
     Beachdayitemmodel(
-        imagebeach: "https://images.pexels.com/photos/14539540/pexels-photo-14539540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", beachname: 'Corfu'  ),
+        imagebeach: "https://cdn.pixabay.com/photo/2017/08/17/11/41/beach-2650976_960_720.jpg", beachname: 'Clifton Beach'  ),
 
     Beachdayitemmodel(
-        imagebeach: "https://images.pexels.com/photos/11891076/pexels-photo-11891076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", beachname: 'Ibiza' ),
+        imagebeach: "https://images.pexels.com/photos/11891076/pexels-photo-11891076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", beachname: 'French Beach' ),
 
     Beachdayitemmodel (
-        imagebeach: "https://images.pexels.com/photos/883758/pexels-photo-883758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", beachname: 'Majorca' ),
+        imagebeach: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1496&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", beachname: 'Manoda' ),
 
     Beachdayitemmodel (
-        imagebeach: "https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", beachname: 'Santorini' ),
+        imagebeach: "https://cdn.pixabay.com/photo/2018/03/16/20/13/seagull-3232350_960_720.jpg", beachname: 'Ormara Beach' ),
 
-    Beachdayitemmodel (
-        imagebeach: "https://images.pexels.com/photos/3754810/pexels-photo-3754810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", beachname: 'Sicily' ),
+    // Beachdayitemmodel (
+    //     imagebeach: "https://images.pexels.com/photos/3754810/pexels-photo-3754810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", beachname: 'Sicily' ),
     // Add more travel data entries
   ];
 
@@ -83,7 +83,7 @@ class _BeachDayCardState extends State<BeachDayCard> {
           );
         },
           child: SizedBox( 
-            height: height * .4,
+            height: height * .3,
             width: width* .6,
                   child: Column(
                     children: [
@@ -100,7 +100,7 @@ class _BeachDayCardState extends State<BeachDayCard> {
                                 child: Text(widget.beachDayItem.beachname,
                                 style: const TextStyle(
                                             fontFamily: Medium,
-                                            fontSize: 34, 
+                                            fontSize: 30,
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,),
                                             ),

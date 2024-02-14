@@ -42,50 +42,50 @@ backgroundColor: Colors.white,
   //             padding: const EdgeInsets.only(left: 20),
   //             child: Text("Review",  style: TextStyle(color: Colors.black, fontSize:36, fontWeight: FontWeight.bold ),),
   //           ), 
-            SizedBox(height: height* .04,),
+            // SizedBox(height: height* .04,),
       
-          const  Padding(
-              padding:  EdgeInsets.only(left: 20),
-              child: Text("No reviews yet", style: TextStyle( fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),),
-            ),
-            SizedBox(height: height *.02,),
-          const  Padding(
-              padding:  EdgeInsets.only(left: 20),
-              child: Text("If you have not written any reviews yet, get started!",style: TextStyle( fontSize: 18, color: Colors.black),),
-            ),
+          // const  Padding(
+          //     padding:  EdgeInsets.only(left: 20),
+          //     child: Text("No reviews yet", style: TextStyle( fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),),
+          //   ),
+          //   SizedBox(height: height *.02,),
+          // const  Padding(
+          //     padding:  EdgeInsets.only(left: 20),
+          //     child: Text("If you have not written any reviews yet, get started!",style: TextStyle( fontSize: 18, color: Colors.black),),
+          //   ),
       
             SizedBox(height: height* .05,),
       
-            Row(                         // custom Buttons
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+      //       Row(                         // custom Buttons
+      //               mainAxisAlignment: MainAxisAlignment.center,
+      //               children: [
                     
-                    CustomButton(                   
-                        borderColor: Colors.black,
-                       text: 'Write a review',
-                       onPressed: () {
-                        Navigator.push(context,
-                         MaterialPageRoute(builder: (context) =>const WriteReviewSubScreen1()),
-                       );
-                          },
-                           buttonWidth: 160, // Set the desired width for the button
-                           buttonHeight: 60, // Set the desired height for the button
-                          ),
+      //               CustomButton(                   
+      //                   borderColor: Colors.black,
+      //                  text: 'Write a review',
+      //                  onPressed: () {
+      //                   Navigator.push(context,
+      //                    MaterialPageRoute(builder: (context) =>const WriteReviewSubScreen1()),
+      //                  );
+      //                     },
+      //                      buttonWidth: 160, // Set the desired width for the button
+      //                      buttonHeight: 60, // Set the desired height for the button
+      //                     ),
         
-       const SizedBox(width: 10,),
+      //  const SizedBox(width: 10,),
         
-                   CustomButton(             
-                        borderColor: Colors.black,
-                      text: 'Upload a photo',
-                      onPressed: () {
-                         },
-                          buttonWidth: 160, // Set the desired width for the button
-                          buttonHeight: 60, // Set the desired height for the button
-                         ),
-          ]
-          ),
+      //              CustomButton(             
+      //                   borderColor: Colors.black,
+      //                 text: 'Upload a photo',
+      //                 onPressed: () {
+      //                    },
+      //                     buttonWidth: 160, // Set the desired width for the button
+      //                     buttonHeight: 60, // Set the desired height for the button
+      //                    ),
+      //     ]
+      //     ),
       
-           SizedBox(height: height*.04,),
+       //    SizedBox(height: height*.04,),
           
              Container(
                height: height * .7,
@@ -133,27 +133,27 @@ backgroundColor: Colors.white,
                ),
              ),
 
-SizedBox(height: height* .07,),
-             const Center(child: Text("Is Adventurist missing a place?",  style: TextStyle( fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),)),
+// SizedBox(height: height* .07,),
+//              const Center(child: Text("Is Adventurist missing a place?",  style: TextStyle( fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),)),
              
- SizedBox(height: height* .02,),
-            const  Center(child: Text("Tell us about it so we can improve what we show",  style: TextStyle( fontSize: 16, color: Colors.black),)),
+//  SizedBox(height: height* .02,),
+//             const  Center(child: Text("Tell us about it so we can improve what we show",  style: TextStyle( fontSize: 16, color: Colors.black),)),
           
           
-    SizedBox(height: height* .04,),      
-          Center(
-            child: CustomButton(
-                             borderColor: Colors.black,
-                             icon: const Icon(Icons. add_location_alt_outlined, color: Colors.black,),
-                             text: "Add a missing place",
-                             onPressed: () {
-                                },
-                                 buttonWidth: 250, 
-                                 buttonHeight: 60, 
-                                ),
-          ),
+//     SizedBox(height: height* .04,),      
+//           Center(
+//             child: CustomButton(
+//                              borderColor: Colors.black,
+//                              icon: const Icon(Icons. add_location_alt_outlined, color: Colors.black,),
+//                              text: "Add a missing place",
+//                              onPressed: () {
+//                                 },
+//                                  buttonWidth: 250, 
+//                                  buttonHeight: 60, 
+//                                 ),
+//           ),
 
-          SizedBox(height: height* .02,), 
+//           SizedBox(height: height* .02,), 
 
            // Center(
            //   child: CustomButton(

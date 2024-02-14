@@ -20,10 +20,10 @@ class Tripideaweekenditemmodeldata {
   final List<Tripideaweekenditemmodel> tripIdeas = [
 
     Tripideaweekenditemmodel(
-        imageI: "https://images.pexels.com/photos/14406067/pexels-photo-14406067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", cityname: 'Lahore'  ),
+        imageI: "https://images.unsplash.com/photo-1578562501518-fc75b2484885?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", cityname: 'Murree'  ),
 
     Tripideaweekenditemmodel(
-        imageI: "https://images.pexels.com/photos/1057840/pexels-photo-1057840.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", cityname: 'Berlin' ),
+        imageI: "https://images.unsplash.com/photo-1659293155300-f4cc8b866e80?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", cityname: 'Khunjerab park' ),
 
     Tripideaweekenditemmodel (
         imageI: "https://images.pexels.com/photos/1823681/pexels-photo-1823681.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", cityname: 'Chicago' ),
@@ -82,7 +82,7 @@ class _WeekEndTripIdeasCardState extends State<WeekEndTripIdeasCard> {
                               child: Text(widget.tripIdea.cityname,
                               style: const TextStyle(
                                           fontFamily: Medium,
-                                          fontSize: 34, 
+                                          fontSize: 28,
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,),
                                           ),

@@ -1,6 +1,9 @@
 import 'package:adventurist/RestaurantsCard/restaurants.dart';
 import 'package:adventurist/Tour%20Pages/tourpagelist.dart';
 import 'package:adventurist/screens/Hotels_ThingsToDo_Restaurant_Forums_Screens%20and%20Subscreens/firstSimpleScreen.dart';
+import 'package:adventurist/screens/Muree_Blog.dart';
+import 'package:adventurist/screens/cholistan_blog.dart';
+import 'package:adventurist/screens/khujerabNationalPark.dart';
 
 import '../RestaurantsCard/RestaurantCityDetailsScreen.dart';
 import '../models/WeekendTripIdeas/tripideasweekenditemdata.dart';
@@ -163,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: width * .85,
           decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10),), 
-          image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/3763190/pexels-photo-3763190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+          image: DecorationImage(image: NetworkImage("https://images.unsplash.com/photo-1611068661807-c850d6a24f62?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
           fit: BoxFit.cover),
          ),
           
@@ -171,10 +174,12 @@ class _HomeScreenState extends State<HomeScreen> {
             children:  [
              const Padding(
                padding: EdgeInsets.only(top: 20),
-               child: Align(
-                  alignment:Alignment.center, 
-                child:Text("Discover More in\nDubai", 
-                style: TextStyle(fontFamily: Medium, fontSize: 34, fontWeight: FontWeight.bold, color: Colors.white),),),
+               child: Row( mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   Text("Discover More in\nKarachi",
+                   style: TextStyle(fontFamily: Medium, fontSize: 34, fontWeight: FontWeight.bold, color: Colors.white),),
+                 ],
+               ),
              ),
        
                Padding(
@@ -280,8 +285,8 @@ Padding(
             child: Container(
               height: height * .7,
             width: double.infinity,
-            decoration: const BoxDecoration( 
-            image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/2674062/pexels-photo-2674062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+            decoration: const BoxDecoration(
+            image: DecorationImage(image: NetworkImage("https://cdn.pixabay.com/photo/2020/09/09/07/57/fortress-5556905_1280.jpg"),
             fit: BoxFit.fill),
                    ),
     
@@ -293,7 +298,7 @@ Padding(
                   const Padding(              // Text
                     padding: EdgeInsets.only( left: 30, right: 30),
                     child: Align(alignment: Alignment.center,
-                      child: Text("The Best Island in Europe", 
+                      child: Text("Cholistan Desert",
                       style: TextStyle(fontFamily: Medium, fontSize: 38, fontWeight: FontWeight.bold, color:Colors.white),),
                     ),
                   ),
@@ -301,7 +306,7 @@ Padding(
                  const  Padding(              // Text
                     padding: EdgeInsets.only(top: 20, left: 30, right: 30),
                     child: Align(alignment: Alignment.center ,
-                      child: Text("All the Places you gotta see from the Arctic to the Aegean", 
+                      child: Text("Exploring the Mystique of Cholistan Desert: A Jewel of Pakistan",
                       style: TextStyle(fontFamily: Medium, fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
                     ),
                   ),
@@ -311,11 +316,16 @@ Padding(
                  child: Align(alignment: Alignment.centerLeft,
                   
                    child: CustomButton(
-                          text: "Let's go",
+                          text: "Wan't to more!",
                           onPressed: () {
-                            
+                            Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => CholistanBlogScreen(),
+                                        ),
+                                      );
                              },
-                              buttonWidth: 120, 
+                              buttonWidth: 150,
                               buttonHeight: 50, 
                              ),
                  ),
@@ -325,31 +335,19 @@ Padding(
             ),
           ),
     
-       SizedBox(height: height * .035,),
+       SizedBox(height: height * .08),
     
-       Center(                         // Text
-         child: Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-           children: [
-             Text("Soak up the end of Summer", 
-             style: TextStyle(
-              fontFamily: Medium,
-              fontSize: 22,
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-             ),),
-
-             InkWell (
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => TourPageListScreen()),
-                );
-              },
-              
-              child: Text("See more\nTours", )),
-           ],
-         ),
+       Padding(
+         padding: const EdgeInsets.only(left: 20, right: 20),
+         child: Text("Explore some Famous Cities of Pakistan",
+         style: TextStyle(
+          fontFamily: Medium,
+          fontSize: 22,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+         ),),
        ),
+
         
         SizedBox(height: height* .02,),
     
@@ -357,7 +355,7 @@ Padding(
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Center(
            child: Align( alignment: Alignment.center,
-             child:  Text("Outdore adventures to make every second count", 
+             child:  Text("Make your best Memories in these City",
              style: TextStyle(
               fontFamily: Medium,
               fontSize: 16, 
@@ -387,6 +385,8 @@ Padding(
           }
           ),
       ),
+            SizedBox(height: height* .02,),
+            TextButton(onPressed: (){}, child: Text("See more Tours", )),
     
       SizedBox(height: height*.02,),
       
@@ -446,7 +446,7 @@ Padding(
               height: height * .73,
             width: double.infinity,
             decoration: const BoxDecoration( 
-            image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/3743492/pexels-photo-3743492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+            image: DecorationImage(image: NetworkImage("https://images.unsplash.com/photo-1602600049562-ab0a1645ce3e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
             fit: BoxFit.fill),
                    ),
     
@@ -457,16 +457,18 @@ Padding(
     
                   const Padding(              // Text
                     padding: EdgeInsets.only( left: 30, right: 30),
-                    child: Align(alignment: Alignment.center,
-                      child: Text("A summer Weekend in the Catskills", 
-                      style: TextStyle(fontFamily: Medium, fontSize: 38, fontWeight: FontWeight.bold, color:Colors.white),),
+                    child: Row(mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text("Murree",
+                        style: TextStyle(fontFamily: Medium, fontSize: 38, fontWeight: FontWeight.bold, color:Colors.white),),
+                      ],
                     ),
                   ),
                   
                  const  Padding(              // Text
                     padding: EdgeInsets.only(top: 20, left: 30, right: 30),
                     child: Align(alignment: Alignment.center ,
-                      child: Text("It's got it all-arts, eats, nature-and is right by NYC", 
+                      child: Text("A Mountain Retreat with a Rich History",
                       style: TextStyle(fontFamily: Medium, fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
                     ),
                   ),
@@ -475,10 +477,14 @@ Padding(
                  padding: const EdgeInsets.only(top: 30, left: 30),
                  child: Align(alignment: Alignment.centerLeft,
                    child: CustomButton(
-                          text: "Pack Your bags",
+                          text: "Want to know More!",
                           onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) =>  const MurreeBlogScreen()),
+                            );
                              },
-                              buttonWidth: 170, 
+                              buttonWidth: 190,
                               buttonHeight: 50, 
                              ),
                  ),
@@ -507,7 +513,7 @@ Padding(
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Center(
            child: Align( alignment: Alignment.center,
-             child:  Text("Spend the summer on the European Island", 
+             child:  Text("Spend your summer on the best Pakistan Beaches",
              style: TextStyle(
               fontFamily: Medium,
               fontSize: 16, 
@@ -518,10 +524,11 @@ Padding(
            ),
          ),
       ),
+
       SizedBox(height: height*.05,),
         
             SizedBox(  
-              height: height *.4,
+              height: height *.35,
               
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -537,13 +544,13 @@ Padding(
                 ),
             ),
           
-         // SizedBox(height: height * .02,),
+         SizedBox(height: height * .05,),
 
           Container(
                height: height * .7,
              width: double.infinity,
              decoration: const BoxDecoration( 
-             image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/3428289/pexels-photo-3428289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+             image: DecorationImage(image: NetworkImage("https://images.unsplash.com/photo-1637000404414-d064eae612d8?q=80&w=1659&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
              fit: BoxFit.fill),
                     ),
           
@@ -555,7 +562,7 @@ Padding(
                    const Padding(              // Text
                      padding: EdgeInsets.only( left: 30, right: 30),
                      child: Align(alignment: Alignment.center,
-                       child: Text("Happy 100th Birthday DisneyLand", 
+                       child: Text("Khunjerab National Park",
                        style: TextStyle( fontSize: 38, fontWeight: FontWeight.bold, color:Colors.white),),
                      ),
                    ),
@@ -563,7 +570,7 @@ Padding(
                   const  Padding(              // Text
                      padding: EdgeInsets.only(top: 20, left: 30, right: 40),
                      child: Align(alignment: Alignment.center ,
-                       child: Text("Celebrate with a trip-our Park guide'll get you going", 
+                       child: Text("Exploring Pakistan's Alpine Wonderland",
                        style: TextStyle( fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
                      ),
                    ),
@@ -572,11 +579,16 @@ Padding(
                   padding: const EdgeInsets.only(top: 30, left: 30),
                   child: Align(alignment: Alignment.centerLeft,
                     child: CustomButton(
-                           text: "Explore Now",
+                           text: "Read more about this",
                            onPressed: () {
+
+                             Navigator.push(
+                               context,
+                               MaterialPageRoute(builder: (context) =>  const KhujerabParkScreen()),
+                             );
                               },
-                               buttonWidth: 170, 
-                               buttonHeight: 50, 
+                               buttonWidth: 210,
+                               buttonHeight: 50,
                               ),
                   ),
                 ),
@@ -639,47 +651,47 @@ Padding(
       ),
           
           
-       Padding(              // Discover More in Dubai Container
-         padding: const EdgeInsets.only(top: 5),
-         child: Container( 
-          height: height * .28,
-          width: width * .85,
-         decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10),), 
-         image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/2115367/pexels-photo-2115367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-         fit: BoxFit.cover),
-         ),
-          
-          child: Column( 
-            children:  [
-             const Padding(
-               padding: EdgeInsets.only(top: 15, left: 20, right: 20),
-               child: Align(
-                  alignment:Alignment.center, 
-                child:Text("Is Adventurist Missing a Place?", 
-                style: TextStyle(fontFamily: Medium, fontSize: 34, fontWeight: FontWeight.bold, color: Colors.white),),),
-             ),
-       
-               Padding(
-                 padding: const EdgeInsets.only(top: 20,),
-                 child: Align(alignment: Alignment.center,
-                   child: CustomButton(                   //  calling a button from buttons.dart
-                         
-                         icon: const Icon(Icons.place, color: Colors.black,),
-                          text: 'Add a missing Place',
-                          onPressed: () {
-                             },
-                              buttonWidth: 250, // Set the desired width for the button
-                              buttonHeight: 50, // Set the desired height for the button
-                             ),
-                 ),
-               ),
-       
-            ],
-       
-          ),
-         ),
-       ),
+       // Padding(              // Discover More in Dubai Container
+       //   padding: const EdgeInsets.only(top: 5),
+       //   child: Container(
+       //    height: height * .28,
+       //    width: width * .85,
+       //   decoration: const BoxDecoration(
+       //    borderRadius: BorderRadius.all(Radius.circular(10),),
+       //   image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/2115367/pexels-photo-2115367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+       //   fit: BoxFit.cover),
+       //   ),
+       //
+       //    child: Column(
+       //      children:  [
+       //       const Padding(
+       //         padding: EdgeInsets.only(top: 15, left: 20, right: 20),
+       //         child: Align(
+       //            alignment:Alignment.center,
+       //          child:Text("Is Adventurist Missing a Place?",
+       //          style: TextStyle(fontFamily: Medium, fontSize: 34, fontWeight: FontWeight.bold, color: Colors.white),),),
+       //       ),
+       //
+       //         Padding(
+       //           padding: const EdgeInsets.only(top: 20,),
+       //           child: Align(alignment: Alignment.center,
+       //             child: CustomButton(                   //  calling a button from buttons.dart
+       //
+       //                   icon: const Icon(Icons.place, color: Colors.black,),
+       //                    text: 'Add a missing Place',
+       //                    onPressed: () {
+       //                       },
+       //                        buttonWidth: 250, // Set the desired width for the button
+       //                        buttonHeight: 50, // Set the desired height for the button
+       //                       ),
+       //           ),
+       //         ),
+       //
+       //      ],
+       //
+       //    ),
+       //   ),
+       // ),
        SizedBox(height: height * .05 ,),  
         ],
         ),

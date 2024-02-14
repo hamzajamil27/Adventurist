@@ -24,15 +24,15 @@ class SummerVacationItemModeldata {
   final List<SummervacationItemModel> summerVacations= [
 
     SummervacationItemModel(
-      imagePath: "https://images.pexels.com/photos/1628086/pexels-photo-1628086.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'French beach', companyName: 'Daewoo', price: '\$999',
+      imagePath: "https://images.unsplash.com/photo-1598461814968-639d9321f483?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", placeName: 'Multan', companyName: 'Daewoo', price: '\$999',
     ),
 
     SummervacationItemModel(
-      imagePath: "https://images.pexels.com/photos/61109/pexels-photo-61109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'San-Fransisco', companyName: 'Faisal Mover', price: '\$1499',
+      imagePath: "https://images.unsplash.com/photo-1603491656337-3b491147917c?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", placeName: 'Lahore', companyName: 'Faisal Mover', price: '\$1499',
     ),
 
     SummervacationItemModel (
-      imagePath: "https://images.pexels.com/photos/13849369/pexels-photo-13849369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", placeName: 'Palermo', companyName: 'Night Travelers', price: '\$560',
+      imagePath: "https://images.unsplash.com/photo-1617373743747-3bb331fd4e8d?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", placeName: 'Karachi', companyName: 'Night Travelers', price: '\$560',
     ),
     // Add more travel data entries
   ];
