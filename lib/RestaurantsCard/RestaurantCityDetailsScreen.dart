@@ -40,21 +40,170 @@ class _RestaurantCityDetailsScreenState extends State<RestaurantCityDetailsScree
               Text('Top Restaurants', style: TextStyle(fontSize: 24),),
               SizedBox(height: height * 0.015,),
 
-              SizedBox(
-                height: height *.6,
-
-                child:
-                ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  itemCount: CityRestaurantModelsdata().cityrestaurants.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return CityRestaurantcards(
-                        cityrestaurant : CityRestaurantModelsdata().cityrestaurants[index]
-
-                    );
+               Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: InkWell( onTap: (){
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => RestaurantCityDetailsScreen(
+                    //         cityrestaurant: widget.cityrestaurant
+                    //     ),
+                    //   ),
+                    // );
                   },
+                    child: Container(
+                        height: height * .17,
+                        width: width* .9,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.black12
+                        ),
+
+                        child: Row(
+                          children: [
+                            Container(
+                                height: height *.17,
+                                width: width* .38,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Image(
+                                  image: NetworkImage(widget.restaurant.subRestaurantImageLa, ),
+                                  fit: BoxFit.fill, )
+                              //Image.network(widget.cityrestaurant.imageI, fit: BoxFit.cover,),
+                            ),
+                            SizedBox(width: 10,),
+
+                            Column( crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: height*0.01,),
+                                Text(widget.restaurant.cityRestaurantNameLa),
+                                SizedBox(height: height*0.015,),
+                                Text(widget.restaurant.priceLa),
+                              ],
+                            ),
+                          ],
+                        )
+                    ),
+                  ),
                 ),
-              ),
+
+
+                //////////////
+              // 2nd Restaurant
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: InkWell( onTap: (){
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => RestaurantCityDetailsScreen(
+                    //         cityrestaurant: widget.cityrestaurant
+                    //     ),
+                    //   ),
+                    // );
+                  },
+                    child: Container(
+                        height: height * .17,
+                        width: width* .9,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.black12
+                        ),
+
+                        child: Row(
+                          children: [
+                            Container(
+                                height: height *.17,
+                                width: width* .38,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Image(
+                                  image: NetworkImage(widget.restaurant.subRestaurantImagetwoLa, ),
+                                  fit: BoxFit.fill, )
+                              //Image.network(widget.cityrestaurant.imageI, fit: BoxFit.cover,),
+                            ),
+                            SizedBox(width: 10,),
+
+                            Column( crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: height*0.01,),
+                                Text(widget.restaurant.cityRestaurantNametwoLa),
+                                SizedBox(height: height*0.015,),
+                                Text(widget.restaurant.pricetwoLa),
+                              ],
+                            ),
+                          ],
+                        )
+                    ),
+                  ),
+                ),
+
+
+              //////////////
+              // 3rd Restaurant
+
+                  Padding(
+                  padding: const EdgeInsets.only(top: 20),
+          child: InkWell( onTap: (){
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => RestaurantCityDetailsScreen(
+            //         cityrestaurant: widget.cityrestaurant
+            //     ),
+            //   ),
+            // );
+          },
+            child: Container(
+                height: height * .17,
+                width: width* .9,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.black12
+                ),
+
+                child: Row(
+                  children: [
+                    Container(
+                        height: height *.17,
+                        width: width* .38,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Image(
+                          image: NetworkImage(widget.restaurant.subRestaurantImagethreeLa, ),
+                          fit: BoxFit.fill, )
+                      //Image.network(widget.cityrestaurant.imageI, fit: BoxFit.cover,),
+                    ),
+                    SizedBox(width: 10,),
+
+                    Column( crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: height*0.01,),
+                        Text(widget.restaurant.cityRestaurantNamethreeLa),
+                        SizedBox(height: height*0.015,),
+                        Text(widget.restaurant.pricethreeLa),
+                      ],
+                    ),
+                  ],
+                )
+            ),
+          ),
+        ),
+              //   ListView.builder(
+              //     scrollDirection: Axis.vertical,
+              //     itemCount: CityRestaurantModelsdata().cityrestaurants.length,
+              //     itemBuilder: (BuildContext context, int index) {
+              //       return CityRestaurantcards(
+              //           cityrestaurant : CityRestaurantModelsdata().cityrestaurants[index]
+              //
+              //       );
+              //     },
+              //   ),
+              // ),
               SizedBox(height: height *0.04,),
               Center(
                 child: CustomButton(      //  calling a button from buttons.dart

@@ -5,6 +5,7 @@ import 'package:adventurist/screens/Muree_Blog.dart';
 import 'package:adventurist/screens/cholistan_blog.dart';
 import 'package:adventurist/screens/khujerabNationalPark.dart';
 
+import '../Discover_More_in_Karachi/Discover_More_in_Karachi.dart';
 import '../RestaurantsCard/RestaurantCityDetailsScreen.dart';
 import '../models/WeekendTripIdeas/tripideasweekenditemdata.dart';
 import '../models/WeekendTripIdeas/tripideaweekenditemmodel.dart';
@@ -189,6 +190,12 @@ class _HomeScreenState extends State<HomeScreen> {
                          icon: const Icon(Icons.explore, color: Colors.black,),
                           text: 'Keep Exploring',
                           onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DiscoverMoreinKarachiScreen(),
+                              ),
+                            );
                              },
                               buttonWidth: 200, // Set the desired width for the button
                               buttonHeight: 50, // Set the desired height for the button
@@ -226,7 +233,7 @@ Padding(
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Center(
            child: Align( alignment: Alignment.center,
-             child:  Text("Check out the top dining spots in town", 
+             child:  Text("Check out the top dining spots in Pakistan",
              style: TextStyle(
               fontFamily: Medium,
               fontSize: 16, 
@@ -316,7 +323,7 @@ Padding(
                  child: Align(alignment: Alignment.centerLeft,
                   
                    child: CustomButton(
-                          text: "Wan't to more!",
+                          text: "Want to more!",
                           onPressed: () {
                             Navigator.push(
                                         context,
