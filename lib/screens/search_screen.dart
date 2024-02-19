@@ -1,7 +1,5 @@
 import 'package:adventurist/constants/colors/fontcolors.dart';
 import 'package:adventurist/models/TopExperiences/topexperience.dart';
-import 'package:adventurist/models/TopExperiences/topexperienceitemdata.dart';
-import 'package:adventurist/models/TopExperiences/topexperienceitemmodel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants/buttons.dart';

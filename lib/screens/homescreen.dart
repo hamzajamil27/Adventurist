@@ -1,23 +1,12 @@
 import 'package:adventurist/RestaurantsCard/restaurants.dart';
-import 'package:adventurist/Tour%20Pages/tourpagelist.dart';
 import 'package:adventurist/screens/Hotels_ThingsToDo_Restaurant_Forums_Screens%20and%20Subscreens/firstSimpleScreen.dart';
 import 'package:adventurist/screens/Muree_Blog.dart';
 import 'package:adventurist/screens/cholistan_blog.dart';
 import 'package:adventurist/screens/khujerabNationalPark.dart';
-
 import '../Discover_More_in_Karachi/Discover_More_in_Karachi.dart';
-import '../RestaurantsCard/RestaurantCityDetailsScreen.dart';
-import '../models/WeekendTripIdeas/tripideasweekenditemdata.dart';
-import '../models/WeekendTripIdeas/tripideaweekenditemmodel.dart';
 import '../models/WeekendTripIdeas/weekendtripideas.dart';
 import '../models/beachdayforbooks/beachday.dart';
-import '../models/beachdayforbooks/beachdayitemdata.dart';
-import '../models/beachdayforbooks/beachdayitemmodel.dart';
 import '../models/beyondthebeach/beyondthebeach.dart';
-import '../models/beyondthebeach/beyondthebeachitemdata.dart';
-import '../models/beyondthebeach/beyondthebeachitemmodel.dart';
-import '../models/summer_vacations/summerVacationItemModel.dart';
-import '../models/summer_vacations/summervacationitemdata.dart';
 import 'package:adventurist/constants/colors/fontcolors.dart';
 import 'package:flutter/material.dart';
 import '../constants/buttons.dart';
@@ -208,6 +197,61 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
          ),
        ),
+
+            const SizedBox(height: 50,),
+
+
+            Container(
+              height: height * .7,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(image: NetworkImage("https://cdn.pixabay.com/photo/2020/09/09/07/57/fortress-5556905_1280.jpg"),
+                    fit: BoxFit.fill),
+              ),
+
+              child: Column(
+                children:  [
+
+                  SizedBox(height: height*.3,),
+
+                  const Padding(              // Text
+                    padding: EdgeInsets.only( left: 30, right: 30),
+                    child: Align(alignment: Alignment.center,
+                      child: Text("Cholistan Desert",
+                        style: TextStyle(fontFamily: Medium, fontSize: 38, fontWeight: FontWeight.bold, color:Colors.white),),
+                    ),
+                  ),
+
+                  const  Padding(              // Text
+                    padding: EdgeInsets.only(top: 20, left: 30, right: 30),
+                    child: Align(alignment: Alignment.center ,
+                      child: Text("Exploring the Mystique of Cholistan Desert: A Jewel of Pakistan",
+                        style: TextStyle(fontFamily: Medium, fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
+                    ),
+                  ),
+
+                  Padding(       // Lets go Button
+                    padding: const EdgeInsets.only(top: 30, left: 30),
+                    child: Align(alignment: Alignment.centerLeft,
+
+                      child: CustomButton(
+                        text: "Want to more!",
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CholistanBlogScreen(),
+                            ),
+                          );
+                        },
+                        buttonWidth: 150,
+                        buttonHeight: 50,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
 SizedBox(height: height*.04,),
 
 Padding(
@@ -287,64 +331,64 @@ Padding(
         ), 
 
         
-          Padding(                 // Island pic and buuton and text
-            padding: const EdgeInsets.only(top: 20),
-            child: Container(
-              height: height * .7,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-            image: DecorationImage(image: NetworkImage("https://cdn.pixabay.com/photo/2020/09/09/07/57/fortress-5556905_1280.jpg"),
-            fit: BoxFit.fill),
-                   ),
+
     
+       SizedBox(height: height * .08),
+            Container(
+              height: height * .73,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(image: NetworkImage("https://images.unsplash.com/photo-1602600049562-ab0a1645ce3e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                    fit: BoxFit.fill),
+              ),
+
               child: Column(
-                children:  [ 
-    
-                  SizedBox(height: height*.3,),
-    
+                children:  [
+
+                  SizedBox(height: height*.25,),
+
                   const Padding(              // Text
                     padding: EdgeInsets.only( left: 30, right: 30),
-                    child: Align(alignment: Alignment.center,
-                      child: Text("Cholistan Desert",
-                      style: TextStyle(fontFamily: Medium, fontSize: 38, fontWeight: FontWeight.bold, color:Colors.white),),
+                    child: Row(mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text("Murree",
+                          style: TextStyle(fontFamily: Medium, fontSize: 38, fontWeight: FontWeight.bold, color:Colors.white),),
+                      ],
                     ),
                   ),
-                  
-                 const  Padding(              // Text
+
+                  const  Padding(              // Text
                     padding: EdgeInsets.only(top: 20, left: 30, right: 30),
                     child: Align(alignment: Alignment.center ,
-                      child: Text("Exploring the Mystique of Cholistan Desert: A Jewel of Pakistan",
-                      style: TextStyle(fontFamily: Medium, fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
+                      child: Text("A Mountain Retreat with a Rich History",
+                        style: TextStyle(fontFamily: Medium, fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
                     ),
                   ),
-    
-                   Padding(       // Lets go Button
-                 padding: const EdgeInsets.only(top: 30, left: 30),
-                 child: Align(alignment: Alignment.centerLeft,
-                  
-                   child: CustomButton(
-                          text: "Want to more!",
-                          onPressed: () {
-                            Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => CholistanBlogScreen(),
-                                        ),
-                                      );
-                             },
-                              buttonWidth: 150,
-                              buttonHeight: 50, 
-                             ),
-                 ),
-               ),
+
+                  Padding(       // Pack your Bags Button
+                    padding: const EdgeInsets.only(top: 30, left: 30),
+                    child: Align(alignment: Alignment.centerLeft,
+                      child: CustomButton(
+                        text: "Want to know More!",
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>  const MurreeBlogScreen()),
+                          );
+                        },
+                        buttonWidth: 190,
+                        buttonHeight: 50,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
-          ),
-    
-       SizedBox(height: height * .08),
-    
-       Padding(
+
+            SizedBox(height: height * .08),
+
+
+            Padding(
          padding: const EdgeInsets.only(left: 20, right: 20),
          child: Text("Explore some Famous Cities of Pakistan",
          style: TextStyle(
@@ -393,6 +437,59 @@ Padding(
           ),
       ),
             SizedBox(height: height* .02,),
+
+            Container(
+              height: height * .7,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(image: NetworkImage("https://images.unsplash.com/photo-1637000404414-d064eae612d8?q=80&w=1659&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                    fit: BoxFit.fill),
+              ),
+
+              child: Column(
+                children:  [
+
+                  SizedBox(height: height*.2,),
+
+                  const Padding(              // Text
+                    padding: EdgeInsets.only( left: 30, right: 30),
+                    child: Align(alignment: Alignment.center,
+                      child: Text("Khunjerab National Park",
+                        style: TextStyle( fontSize: 38, fontWeight: FontWeight.bold, color:Colors.white),),
+                    ),
+                  ),
+
+                  const  Padding(              // Text
+                    padding: EdgeInsets.only(top: 20, left: 30, right: 40),
+                    child: Align(alignment: Alignment.center ,
+                      child: Text("Exploring Pakistan's Alpine Wonderland",
+                        style: TextStyle( fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
+                    ),
+                  ),
+
+                  Padding(       // Pack your Bags Button
+                    padding: const EdgeInsets.only(top: 30, left: 30),
+                    child: Align(alignment: Alignment.centerLeft,
+                      child: CustomButton(
+                        text: "Read more about this",
+                        onPressed: () {
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>  const KhujerabParkScreen()),
+                          );
+                        },
+                        buttonWidth: 210,
+                        buttonHeight: 50,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: height* .05,),
+
             TextButton(onPressed: (){}, child: Text("See more Tours", )),
     
       SizedBox(height: height*.02,),
@@ -447,60 +544,7 @@ Padding(
         ), 
       ),
         
-         Padding(                 // A summer Weekend in the Catskills
-            padding: const EdgeInsets.only(top: 20),
-            child: Container(
-              height: height * .73,
-            width: double.infinity,
-            decoration: const BoxDecoration( 
-            image: DecorationImage(image: NetworkImage("https://images.unsplash.com/photo-1602600049562-ab0a1645ce3e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
-            fit: BoxFit.fill),
-                   ),
-    
-              child: Column(
-                children:  [ 
-    
-                  SizedBox(height: height*.25,),
-    
-                  const Padding(              // Text
-                    padding: EdgeInsets.only( left: 30, right: 30),
-                    child: Row(mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text("Murree",
-                        style: TextStyle(fontFamily: Medium, fontSize: 38, fontWeight: FontWeight.bold, color:Colors.white),),
-                      ],
-                    ),
-                  ),
-                  
-                 const  Padding(              // Text
-                    padding: EdgeInsets.only(top: 20, left: 30, right: 30),
-                    child: Align(alignment: Alignment.center ,
-                      child: Text("A Mountain Retreat with a Rich History",
-                      style: TextStyle(fontFamily: Medium, fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
-                    ),
-                  ),
-    
-                   Padding(       // Pack your Bags Button
-                 padding: const EdgeInsets.only(top: 30, left: 30),
-                 child: Align(alignment: Alignment.centerLeft,
-                   child: CustomButton(
-                          text: "Want to know More!",
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) =>  const MurreeBlogScreen()),
-                            );
-                             },
-                              buttonWidth: 190,
-                              buttonHeight: 50, 
-                             ),
-                 ),
-               ),
-                ],
-              ),
-            ),
-          ),
-        
+
         SizedBox(height: height * .05,),
     
            const Center(                         // Text A beach day for the books
@@ -553,109 +597,61 @@ Padding(
           
          SizedBox(height: height * .05,),
 
-          Container(
-               height: height * .7,
-             width: double.infinity,
-             decoration: const BoxDecoration( 
-             image: DecorationImage(image: NetworkImage("https://images.unsplash.com/photo-1637000404414-d064eae612d8?q=80&w=1659&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
-             fit: BoxFit.fill),
-                    ),
-          
-               child: Column(
-                 children:  [ 
-          
-                   SizedBox(height: height*.2,),
-          
-                   const Padding(              // Text
-                     padding: EdgeInsets.only( left: 30, right: 30),
-                     child: Align(alignment: Alignment.center,
-                       child: Text("Khunjerab National Park",
-                       style: TextStyle( fontSize: 38, fontWeight: FontWeight.bold, color:Colors.white),),
-                     ),
-                   ),
-                   
-                  const  Padding(              // Text
-                     padding: EdgeInsets.only(top: 20, left: 30, right: 40),
-                     child: Align(alignment: Alignment.center ,
-                       child: Text("Exploring Pakistan's Alpine Wonderland",
-                       style: TextStyle( fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
-                     ),
-                   ),
-          
-                    Padding(       // Pack your Bags Button
-                  padding: const EdgeInsets.only(top: 30, left: 30),
-                  child: Align(alignment: Alignment.centerLeft,
-                    child: CustomButton(
-                           text: "Read more about this",
-                           onPressed: () {
 
-                             Navigator.push(
-                               context,
-                               MaterialPageRoute(builder: (context) =>  const KhujerabParkScreen()),
-                             );
-                              },
-                               buttonWidth: 210,
-                               buttonHeight: 50,
-                              ),
-                  ),
-                ),
-                 ],
-               ),
-             ),
 
 
           
          
-             SizedBox(height: height*.03,),
-      
-        const Center(                         // Text
-         child: Text("Beyond the Beach", 
-         style: TextStyle(
-          fontFamily: Medium,
-          fontSize: 24,
-          color: Colors.black,
-          fontWeight: FontWeight.bold,
-         ),
-         ),
-       ),
-         
-          SizedBox(height: height * .01,),
-         
-           const Padding(                     // Text
-        padding: EdgeInsets.only(left: 20, right: 20),
-        child: Center(
-           child: Align( alignment: Alignment.center,
-             child:  Text("Triopical experiences to travel up your trips", 
-             style: TextStyle(
-              fontFamily: Medium,
-              fontSize: 16, 
-              color: Colors.black,
-             // fontWeight: FontWeight.bold,
-             ),
-             ),
-           ),
-         ),
-      ),
-          
-          Padding(                  // Listview Builder Beyond the Beach
-        padding: const EdgeInsets.symmetric(vertical: 30),
-        child: SizedBox(  
-          height: height *.48 ,
-          
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: Beyondthebeachitemdata().beachItems.length,
-            itemBuilder: (context, index){
-           // Beyondthebeachitemmodel model = Beyondthebeachitemdata .getStatusItem(index);
-           
-            return BeyondTheBeachCard(
-              beachitem: Beyondthebeachitemdata().beachItems[index],
-              // beyondbeachimage:model.beyondbeachimage, // beyondbeachplaceName: model.beyondbeachplaceName,  // beyondbeachcompanyName: model.beyondbeachcompanyName, // beyondbeachprice: model.beyondbeachprice,
-              ); 
-            }
-            ),
-        ), 
-      ),
+      //        SizedBox(height: height*.03,),
+      //
+      //   const Center(                         // Text
+      //    child: Text("Beyond the Beach",
+      //    style: TextStyle(
+      //     fontFamily: Medium,
+      //     fontSize: 24,
+      //     color: Colors.black,
+      //     fontWeight: FontWeight.bold,
+      //    ),
+      //    ),
+      //  ),
+      //
+      //     SizedBox(height: height * .01,),
+      //
+      //      const Padding(                     // Text
+      //   padding: EdgeInsets.only(left: 20, right: 20),
+      //   child: Center(
+      //      child: Align( alignment: Alignment.center,
+      //        child:  Text("Triopical experiences to travel up your trips",
+      //        style: TextStyle(
+      //         fontFamily: Medium,
+      //         fontSize: 16,
+      //         color: Colors.black,
+      //        // fontWeight: FontWeight.bold,
+      //        ),
+      //        ),
+      //      ),
+      //    ),
+      // ),
+      //
+      //     Padding(                  // Listview Builder Beyond the Beach
+      //   padding: const EdgeInsets.symmetric(vertical: 30),
+      //   child: SizedBox(
+      //     height: height *.48 ,
+      //
+      //     child: ListView.builder(
+      //       scrollDirection: Axis.horizontal,
+      //       itemCount: Beyondthebeachitemdata().beachItems.length,
+      //       itemBuilder: (context, index){
+      //      // Beyondthebeachitemmodel model = Beyondthebeachitemdata .getStatusItem(index);
+      //
+      //       return BeyondTheBeachCard(
+      //         beachitem: Beyondthebeachitemdata().beachItems[index],
+      //         // beyondbeachimage:model.beyondbeachimage, // beyondbeachplaceName: model.beyondbeachplaceName,  // beyondbeachcompanyName: model.beyondbeachcompanyName, // beyondbeachprice: model.beyondbeachprice,
+      //         );
+      //       }
+      //       ),
+      //   ),
+      // ),
           
           
        // Padding(              // Discover More in Dubai Container
@@ -699,7 +695,7 @@ Padding(
        //    ),
        //   ),
        // ),
-       SizedBox(height: height * .05 ,),  
+       SizedBox(height: height * .01 ,),
         ],
         ),
         
