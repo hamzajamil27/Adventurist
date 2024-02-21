@@ -10,6 +10,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../Firebase_Practice_Screens/visitReiew.dart';
+
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
@@ -24,6 +26,7 @@ class _AccountScreenState extends State<AccountScreen> {
   // bool user = false;
 
   final String link = 'https://shoparonline.com/contact-us';
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height * 1;
@@ -121,11 +124,11 @@ class _AccountScreenState extends State<AccountScreen> {
 
                       ListTile(
                         leading: const Icon(
-                          Icons.settings,
+                          Icons.rate_review,
                           color: Colors.black,
                         ),
                         title: const Text(
-                          "Prefrences",
+                          "Your Reviews",
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
@@ -133,7 +136,12 @@ class _AccountScreenState extends State<AccountScreen> {
                           Icons.arrow_forward_ios,
                           color: Colors.black,
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => VisitReviewScreen()),
+                          );
+                        },
                       ),
 
                       SizedBox(height: height * .02),
@@ -152,14 +160,25 @@ class _AccountScreenState extends State<AccountScreen> {
                           Icons.arrow_forward_ios,
                           color: Colors.black,
                         ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: ((context) => const SupportScreen()),
-                            ),
-                          );
-                        },
+                        onTap: () {}
+
+                      ),
+                      ListTile(
+                          leading: const Icon(
+                            Icons.notifications_active,
+                            color: Colors.black,
+                          ),
+                          title: const Text(
+                            "Notifications",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.black,
+                          ),
+                          onTap: () {}
+
                       ),
 
                       SizedBox(height: height * .02),
@@ -211,11 +230,11 @@ class _AccountScreenState extends State<AccountScreen> {
 
                       ListTile(
                         leading: const Icon(
-                          Icons.settings,
+                          Icons.rate_review,
                           color: Colors.black,
                         ),
                         title: const Text(
-                          "Prefrences",
+                          "Your Reviews",
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
@@ -224,7 +243,10 @@ class _AccountScreenState extends State<AccountScreen> {
                           color: Colors.black,
                         ),
                         onTap: () {
-                          // _launchURL(support@shoparonline.com);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => VisitReviewScreen()),
+                          );
                         },
                       ),
 
@@ -256,28 +278,28 @@ class _AccountScreenState extends State<AccountScreen> {
 
                       SizedBox(height: height * .02),
 
-                      ListTile(
-                        leading: const Icon(
-                          Icons.person,
-                          color: Colors.black,
-                        ),
-                        title: const Text(
-                          "Profile",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        trailing: const Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.black,
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProfileScreen(),
-                              ));
-                        },
-                      ),
+                      // ListTile(
+                      //   leading: const Icon(
+                      //     Icons.person,
+                      //     color: Colors.black,
+                      //   ),
+                      //   title: const Text(
+                      //     "Profile",
+                      //     style: TextStyle(
+                      //         fontSize: 18, fontWeight: FontWeight.bold),
+                      //   ),
+                      //   trailing: const Icon(
+                      //     Icons.arrow_forward_ios,
+                      //     color: Colors.black,
+                      //   ),
+                      //   onTap: () {
+                      //     Navigator.push(
+                      //         context,
+                      //         MaterialPageRoute(
+                      //           builder: (context) => ProfileScreen(),
+                      //         ));
+                      //   },
+                      // ),
                       SizedBox(
                         height: height * .2,
                       ),
