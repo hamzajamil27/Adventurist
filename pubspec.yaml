@@ -48,6 +48,8 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   http: ^1.2.0
   intl: ^0.19.0
+  connection_notifier: ^2.0.1
+  flutter_email_sender: ^6.0.2
 
   
 
@@ -83,6 +85,15 @@ flutter:
     - assets/Adventurist Remove Background Logo.png
     - assets/Adventurist Splash Screen.png
     - assets/AppLogo.png
+    - assets/AvariKarachi.jpg
+    - assets/AvariLahore.jpg
+    - assets/AvariXpressMultan.jpg
+    - assets/FaletiGrandMultan.jpg
+    - assets/HotelOneMultan.jpg
+    - assets/MehranhotelKarachi.jpg
+    - assets/pcKarachi.jpg
+    - assets/pcLahore.jpg
+    - assets/RoyalSwissLahore.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

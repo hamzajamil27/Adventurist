@@ -1,4 +1,5 @@
 import 'package:adventurist/screens/splashScreen.dart';
+import 'package:connection_notifier/connection_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -22,16 +23,21 @@ class Adventurist extends StatefulWidget {
 class _AdventuristState extends State<Adventurist> {
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp( 
-      debugShowCheckedModeBanner: false,
-       theme: ThemeData( primarySwatch: Colors.teal),
-     
-      initialRoute: '/splash',
-      routes: {
-        '/splash': (context) => const SplashScreen(),
-        // Add your other routes here 
-      },
-      
+    return  ConnectionNotifier(
+      connectionNotificationOptions: const ConnectionNotificationOptions(
+        alignment: AlignmentDirectional.bottomCenter,
+      ),
+      child: MaterialApp( 
+        debugShowCheckedModeBanner: false,
+         theme: ThemeData( primarySwatch: Colors.teal),
+       
+        initialRoute: '/splash',
+        routes: {
+          '/splash': (context) => const SplashScreen(),
+          // Add your other routes here 
+        },
+        
+      ),
     );
   }
 }

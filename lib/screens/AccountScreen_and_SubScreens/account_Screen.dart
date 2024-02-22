@@ -9,7 +9,9 @@ import 'package:adventurist/screens/signin_Screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../BottomNavigationBar/navigationbar.dart';
 import '../Firebase_Practice_Screens/visitReiew.dart';
 
 
@@ -19,13 +21,24 @@ class AccountScreen extends StatefulWidget {
   @override
   State<AccountScreen> createState() => _AccountScreenState();
 }
-
 class _AccountScreenState extends State<AccountScreen> {
   final auth = FirebaseAuth.instance;
   final user = FirebaseAuth.instance.currentUser;
   // bool user = false;
 
   final String link = 'https://shoparonline.com/contact-us';
+
+  Future<void> sendEmail() async{
+    final Email email = Email(
+      recipients: ['hamzajamil288@gmail.com'],
+      isHTML: false,
+    );
+    try {
+      await FlutterEmailSender.send(email);
+    } catch (e) {
+      FlutterToastUtils().toastMessage("Error sending email");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,29 +135,29 @@ class _AccountScreenState extends State<AccountScreen> {
 
                       SizedBox(height: height * .02),
 
-                      ListTile(
-                        leading: const Icon(
-                          Icons.rate_review,
-                          color: Colors.black,
-                        ),
-                        title: const Text(
-                          "Your Reviews",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        trailing: const Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.black,
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => VisitReviewScreen()),
-                          );
-                        },
-                      ),
-
-                      SizedBox(height: height * .02),
+                      // ListTile(
+                      //   leading: const Icon(
+                      //     Icons.rate_review,
+                      //     color: Colors.black,
+                      //   ),
+                      //   title: const Text(
+                      //     "Your Reviews",
+                      //     style: TextStyle(
+                      //         fontSize: 18, fontWeight: FontWeight.bold),
+                      //   ),
+                      //   trailing: const Icon(
+                      //     Icons.arrow_forward_ios,
+                      //     color: Colors.black,
+                      //   ),
+                      //   onTap: () {
+                      //     Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(builder: (context) => VisitReviewScreen()),
+                      //     );
+                      //   },
+                      // ),
+                      //
+                      // SizedBox(height: height * .02),
 
                       ListTile(
                         leading: const Icon(
@@ -160,7 +173,9 @@ class _AccountScreenState extends State<AccountScreen> {
                           Icons.arrow_forward_ios,
                           color: Colors.black,
                         ),
-                        onTap: () {}
+                        onTap: () {
+                          sendEmail();
+                        }
 
                       ),
                       ListTile(
@@ -267,12 +282,13 @@ class _AccountScreenState extends State<AccountScreen> {
                           color: Colors.black,
                         ),
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: ((context) => const SupportScreen()),
-                            ),
-                          );
+                          sendEmail();
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: ((context) => const SupportScreen()),
+                          //   ),
+                          // );
                         },
                       ),
 
@@ -316,10 +332,10 @@ class _AccountScreenState extends State<AccountScreen> {
                         textColor: Colors.white,
                         onPressed: () {
                           auth.signOut().then((value) {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: ((context) => const SignInScreen()),
+                                builder: ((context) => const NavigatorBar()),
                               ),
                             );
                           }).onError((error, stackTrace) {

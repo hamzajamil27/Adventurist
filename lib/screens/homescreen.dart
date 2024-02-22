@@ -20,7 +20,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-@override
+  bool _isLoading = false;
+
+  @override
  Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height * 1;
     final width = MediaQuery.of(context).size.width * 1;
@@ -39,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                  
-                  SizedBox(height: height * .025),
+                  SizedBox(height: height * .05),
                  
                   Row( mainAxisAlignment: MainAxisAlignment.end,   // Circle Avatar Profile Pic
                     children: [ 
@@ -53,8 +55,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         // Set the border width
                       ),
                     ),
-                    child: const CircleAvatar( 
-                        backgroundImage: NetworkImage("https://images.pexels.com/photos/5384445/pexels-photo-5384445.jpeg?auto=compress&cs=tinysrgb&w=600"),
+                    child:  CircleAvatar(
+                      child: Icon(Icons.person),
+                        // backgroundImage: NetworkImage("https://images.pexels.com/photos/5384445/pexels-photo-5384445.jpeg?auto=compress&cs=tinysrgb&w=600"),
                       ),
                     ),
                     
@@ -71,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                    child: Text('Explore', style: TextStyle(fontFamily: Medium, fontSize: 34, fontWeight: FontWeight.bold),),
                  ),
            
-              SizedBox(height: height * .04,),
+              SizedBox(height: height * .05,),
                
                 Row(                          // Hotel and Things to do Button
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -91,59 +94,71 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
       
       const SizedBox(width: 10,),
-      
-                 CustomButton(                  //  calling a button from buttons.dart
-                   
-                   icon: const Icon(Icons.local_activity, color: Colors.black,),
-                    text: 'Things to do',
-                    onPressed: () {
-                       Navigator.push( context, MaterialPageRoute(builder: (context) =>  const FirstSimpleScreen(category: 'Things to do')),
-                         );
-                       },
-                        buttonWidth: 155, // Set the desired width for the button
-                        buttonHeight: 60, // Set the desired height for the button
-                       ),
+
+                    CustomButton(                   //  calling a button from buttons.dart
+
+                      icon: const Icon(Icons.restaurant, color: Colors.black,),
+                      text: 'Restaurants',
+                      onPressed: () {
+                        Navigator.push( context, MaterialPageRoute(builder: (context) =>  const FirstSimpleScreen(category: 'Restaurants')),
+                        );
+                      },
+                      buttonWidth: 155, // Set the desired width for the button
+                      buttonHeight: 60, // Set the desired height for the button
+                    ),
+
+                    // CustomButton(                  //  calling a button from buttons.dart
+                 //
+                 //   icon: const Icon(Icons.local_activity, color: Colors.black,),
+                 //    text: 'Things to do',
+                 //    onPressed: () {
+                 //       Navigator.push( context, MaterialPageRoute(builder: (context) =>  const FirstSimpleScreen(category: 'Things to do')),
+                 //         );
+                 //       },
+                 //        buttonWidth: 155, // Set the desired width for the button
+                 //        buttonHeight: 60, // Set the desired height for the button
+                 //       ),
             
                 ],
               ),
                
-            const SizedBox(height: 10),
+            const SizedBox(height: 40),
              
-             Padding(                   // custome buttom of Restaurants and forums
-               padding: const EdgeInsets.only(bottom: 20),
-               child: Row(
-                 mainAxisAlignment: MainAxisAlignment.center,
-                 children: [
-                 
-                 CustomButton(                   //  calling a button from buttons.dart
-
-                   icon: const Icon(Icons.restaurant, color: Colors.black,),
-                    text: 'Restaurants',
-                    onPressed: () {
-                       Navigator.push( context, MaterialPageRoute(builder: (context) =>  const FirstSimpleScreen(category: 'Restaurants')),
-                         );
-                       },
-                        buttonWidth: 155, // Set the desired width for the button
-                        buttonHeight: 60, // Set the desired height for the button
-                       ),
-             
-                  const SizedBox(width: 10,),
-             
-                CustomButton(                  //  calling a button from buttons.dart
-
-                  icon: const Icon(Icons.forum, color: Colors.black,),
-                   text: 'Forums',
-                   onPressed: () {
-                    Navigator.push( context, MaterialPageRoute(builder: (context) =>  const FirstSimpleScreen(category: 'Forums')),
-                         );
-                      },
-                       buttonWidth: 155, // Set the desired width for the button
-                       buttonHeight: 60, // Set the desired height for the button
-                      ),
-                  
-                  ],
-                ),
-             ),
+             // Padding(                   // custome buttom of Restaurants and forums
+             //   padding: const EdgeInsets.only(bottom: 20),
+             //   child: Row(
+             //     mainAxisAlignment: MainAxisAlignment.center,
+             //     children: [
+             //
+             //     CustomButton(                   //  calling a button from buttons.dart
+             //
+             //       icon: const Icon(Icons.restaurant, color: Colors.black,),
+             //        text: 'Restaurants',
+             //        onPressed: () {
+             //           Navigator.push( context, MaterialPageRoute(builder: (context) =>  const FirstSimpleScreen(category: 'Restaurants')),
+             //             );
+             //           },
+             //            buttonWidth: 155, // Set the desired width for the button
+             //            buttonHeight: 60, // Set the desired height for the button
+             //           ),
+             //
+             //      const SizedBox(width: 10,),
+             //
+             //    CustomButton(                  //  calling a button from buttons.dart
+             //
+             //      icon: const Icon(Icons.forum, color: Colors.black,),
+             //       text: 'Forums',
+             //       onPressed: () {
+             //        Navigator.push( context, MaterialPageRoute(builder: (context) =>  const FirstSimpleScreen(category: 'Forums')),
+             //             );
+             //          },
+             //           buttonWidth: 155, // Set the desired width for the button
+             //           buttonHeight: 60, // Set the desired height for the button
+             //          ),
+             //
+             //      ],
+             //    ),
+             // ),
          
           ],
         ),
