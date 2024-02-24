@@ -43,14 +43,14 @@ class _RestaurantCityDetailsScreenState extends State<RestaurantCityDetailsScree
                Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: InkWell( onTap: (){
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => RestaurantCityDetailsScreen(
-                    //         cityrestaurant: widget.cityrestaurant
-                    //     ),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RestaurantDetail(
+                            restaurant: widget.restaurant
+                        ),
+                      ),
+                    );
                   },
                     child: Container(
                         height: height * .17,
@@ -205,20 +205,20 @@ class _RestaurantCityDetailsScreenState extends State<RestaurantCityDetailsScree
               //   ),
               // ),
               SizedBox(height: height *0.04,),
-              Center(
-                child: CustomButton(      //  calling a button from buttons.dart
-                  borderColor: Colors.black,
-                  backgroundColor: Colors.black,
-                  text: 'View all restaurants',
-                  textColor: Colors.white,
-                  loading: loading,
-                  onPressed: () {
-
-                  },
-                  buttonWidth: width*.7, // Set the desired width for the button
-                  buttonHeight: 60, // Set the desired height for the button
-                ),
-              ),
+              // Center(
+              //   child: CustomButton(      //  calling a button from buttons.dart
+              //     borderColor: Colors.black,
+              //     backgroundColor: Colors.black,
+              //     text: 'View all restaurants',
+              //     textColor: Colors.white,
+              //     loading: loading,
+              //     onPressed: () {
+              //
+              //     },
+              //     buttonWidth: width*.7, // Set the desired width for the button
+              //     buttonHeight: 60, // Set the desired height for the button
+              //   ),
+              // ),
 
 
             ],

@@ -151,7 +151,7 @@ class _CityHotelsScreenState extends State<CityHotelsScreen> {
                       // icon: const Icon(Icons.forum, color: Colors.black,),
                       text: 'Book Now',
                       onPressed: () {
-                        Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
+                        Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreenTwo(summerVacation: widget.summerVacation)),
                         );
                       },
                       buttonWidth: 155, // Set the desired width for the button
@@ -220,7 +220,7 @@ class _CityHotelsScreenState extends State<CityHotelsScreen> {
                       // icon: const Icon(Icons.forum, color: Colors.black,),
                       text: 'Book Now',
                       onPressed: () {
-                        Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
+                        Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreenThree(summerVacation: widget.summerVacation)),
                         );
                       },
                       buttonWidth: 155, // Set the desired width for the button

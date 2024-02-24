@@ -1,23 +1,24 @@
+import 'package:adventurist/models/WeekendTripIdeas/weekendtripideas.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/buttons.dart';
-import 'SummerVacation.dart';
 
-class HotelDetailScreen extends StatefulWidget {
-  final SummervacationItemModel summerVacation;
-  const HotelDetailScreen({super.key, required this.summerVacation});
+class MountainSingleHotel extends StatefulWidget {
+  final Tripideaweekenditemmodel tripIdea;
+  const MountainSingleHotel({super.key, required this.tripIdea});
 
   @override
-  State<HotelDetailScreen> createState() => _HotelDetailScreenState();
+  State<MountainSingleHotel> createState() => _MountainSingleHotelState();
 }
 
-class _HotelDetailScreenState extends State<HotelDetailScreen> {
+class _MountainSingleHotelState extends State<MountainSingleHotel> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height* 1;
     final width = MediaQuery.of(context).size.width* 1;
     return Scaffold(
       appBar: AppBar(
+        title: Center(child: Text("Hotel Detail")),
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -34,128 +35,7 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                     width: width * 0.98,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(widget.summerVacation.hotelsImage),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-
-                  Container( height: 28, width: 90,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2.0// Border color
-                      ),
-                      borderRadius: BorderRadius.circular(5), // Border radius
-                    ),
-                    child: Center(child: Text("Top Rated", style: TextStyle(fontSize: 16),)),
-                  ),
-
-                  SizedBox(height: 20),
-                  // Name of the hotel
-                  Text(
-                    "${widget.summerVacation.hotelname}",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-
-                  Text(
-                    "About the Hotel:",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  // Description
-                  Text(
-                    "${widget.summerVacation.Decription}",
-                    style: TextStyle(fontSize: 16),
-                  ),
-
-
-                  SizedBox(height: 20),
-                  Text("Booking.com", style: TextStyle(fontSize: 20,color: Colors.blueAccent),),
-
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                        Text("Price Ranges from:  ", style: TextStyle(fontSize: 18),),
-                      Text(
-                        "${widget.summerVacation.price}",
-                        style: TextStyle(fontSize: 18, color: Colors.blueAccent),
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(height: 30),
-                  Center(
-                    child: CustomButton(                  //  calling a button from buttons.dart
-                      backgroundColor: Colors.black,
-                      borderColor: Colors.white,
-                      textColor: Colors.white,
-                      // icon: const Icon(Icons.forum, color: Colors.black,),
-                      text: 'Book Now',
-                      onPressed: () {
-                        // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                        // );
-                      },
-                      buttonWidth: 155, // Set the desired width for the button
-                      buttonHeight: 60, // Set the desired height for the button
-                    ),
-                  ),
-                ],
-              ),
-            ),
-        
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
-///////////////////////////////////////////////////////////////////
-
-
-
-class HotelDetailScreenTwo extends StatefulWidget {
-  final SummervacationItemModel summerVacation;
-  const HotelDetailScreenTwo({super.key, required this.summerVacation});
-
-  @override
-  State<HotelDetailScreenTwo> createState() => _HotelDetailScreenTwoState();
-}
-
-class _HotelDetailScreenTwoState extends State<HotelDetailScreenTwo> {
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height* 1;
-    final width = MediaQuery.of(context).size.width* 1;
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 30,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.all(20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Image at the top
-                  Container(
-                    height: height * 0.38,
-                    width: width * 0.98,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(widget.summerVacation.hotelImagetwo),
+                        image: NetworkImage(widget.tripIdea.hotelsImage),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -176,7 +56,7 @@ class _HotelDetailScreenTwoState extends State<HotelDetailScreenTwo> {
                   SizedBox(height: 20),
                   // Name of the hotel
                   Text(
-                    "${widget.summerVacation.hotelnametwo}",
+                    "${widget.tripIdea.hotelname}",
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -194,7 +74,7 @@ class _HotelDetailScreenTwoState extends State<HotelDetailScreenTwo> {
                   SizedBox(height: 20),
                   // Description
                   Text(
-                    "${widget.summerVacation.Decriptiontwo}",
+                    "${widget.tripIdea.Decription}",
                     style: TextStyle(fontSize: 16),
                   ),
 
@@ -207,7 +87,7 @@ class _HotelDetailScreenTwoState extends State<HotelDetailScreenTwo> {
                     children: [
                       Text("Price Ranges from:  ", style: TextStyle(fontSize: 18),),
                       Text(
-                        "${widget.summerVacation.price}",
+                        "${widget.tripIdea.price}",
                         style: TextStyle(fontSize: 18, color: Colors.blueAccent),
                       ),
                     ],
@@ -241,28 +121,26 @@ class _HotelDetailScreenTwoState extends State<HotelDetailScreenTwo> {
 }
 
 
+/////////////////////////////////////////
 
 
 
-///////////////////////////////////////////////////////////////////
-
-
-
-class HotelDetailScreenThree extends StatefulWidget {
-  final SummervacationItemModel summerVacation;
-  const HotelDetailScreenThree({super.key, required this.summerVacation});
+class MountainSingleHotelTwo extends StatefulWidget {
+  final Tripideaweekenditemmodel tripIdea;
+  const MountainSingleHotelTwo({super.key, required this.tripIdea});
 
   @override
-  State<HotelDetailScreenThree> createState() => _HotelDetailScreenThreeState();
+  State<MountainSingleHotelTwo> createState() => _MountainSingleHotelTwoState();
 }
 
-class _HotelDetailScreenThreeState extends State<HotelDetailScreenThree> {
+class _MountainSingleHotelTwoState extends State<MountainSingleHotelTwo> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height* 1;
     final width = MediaQuery.of(context).size.width* 1;
     return Scaffold(
       appBar: AppBar(
+        title: Center(child: Text("Hotel Detail")),
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -279,7 +157,7 @@ class _HotelDetailScreenThreeState extends State<HotelDetailScreenThree> {
                     width: width * 0.98,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(widget.summerVacation.hotelImagethree),
+                        image: NetworkImage(widget.tripIdea.hotelImagetwo),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -300,7 +178,7 @@ class _HotelDetailScreenThreeState extends State<HotelDetailScreenThree> {
                   SizedBox(height: 20),
                   // Name of the hotel
                   Text(
-                    "${widget.summerVacation.hotelnamethree}",
+                    "${widget.tripIdea.hotelnametwo}",
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -318,7 +196,7 @@ class _HotelDetailScreenThreeState extends State<HotelDetailScreenThree> {
                   SizedBox(height: 20),
                   // Description
                   Text(
-                    "${widget.summerVacation.Decriptionthree}",
+                    "${widget.tripIdea.Decriptiontwo}",
                     style: TextStyle(fontSize: 16),
                   ),
 
@@ -331,7 +209,129 @@ class _HotelDetailScreenThreeState extends State<HotelDetailScreenThree> {
                     children: [
                       Text("Price Ranges from:  ", style: TextStyle(fontSize: 18),),
                       Text(
-                        "${widget.summerVacation.price}",
+                        "${widget.tripIdea.price}",
+                        style: TextStyle(fontSize: 18, color: Colors.blueAccent),
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: 30),
+                  Center(
+                    child: CustomButton(                  //  calling a button from buttons.dart
+                      backgroundColor: Colors.black,
+                      borderColor: Colors.white,
+                      textColor: Colors.white,
+                      // icon: const Icon(Icons.forum, color: Colors.black,),
+                      text: 'Book Now',
+                      onPressed: () {
+                        // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
+                        // );
+                      },
+                      buttonWidth: 155, // Set the desired width for the button
+                      buttonHeight: 60, // Set the desired height for the button
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+///////////////////////////////////////////////////////////////
+
+
+
+class MountainSingleHotelThree extends StatefulWidget {
+  final Tripideaweekenditemmodel tripIdea;
+  const MountainSingleHotelThree({super.key, required this.tripIdea});
+
+  @override
+  State<MountainSingleHotelThree> createState() => _MountainSingleHotelThreeState();
+}
+
+class _MountainSingleHotelThreeState extends State<MountainSingleHotelThree> {
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height* 1;
+    final width = MediaQuery.of(context).size.width* 1;
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("Hotel Detail")),
+        elevation: 30,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Image at the top
+                  Container(
+                    height: height * 0.38,
+                    width: width * 0.98,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(widget.tripIdea.hotelImagethree),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+
+                  Container( height: 28, width: 90,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 2.0// Border color
+                      ),
+                      borderRadius: BorderRadius.circular(5), // Border radius
+                    ),
+                    child: Center(child: Text("Top Rated", style: TextStyle(fontSize: 16),)),
+                  ),
+
+                  SizedBox(height: 20),
+                  // Name of the hotel
+                  Text(
+                    "${widget.tripIdea.hotelnamethree}",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+
+                  Text(
+                    "About the Hotel:",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  // Description
+                  Text(
+                    "${widget.tripIdea.Decriptionthree}",
+                    style: TextStyle(fontSize: 16),
+                  ),
+
+
+                  SizedBox(height: 20),
+                  Text("Booking.com", style: TextStyle(fontSize: 20,color: Colors.blueAccent),),
+
+                  SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Text("Price Ranges from:  ", style: TextStyle(fontSize: 18),),
+                      Text(
+                        "${widget.tripIdea.price}",
                         style: TextStyle(fontSize: 18, color: Colors.blueAccent),
                       ),
                     ],

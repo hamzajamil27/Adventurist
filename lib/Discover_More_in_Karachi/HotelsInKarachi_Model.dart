@@ -1,16 +1,18 @@
 import 'package:adventurist/constants/colors/fontcolors.dart';
 import 'package:flutter/material.dart';
 
+import 'Hoteldetails.dart';
+
 class KarachiHotelsModel{
   final String ImagePath;
-  final String placeName;
-  final String companyName;
+  final String hotelname;
+  final String Decription;
   final String price;
 
   KarachiHotelsModel({
     required this.ImagePath,
-    required this.placeName,
-    required this.companyName,
+    required this.hotelname,
+    required this.Decription,
     required this.price,
   }
       );
@@ -22,18 +24,14 @@ class KarachiHotelsModeldata {
   final List<KarachiHotelsModel> karachiHotels= [
 
     KarachiHotelsModel(
-      ImagePath: "https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg", placeName: 'Karachi', companyName: 'Avari Hotel', price: '\$999',
-    ),
-
-    KarachiHotelsModel(
-      ImagePath: "https://cdn.pixabay.com/photo/2016/06/10/01/05/hotel-room-1447201_960_720.jpg", placeName: 'Karchi', companyName: 'Faizi ka ghar', price: '\$1499',
+      ImagePath: "https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",  hotelname: "Pearl Continental Karachi", Decription : "Welcome to Pearl Continental Karachi, where luxury meets comfort in the heart of Pakistan's bustling metropolis. With breathtaking views of the Arabian Sea, our hotel offers unrivaled elegance and impeccable service. Indulge in exquisite dining experiences, relax by our shimmering pool, and experience the epitome of opulence in our lavish accommodations. Discover true Pakistani hospitality at Pearl Continental Karachi.", price: '\$200 - 300',
     ),
 
     KarachiHotelsModel (
-      ImagePath: "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_960_720.jpg", placeName: 'Karachi', companyName: 'Molana ka ghar', price: '\$560',
+      ImagePath: "https://cdn.pixabay.com/photo/2016/10/18/09/02/hotel-1749602_1280.jpg", hotelname:"Hotel Excelsior", Decription : "Welcome to Hotel Excelsior, where comfort and elegance converge to create an unforgettable experience. Situated in the heart of the city, our hotel offers luxurious accommodations, impeccable service, and breathtaking views. Indulge in gourmet dining, unwind in our spa, and explore nearby attractions. Discover the essence of refined hospitality at Hotel Excelsior.", price: '\$200 - 300',
     ),
     KarachiHotelsModel (
-      ImagePath: "https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_960_720.jpg", placeName: 'Karachi', companyName: 'Pearl Contenantal', price: '\$560',
+      ImagePath: "https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_960_720.jpg",hotelname: "Avari Hotel Karchi", Decription: "Experience the epitome of sophistication at Avari Karachi. Nestled in the heart of the city, our hotel offers a perfect blend of modern luxury and traditional charm. Enjoy unparalleled hospitality, world-class dining, and luxurious accommodations. Whether you're here for business or leisure, Avari Karachi promises an unforgettable stay.",price: '\$200 - 300',
     ),
     // Add more travel data entries
   ];
@@ -60,7 +58,8 @@ class _KarachiHotelsCardState extends State<KarachiHotelsCard> {
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: InkWell(
         onTap: (){
-
+          Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailsKarachi(karachiHotel: widget.karachiHotel)),
+          );
         },
         child: SizedBox(
           height: height * .5,
@@ -112,23 +111,23 @@ class _KarachiHotelsCardState extends State<KarachiHotelsCard> {
 
               Padding(
                 padding: const EdgeInsets.only(top: 10),
-                child: Text(widget.karachiHotel.placeName,
-                  style: const TextStyle(fontFamily: Medium, fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),),
+                child: Text(widget.karachiHotel.hotelname,
+                  style: const TextStyle(fontFamily: Medium, fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
               ),
 
-              Padding(
-                padding: const EdgeInsets.only(top: 2),
-                child: Text(widget.karachiHotel.companyName,
-                  style: const TextStyle(fontFamily: Medium, fontSize: 14, color: blackColor),),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.only(top: 5),
-                child: Text(widget.karachiHotel.price,
-                  style: const TextStyle(fontFamily: Medium, fontSize: 18,fontWeight: FontWeight.bold, color: blackColor),
-                ),
-
-              ) ,
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 2),
+              //   child: Text(widget.karachiHotel.companyName,
+              //     style: const TextStyle(fontFamily: Medium, fontSize: 14, color: blackColor),),
+              // ),
+              //
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 5),
+              //   child: Text(widget.karachiHotel.price,
+              //     style: const TextStyle(fontFamily: Medium, fontSize: 18,fontWeight: FontWeight.bold, color: blackColor),
+              //   ),
+              //
+              // ) ,
 
             ],
           ), ),
