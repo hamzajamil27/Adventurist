@@ -51,26 +51,8 @@ import 'Mountain_Single_Hotel.dart';
                       SizedBox(height: 10),
                       // Description
                       Text(
-                        isExpanded
-                            ? "${widget.tripIdea.Decription}"
-                            : "${widget.tripIdea.Decription.substring(0, widget.tripIdea.Decription.length ~/ 4)}...",
+                        "${widget.tripIdea.Decription.substring(0, widget.tripIdea.Decription.length ~/ 4)}...",
                         style: TextStyle(fontSize: 16),
-                      ),
-                      SizedBox(height: 10),
-                      // Read More Button
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            isExpanded = !isExpanded;
-                          });
-                        },
-                        child: Text(
-                          isExpanded ? 'Read Less' : 'Read More',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
                       ),
                       SizedBox(height: 10),
                       Center(
@@ -121,27 +103,11 @@ import 'Mountain_Single_Hotel.dart';
                       SizedBox(height: 10),
                       // Description
                       Text(
-                        isExpanded
-                            ? "${widget.tripIdea.Decriptiontwo}"
-                            : "${widget.tripIdea.Decriptiontwo.substring(0, widget.tripIdea.Decriptiontwo.length ~/ 4)}...",
+                        "${widget.tripIdea.Decriptiontwo.substring(0, widget.tripIdea.Decriptiontwo.length ~/ 4)}...",
                         style: TextStyle(fontSize: 16),
                       ),
                       SizedBox(height: 10),
                       // Read More Button
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            isExpanded = !isExpanded;
-                          });
-                        },
-                        child: Text(
-                          isExpanded ? 'Read Less' : 'Read More',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
                       Center(
                         child: CustomButton(                  //  calling a button from buttons.dart
                           backgroundColor: Colors.black,
@@ -190,27 +156,11 @@ import 'Mountain_Single_Hotel.dart';
                       SizedBox(height: 10),
                       // Description
                       Text(
-                        isExpanded
-                            ? "${widget.tripIdea.Decriptionthree}"
-                            : "${widget.tripIdea.Decriptionthree.substring(0, widget.tripIdea.Decriptionthree.length ~/ 4)}...",
+                        "${widget.tripIdea.Decriptionthree.substring(0, widget.tripIdea.Decriptionthree.length ~/ 4)}...",
                         style: TextStyle(fontSize: 16),
                       ),
                       SizedBox(height: 10),
                       // Read More Button
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            isExpanded = !isExpanded;
-                          });
-                        },
-                        child: Text(
-                          isExpanded ? 'Read Less' : 'Read More',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
                       Center(
                         child: CustomButton(                  //  calling a button from buttons.dart
                           backgroundColor: Colors.black,

@@ -2,6 +2,7 @@ import 'package:adventurist/models/WeekendTripIdeas/weekendtripideas.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/buttons.dart';
+import '../../url_Function.dart';
 
 class MountainSingleHotel extends StatefulWidget {
   final Tripideaweekenditemmodel tripIdea;
@@ -102,8 +103,11 @@ class _MountainSingleHotelState extends State<MountainSingleHotel> {
                       // icon: const Icon(Icons.forum, color: Colors.black,),
                       text: 'Book Now',
                       onPressed: () {
-                        // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                        // );
+                        try {
+                          launchURL(widget.tripIdea.linkOne); // Example usage
+                        } catch (e) {
+                          print('Error launching URL: $e');
+                        }
                       },
                       buttonWidth: 155, // Set the desired width for the button
                       buttonHeight: 60, // Set the desired height for the button
@@ -224,8 +228,11 @@ class _MountainSingleHotelTwoState extends State<MountainSingleHotelTwo> {
                       // icon: const Icon(Icons.forum, color: Colors.black,),
                       text: 'Book Now',
                       onPressed: () {
-                        // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                        // );
+                        try {
+                          launchURL(widget.tripIdea.linkTwo); // Example usage
+                        } catch (e) {
+                          print('Error launching URL: $e');
+                        }
                       },
                       buttonWidth: 155, // Set the desired width for the button
                       buttonHeight: 60, // Set the desired height for the button
@@ -346,8 +353,11 @@ class _MountainSingleHotelThreeState extends State<MountainSingleHotelThree> {
                       // icon: const Icon(Icons.forum, color: Colors.black,),
                       text: 'Book Now',
                       onPressed: () {
-                        // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                        // );
+                        try {
+                          launchURL(widget.tripIdea.linkThree); // Example usage
+                        } catch (e) {
+                          print('Error launching URL: $e');
+                        }
                       },
                       buttonWidth: 155, // Set the desired width for the button
                       buttonHeight: 60, // Set the desired height for the button

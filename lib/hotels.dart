@@ -18,7 +18,7 @@ class _HotelsScreenState extends State<HotelsScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Hotels")),
+        title: Text("Hotels"),
         elevation: 30,
       ),
 
@@ -30,8 +30,8 @@ class _HotelsScreenState extends State<HotelsScreen> {
             ),
         
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Text("Book the best Hotel for yourself", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Text("Book the best Hotel for yourself in these cities", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
             ),
             SizedBox(
               height: height * .05,

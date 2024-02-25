@@ -21,22 +21,24 @@ class Adventurist extends StatefulWidget {
 }
 
 class _AdventuristState extends State<Adventurist> {
+  bool _isConnected = true;
+
   @override
   Widget build(BuildContext context) {
     return  ConnectionNotifier(
       connectionNotificationOptions: const ConnectionNotificationOptions(
         alignment: AlignmentDirectional.bottomCenter,
       ),
-      child: MaterialApp( 
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
          theme: ThemeData( primarySwatch: Colors.teal),
-       
+
         initialRoute: '/splash',
         routes: {
           '/splash': (context) => const SplashScreen(),
-          // Add your other routes here 
+          // Add your other routes here
         },
-        
+
       ),
     );
   }

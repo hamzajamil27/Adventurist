@@ -179,27 +179,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
         
               SizedBox(height: height* .03,),
     
-                Row(
-                 children: [
-                   Checkbox( 
-            value: isChecked, // Set the initial state
-            onChanged: (bool? newValue) {
-              // Handle checkbox state changes
-              setState(() {
-                isChecked = newValue ?? false;
-              });
-            },
-          ),
-                 const Text("Yes, inform me on deals and Features.\nI can opt out at any time", 
-                   style: TextStyle(
-                     color: Colors.black,
-                     fontSize: 14, 
-                  //   fontWeight: FontWeight.bold
-                  ),),
-                 ],
-               ),
+          //       Row(
+          //        children: [
+          //          Checkbox(
+          //   value: isChecked, // Set the initial state
+          //   onChanged: (bool? newValue) {
+          //     // Handle checkbox state changes
+          //     setState(() {
+          //       isChecked = newValue ?? false;
+          //     });
+          //   },
+          // ),
+          //        const Text("Yes, inform me on deals and Features.\nI can opt out at any time",
+          //          style: TextStyle(
+          //            color: Colors.black,
+          //            fontSize: 14,
+          //         //   fontWeight: FontWeight.bold
+          //         ),),
+          //        ],
+          //      ),
     
-                        SizedBox(height: height* .03,),
+                        SizedBox(height: height* .01,),
     
              CustomButton(      //  calling a button from buttons.dart
                             borderColor: Colors.black,
@@ -225,7 +225,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                              text: 'Sign in',
                              textColor: Colors.black,
                              onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: ((context) => const SignInScreen()),),
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => const SignInScreen()),),
                     );
                                 },
                                  buttonWidth: width*.7, // Set the desired width for the button

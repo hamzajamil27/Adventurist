@@ -94,7 +94,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               alignment: Alignment.topLeft, 
             child:Padding(                     // Sign in to start planning
               padding: EdgeInsets.all(20.0),
-              child: Text("Sign in to start planning your trip.", 
+              child: Text("Sign in to start",
               style: TextStyle(fontFamily: Bold ,fontSize: 34, fontWeight: FontWeight.bold, color: Colors.black),),
             ),),
       

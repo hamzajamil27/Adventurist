@@ -6,6 +6,7 @@ import 'package:adventurist/screens/AccountScreen_and_SubScreens/support_Screen.
 import 'package:adventurist/screens/Firebase_Practice_Screens/post_screen.dart';
 import 'package:adventurist/screens/profile.dart';
 import 'package:adventurist/screens/signin_Screen.dart';
+import 'package:app_settings/app_settings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -192,29 +193,13 @@ class _AccountScreenState extends State<AccountScreen> {
                             Icons.arrow_forward_ios,
                             color: Colors.black,
                           ),
-                          onTap: () {}
+                          onTap: () {
+                            AppSettings.openAppSettings(type: AppSettingsType.notification);
+                          }
 
                       ),
 
                       SizedBox(height: height * .02),
-
-                      // ListTile(
-                      //   leading: const Icon(
-                      //     Icons.place_outlined,
-                      //     color: Colors.black,
-                      //   ),
-                      //   title: const Text(
-                      //     "Adventurist Plus",
-                      //     style: TextStyle(
-                      //         fontSize: 18, fontWeight: FontWeight.bold),
-                      //   ),
-                      //   trailing: const Icon(
-                      //     Icons.arrow_forward_ios,
-                      //     color: Colors.black,
-                      //   ),
-                      //   onTap: () {},
-                      // ),
-//Extra button just for practice
 
                       SizedBox(height: height * .02),
                       // CustomButton(      //  calling a button from buttons.dart
@@ -232,6 +217,7 @@ class _AccountScreenState extends State<AccountScreen> {
                       //
                     ],
                   )
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 :
                 //  Otherwise show this Column
                 Column(
@@ -294,28 +280,47 @@ class _AccountScreenState extends State<AccountScreen> {
 
                       SizedBox(height: height * .02),
 
-                      // ListTile(
-                      //   leading: const Icon(
-                      //     Icons.person,
-                      //     color: Colors.black,
-                      //   ),
-                      //   title: const Text(
-                      //     "Profile",
-                      //     style: TextStyle(
-                      //         fontSize: 18, fontWeight: FontWeight.bold),
-                      //   ),
-                      //   trailing: const Icon(
-                      //     Icons.arrow_forward_ios,
-                      //     color: Colors.black,
-                      //   ),
-                      //   onTap: () {
-                      //     Navigator.push(
-                      //         context,
-                      //         MaterialPageRoute(
-                      //           builder: (context) => ProfileScreen(),
-                      //         ));
-                      //   },
-                      // ),
+                      ListTile(
+                        leading: const Icon(
+                          Icons.person,
+                          color: Colors.black,
+                        ),
+                        title: const Text(
+                          "Profile",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: const Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProfileScreen(),
+                              ));
+                        },
+                      ),
+                      ListTile(
+                          leading: const Icon(
+                            Icons.notifications_active,
+                            color: Colors.black,
+                          ),
+                          title: const Text(
+                            "Notifications",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.black,
+                          ),
+                          onTap: () {
+                            AppSettings.openAppSettings(type: AppSettingsType.notification);
+                          }
+
+                      ),
                       SizedBox(
                         height: height * .2,
                       ),

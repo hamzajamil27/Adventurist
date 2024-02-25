@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../../constants/buttons.dart';
+import '../../url_Function.dart';
 import 'SummerVacation.dart';
 
 class HotelDetailScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
     final width = MediaQuery.of(context).size.width* 1;
     return Scaffold(
       appBar: AppBar(
+        title: Text("Hotel detail"),
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -101,8 +103,12 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                       // icon: const Icon(Icons.forum, color: Colors.black,),
                       text: 'Book Now',
                       onPressed: () {
-                        // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                        // );
+
+                          try {
+                            launchURL(widget.summerVacation.linkOne); // Example usage
+                          } catch (e) {
+                            print('Error launching URL: $e');
+                          }
                       },
                       buttonWidth: 155, // Set the desired width for the button
                       buttonHeight: 60, // Set the desired height for the button
@@ -139,6 +145,7 @@ class _HotelDetailScreenTwoState extends State<HotelDetailScreenTwo> {
     final width = MediaQuery.of(context).size.width* 1;
     return Scaffold(
       appBar: AppBar(
+        title: Text("Hotel detail"),
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -222,8 +229,11 @@ class _HotelDetailScreenTwoState extends State<HotelDetailScreenTwo> {
                       // icon: const Icon(Icons.forum, color: Colors.black,),
                       text: 'Book Now',
                       onPressed: () {
-                        // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                        // );
+                        try {
+                          launchURL(widget.summerVacation.linkTwo); // Example usage
+                        } catch (e) {
+                          print('Error launching URL: $e');
+                        }
                       },
                       buttonWidth: 155, // Set the desired width for the button
                       buttonHeight: 60, // Set the desired height for the button
@@ -263,6 +273,7 @@ class _HotelDetailScreenThreeState extends State<HotelDetailScreenThree> {
     final width = MediaQuery.of(context).size.width* 1;
     return Scaffold(
       appBar: AppBar(
+        title: Text("Hotel detail"),
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -346,8 +357,11 @@ class _HotelDetailScreenThreeState extends State<HotelDetailScreenThree> {
                       // icon: const Icon(Icons.forum, color: Colors.black,),
                       text: 'Book Now',
                       onPressed: () {
-                        // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                        // );
+                        try {
+                          launchURL(widget.summerVacation.linkThree); // Example usage
+                        } catch (e) {
+                          print('Error launching URL: $e');
+                        }
                       },
                       buttonWidth: 155, // Set the desired width for the button
                       buttonHeight: 60, // Set the desired height for the button

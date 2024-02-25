@@ -52,26 +52,8 @@ class _CityHotelsScreenState extends State<CityHotelsScreen> {
                   SizedBox(height: 10),
                   // Description
                   Text(
-                    isExpanded
-                        ? "${widget.summerVacation.Decription}"
-                        : "${widget.summerVacation.Decription.substring(0, widget.summerVacation.Decription.length ~/ 4)}...",
+                    "${widget.summerVacation.Decription.substring(0, widget.summerVacation.Decription.length ~/ 4)}...",
                     style: TextStyle(fontSize: 16),
-                  ),
-                  SizedBox(height: 10),
-                  // Read More Button
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isExpanded = !isExpanded;
-                      });
-                    },
-                    child: Text(
-                      isExpanded ? 'Read Less' : 'Read More',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
                   ),
                   SizedBox(height: 10),
                   Center(
@@ -122,27 +104,12 @@ class _CityHotelsScreenState extends State<CityHotelsScreen> {
                   SizedBox(height: 10),
                   // Description
                   Text(
-                    isExpanded
-                        ? "${widget.summerVacation.Decriptiontwo}"
-                        : "${widget.summerVacation.Decriptiontwo.substring(0, widget.summerVacation.Decriptiontwo.length ~/ 4)}...",
+                     "${widget.summerVacation.Decriptiontwo.substring(0, widget.summerVacation.Decriptiontwo.length ~/ 4)}...",
                     style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 10),
                   // Read More Button
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isExpanded = !isExpanded;
-                      });
-                    },
-                    child: Text(
-                      isExpanded ? 'Read Less' : 'Read More',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
+
                   Center(
                     child: CustomButton(                  //  calling a button from buttons.dart
                       backgroundColor: Colors.black,
@@ -191,27 +158,11 @@ class _CityHotelsScreenState extends State<CityHotelsScreen> {
                   SizedBox(height: 10),
                   // Description
                   Text(
-                    isExpanded
-                        ? "${widget.summerVacation.Decriptionthree}"
-                        : "${widget.summerVacation.Decriptionthree.substring(0, widget.summerVacation.Decriptionthree.length ~/ 4)}...",
+                   "${widget.summerVacation.Decriptionthree.substring(0, widget.summerVacation.Decriptionthree.length ~/ 4)}...",
                     style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 10),
-                  // Read More Button
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isExpanded = !isExpanded;
-                      });
-                    },
-                    child: Text(
-                      isExpanded ? 'Read Less' : 'Read More',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
+
                   Center(
                     child: CustomButton(                  //  calling a button from buttons.dart
                       backgroundColor: Colors.black,
