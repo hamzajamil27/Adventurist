@@ -1,6 +1,7 @@
-import 'package:adventurist/constants/colors/fontcolors.dart';
+
 import 'package:flutter/material.dart';
 
+import '../constants/colors/fontcolors.dart';
 import 'Hoteldetails.dart';
 
 class KarachiHotelsModel{
@@ -84,39 +85,41 @@ class _KarachiHotelsCardState extends State<KarachiHotelsCard> {
 
                   ),
 
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: GestureDetector(
-                        onTap: () {
-                          // Toggle the pressed state
-                          setState(() {
-                            isPressed = !isPressed;
-                          });
-                        },
-                        child: Container(
-                          height: height * 0.08,
-                          width: width * 0.08,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: isPressed ? Colors.red : Color.fromARGB(255, 223, 222, 222),
-                          ),
-                          child: Icon(
-                            Icons.favorite_border,
-                            color: isPressed ? Colors.white : Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Align(
+                  //   alignment: Alignment.topRight,
+                  //   child: Padding(
+                  //     padding: const EdgeInsets.only(right: 10),
+                  //     child: GestureDetector(
+                  //       onTap: () {
+                  //         // Toggle the pressed state
+                  //         setState(() {
+                  //           isPressed = !isPressed;
+                  //         });
+                  //       },
+                  //       child: Container(
+                  //         height: height * 0.08,
+                  //         width: width * 0.08,
+                  //         decoration: BoxDecoration(
+                  //           shape: BoxShape.circle,
+                  //           color: isPressed ? Colors.red : Color.fromARGB(255, 223, 222, 222),
+                  //         ),
+                  //         child: Icon(
+                  //           Icons.favorite_border,
+                  //           color: isPressed ? Colors.white : Colors.black,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
 
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text(widget.karachiHotel.hotelname,
-                  style: const TextStyle(fontFamily: Medium, fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Text(widget.karachiHotel.hotelname,
+                    style: const TextStyle(fontFamily: Medium, fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
+                ),
               ),
 
               // Padding(

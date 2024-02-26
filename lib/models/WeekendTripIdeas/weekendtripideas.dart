@@ -1,6 +1,7 @@
-import 'package:adventurist/constants/colors/fontcolors.dart';
+
 import 'package:flutter/material.dart';
 
+import '../../constants/colors/fontcolors.dart';
 import 'MountainHoteldetails.dart';
 
 class Tripideaweekenditemmodel{
@@ -157,10 +158,12 @@ class _WeekEndTripIdeasCardState extends State<WeekEndTripIdeasCard> {
                 ],
               ),
 
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text(widget.tripIdea.cityname,
-                  style: const TextStyle(fontFamily: Medium, fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black),),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Text(widget.tripIdea.cityname,
+                    style: const TextStyle(fontFamily: Medium, fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black),),
+                ),
               ),
 
               // Padding(

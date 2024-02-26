@@ -1,6 +1,8 @@
-import 'package:adventurist/constants/colors/fontcolors.dart';
-import 'package:adventurist/models/beachdayforbooks/extraScreen.dart';
+
 import 'package:flutter/material.dart';
+
+import '../../constants/colors/fontcolors.dart';
+import 'extraScreen.dart';
 
 class Beachdayitemmodel{
   final String imagebeach;

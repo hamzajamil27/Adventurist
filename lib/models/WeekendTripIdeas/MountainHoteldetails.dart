@@ -1,4 +1,4 @@
-import 'package:adventurist/models/WeekendTripIdeas/weekendtripideas.dart';
+import 'package:Adventurist/models/WeekendTripIdeas/weekendtripideas.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/buttons.dart';

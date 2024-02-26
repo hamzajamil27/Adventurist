@@ -1,7 +1,7 @@
-import 'package:adventurist/constants/buttons.dart';
-import 'package:adventurist/constants/colors/fontcolors.dart';
+
 import 'package:flutter/material.dart';
 import 'BottomNavigationBar/navigationbar.dart';
+import 'constants/buttons.dart';
 
 class PageTwo extends StatefulWidget {
   const PageTwo({super.key});
@@ -23,13 +23,9 @@ class _PageTwoState extends State<PageTwo> {
           children: [
 
             SizedBox(height: height*.15),
-            
-               Align(alignment: Alignment.center,  // circle Avatar
-                child: SizedBox( height: height*.1,
-                
-                 child: const Image(image: AssetImage("assets/Adventurist Remove Background Logo.png")),
-                ),
-                ), 
+
+            Container(height: height*.19,
+                child: Image(image: AssetImage("assets/Iconbg.png"))),
             
             SizedBox(height: height*.05),
             
@@ -42,12 +38,12 @@ class _PageTwoState extends State<PageTwo> {
             ),
             ),
              
-              SizedBox(height: height * .1,),
+              SizedBox(height: height * .05,),
         
              CustomButton(      //  calling a button from buttons.dart
                           borderColor: Colors.black,
-                           backgroundColor: Colors.black,
-                           icon: Icon(Icons.arrow_right_alt, size: 60, color: Colors.white,),
+                           backgroundColor: Colors.white,
+                           icon: Icon(Icons.arrow_right_alt, size: 50, color: Colors.black,),
                            textColor: Colors.white,
                            onPressed: (){
                              Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => const NavigatorBar()),),

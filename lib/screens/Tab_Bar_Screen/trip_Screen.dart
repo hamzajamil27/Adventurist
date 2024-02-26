@@ -1,8 +1,9 @@
 // ignore_for_file: file_names
 
-import 'package:adventurist/constants/buttons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../constants/buttons.dart';
 
 class TripScreen extends StatefulWidget {
   const TripScreen({super.key});

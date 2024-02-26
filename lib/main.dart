@@ -1,4 +1,4 @@
-import 'package:adventurist/screens/splashScreen.dart';
+import 'package:Adventurist/screens/splashScreen.dart';
 import 'package:connection_notifier/connection_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';

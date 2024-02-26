@@ -1,11 +1,11 @@
 // ignore_for_file: file_names
 
-import 'package:adventurist/constants/buttons.dart';
-import 'package:adventurist/screens/Firebase_Practice_Screens/visitReiew.dart';
-import 'package:adventurist/screens/ReviewSubScreens/writeAReview_Sub_Screen1.dart';
-import 'package:adventurist/screens/signin_Screen.dart';
+import 'package:Adventurist/screens/signin_Screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../constants/buttons.dart';
+import 'ReviewSubScreens/writeAReview_Sub_Screen1.dart';
 
 class ReviewScreen extends StatefulWidget {
   const ReviewScreen({super.key});
@@ -26,7 +26,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
     return Scaffold(  
 backgroundColor: Colors.white,
       appBar: AppBar( 
-        elevation: 0,
+        elevation:30,
         automaticallyImplyLeading: false,
         // toolbarHeight: 120 ,
         title: const Text("Review", style: TextStyle(color: Colors.black, fontSize:36 ),),

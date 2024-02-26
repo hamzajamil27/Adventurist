@@ -1,12 +1,15 @@
-import 'package:adventurist/BottomNavigationBar/navigationbar.dart';
-import 'package:adventurist/constants/buttons.dart';
-import 'package:adventurist/constants/colors/fontcolors.dart';
-import 'package:adventurist/pagetwo.dart';
-import 'package:adventurist/screens/signin_Screen.dart';
+
+import 'package:Adventurist/pagetwo.dart';
+import 'package:Adventurist/screens/signin_Screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+import 'BottomNavigationBar/navigationbar.dart';
+import 'Utilities/flutterToastUtilities.dart';
+import 'constants/buttons.dart';
+import 'constants/colors/fontcolors.dart';
 
 
 class WelcomeScreen extends StatefulWidget {
@@ -27,35 +30,36 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     final width = MediaQuery.of(context).size.width * 1;
     Future<void> _GoogleSignin() async {
       setState(() {
-        loading= true;
+        loading = true;
       });
-    try {
-      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-      if (googleUser != null) {
-        final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-        final AuthCredential credential = GoogleAuthProvider.credential(
-          accessToken: googleAuth.accessToken,
-          idToken: googleAuth.idToken,
-        );
-        final UserCredential userCredential = await _auth.signInWithCredential(credential);
-        final User? user = userCredential.user;
-        // Handle user data (e.g., display user info).
-         Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => const NavigatorBar()),
-    );
-    setState(() {
-        loading= false;
-      });
-    
+      try {
+        final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+        if (googleUser != null) {
+          final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+          final AuthCredential credential = GoogleAuthProvider.credential(
+            accessToken: googleAuth.accessToken,
+            idToken: googleAuth.idToken,
+          );
+          final UserCredential userCredential = await _auth.signInWithCredential(credential);
+          final User? user = userCredential.user;
+
+          // If user is not null, navigate to the NavigatorBar screen
+          if (user != null) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const NavigatorBar()),
+            );
+          }
+        }
+      } catch (error) {
+        FlutterToastUtils().toastMessage("Error signing in with Google");
+        print('Error signing in with Google');
+      } finally {
+        setState(() {
+          loading = false;
+        });
       }
-    } catch (error) {
-      print('Error signing in with Google: $error');
-      setState(() {
-        loading= false;
-      });
     }
-  }
 
     return Scaffold( 
       
@@ -79,86 +83,37 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
             ),
            
-      
-             Align(alignment: Alignment.center,  // circle Avatar
-                child: SizedBox( height: height*.1,
-                
-                 child: const Image(image: AssetImage("assets/Adventurist Remove Background Logo.png")),
-                ),
-                ), 
-                SizedBox(height: height*.05),
+      Container(height: height*.19,
+          child: Image(image: AssetImage("assets/Iconbg.png"))),
+             // Align(alignment: Alignment.center,  // circle Avatar
+             //    child: SizedBox( height: height*.1,
+             //
+             //     child: const Image(image: AssetImage("assets/Iconbg.png", )),
+             //    ),
+             //    ),
+                SizedBox(height: height*.01),
             
             //const SizedBox(height: 20,),
       
             const Align(
-              alignment: Alignment.topLeft, 
+              alignment: Alignment.center,
             child:Padding(                     // Sign in to start planning
               padding: EdgeInsets.all(20.0),
               child: Text("Sign in to start",
-              style: TextStyle(fontFamily: Bold ,fontSize: 34, fontWeight: FontWeight.bold, color: Colors.black),),
+              style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold, color: Colors.black),),
             ),),
       
             Align(alignment: Alignment.topLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
+                padding: const EdgeInsets.only(left: 20.0, right: 20),
                 child: Wrap(
                   children: [
-                    const Text("By proceeding you agree, to our ", style: TextStyle(fontFamily: Regular, color: blackColor),),
-                    InkWell(onTap:(){}, 
-                    child: const Text("Term of Use ", 
-                    style: TextStyle(fontFamily: Bold, color: fullblack, decoration: TextDecoration.underline,
-                  decorationColor: Colors.black, // Customize the underline color
-                  decorationThickness: 2.0, // Customize the underline thickness
-                  ),)),
-                   const Text("and confirm you have read our ",style: TextStyle(fontFamily: Regular, color: blackColor),),
-                     InkWell(onTap:(){
-              //          showDialog(
-              //   context: context,
-              //   builder: (BuildContext context) {
-              //     return AlertDialog(
-              //       title: Text('Privacy Policy'),
-              //       content: Text('This is a simple alert dialog.'),
-              //       actions: [
-              //         TextButton(
-              //           onPressed: () {
-              //             // Close the dialog
-              //             Navigator.of(context).pop();
-              //           },
-              //           child: Text('OK'),
-              //         ),
-              //       ],
-              //     );
-              //   },
-              // );
-    
-                     }, 
-                    child: const Text("Privacy and Cookie statement", 
-                    style: TextStyle(fontFamily: Bold, color: fullblack,
-                     decoration: TextDecoration.underline,
-                  decorationColor: Colors.black, // Customize the underline color
-                  decorationThickness: 2.0, // Customize the underline thickness
-                  ),)),
-                  
+                    const Text("Sign in to unlock exclusive deals and access personalized recommendations. Join now for free and enjoy a seamless booking experience.", style: TextStyle(fontFamily: Regular, color: blackColor),),
                   ],
-                ),
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 20.0),
-            //   child: Wrap(
-            //     children: [
-            //    // const  Text("confirm you have read our",style: TextStyle(fontFamily: Regular, color: blackColor),),
-            //       InkWell(onTap:(){}, 
-            //       child: const Text(" Privacy and Cookie statement", 
-            //       style: TextStyle(fontFamily: Bold, color: fullblack,
-            //        decoration: TextDecoration.underline,
-            //     decorationColor: Colors.black, // Customize the underline color
-            //     decorationThickness: 2.0, // Customize the underline thickness
-            //     ),)),
-            //     ],
-            //   ),
-            // ),
-            
+            ),
+
             SizedBox(height: height*0.1,),
          
             CustomButton(      //  calling a button from buttons.dart
@@ -168,7 +123,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                            text: 'Sign in',
                            textColor: Colors.black,
                            loading: loading,
-                           onPressed: _GoogleSignin,
+                           onPressed: (){
+                             _GoogleSignin();
+                           },
                                buttonWidth: width*0.8, // Set the desired width for the button
                                buttonHeight: 60, // Set the desired height for the button
                               

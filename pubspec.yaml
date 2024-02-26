@@ -1,4 +1,4 @@
-name: adventurist
+name: Adventurist
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -51,17 +51,18 @@ dependencies:
   flutter_email_sender: ^6.0.2
   app_settings: ^5.1.1
   url_launcher: ^6.2.5
+  flutter_launcher_icons: ^0.13.1
 
   
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.13.1
 
 flutter_icons:
   android: true
-  image_path: "assets/Adventurist_applogo.png"
+  image_path: "assets/Icon.png"
+  adaptive_icon_background: "#ffffff"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -95,7 +96,9 @@ flutter:
     - assets/pcKarachi.jpg
     - assets/pcLahore.jpg
     - assets/RoyalSwissLahore.jpg
-
+    - assets/SplashScreen.png
+    - assets/Iconbg.png
+    - assets/support.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

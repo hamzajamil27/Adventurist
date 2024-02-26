@@ -1,5 +1,7 @@
-import 'package:adventurist/constants/colors/fontcolors.dart';
+
 import 'package:flutter/material.dart';
+
+import '../../constants/colors/fontcolors.dart';
 
 class Beyondthebeachitemmodel{
   final String image;

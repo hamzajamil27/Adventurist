@@ -1,4 +1,4 @@
-import 'package:adventurist/Tour%20Pages/tourpagelist.dart';
+
 import 'package:flutter/material.dart';
 
 import 'HotelsInKarachi_Model.dart';

@@ -1,11 +1,5 @@
 // ignore_for_file: file_names
 
-import 'package:adventurist/Utilities/flutterToastUtilities.dart';
-import 'package:adventurist/constants/buttons.dart';
-import 'package:adventurist/screens/AccountScreen_and_SubScreens/support_Screen.dart';
-import 'package:adventurist/screens/Firebase_Practice_Screens/post_screen.dart';
-import 'package:adventurist/screens/profile.dart';
-import 'package:adventurist/screens/signin_Screen.dart';
 import 'package:app_settings/app_settings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -13,7 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../BottomNavigationBar/navigationbar.dart';
+import '../../Utilities/flutterToastUtilities.dart';
+import '../../constants/buttons.dart';
 import '../Firebase_Practice_Screens/visitReiew.dart';
+import '../profile.dart';
+import '../signin_Screen.dart';
 
 
 class AccountScreen extends StatefulWidget {
@@ -53,7 +51,7 @@ class _AccountScreenState extends State<AccountScreen> {
           style: TextStyle(
               color: Colors.black, fontSize: 36, fontWeight: FontWeight.bold),
         ),
-        elevation: 0,
+        elevation: 30,
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.black),
         automaticallyImplyLeading: false,
@@ -181,25 +179,7 @@ class _AccountScreenState extends State<AccountScreen> {
                               ));
                         },
                       ),
-                      ListTile(
-                        leading: const Icon(
-                          Icons.headset_mic_outlined,
-                          color: Colors.black,
-                        ),
-                        title: const Text(
-                          "Support",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        trailing: const Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.black,
-                        ),
-                        onTap: () {
-                          sendEmail();
-                        }
 
-                      ),
 
                       ListTile(
                           leading: const Icon(
@@ -296,32 +276,32 @@ class _AccountScreenState extends State<AccountScreen> {
                         },
                       ),
 
-                      SizedBox(height: height * .02),
+                      // SizedBox(height: height * .02),
 
-                      ListTile(
-                        leading: const Icon(
-                          Icons.headset_mic_outlined,
-                          color: Colors.black,
-                        ),
-                        title: const Text(
-                          "Support",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        trailing: const Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.black,
-                        ),
-                        onTap: () {
-                          sendEmail();
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: ((context) => const SupportScreen()),
-                          //   ),
-                          // );
-                        },
-                      ),
+                      // ListTile(
+                      //   leading: const Icon(
+                      //     Icons.headset_mic_outlined,
+                      //     color: Colors.black,
+                      //   ),
+                      //   title: const Text(
+                      //     "Support",
+                      //     style: TextStyle(
+                      //         fontSize: 18, fontWeight: FontWeight.bold),
+                      //   ),
+                      //   trailing: const Icon(
+                      //     Icons.arrow_forward_ios,
+                      //     color: Colors.black,
+                      //   ),
+                      //   onTap: () {
+                      //     sendEmail();
+                      //     // Navigator.push(
+                      //     //   context,
+                      //     //   MaterialPageRoute(
+                      //     //     builder: ((context) => const SupportScreen()),
+                      //     //   ),
+                      //     // );
+                      //   },
+                      // ),
 
                       SizedBox(height: height * .02),
 

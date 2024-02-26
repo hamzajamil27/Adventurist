@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:adventurist/models/summer_vacations/SummerVacation.dart';
+
 
 import '../../constants/buttons.dart';
 import 'Hotel_detail.dart';
+import 'SummerVacation.dart';
 
 class CityHotelsScreen extends StatefulWidget {
   final SummervacationItemModel summerVacation;

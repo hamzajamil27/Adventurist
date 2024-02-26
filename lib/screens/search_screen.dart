@@ -1,8 +1,9 @@
-import 'package:adventurist/constants/colors/fontcolors.dart';
-import 'package:adventurist/models/TopExperiences/topexperience.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants/buttons.dart';
+import '../constants/colors/fontcolors.dart';
+import '../models/TopExperiences/topexperience.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({

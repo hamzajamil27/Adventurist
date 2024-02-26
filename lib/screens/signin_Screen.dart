@@ -1,11 +1,12 @@
 // ignore_for_file: file_names
 
-import 'package:adventurist/BottomNavigationBar/navigationbar.dart';
-import 'package:adventurist/Utilities/flutterToastUtilities.dart';
-import 'package:adventurist/constants/buttons.dart';
-import 'package:adventurist/screens/signup_Screen.dart';
+import 'package:Adventurist/screens/signup_Screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../BottomNavigationBar/navigationbar.dart';
+import '../Utilities/flutterToastUtilities.dart';
+import '../constants/buttons.dart';
 
 class SignInScreen extends StatefulWidget {
 

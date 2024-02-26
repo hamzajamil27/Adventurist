@@ -1,10 +1,11 @@
 // ignore_for_file: file_names
 
-import 'package:adventurist/Utilities/flutterToastUtilities.dart';
-import 'package:adventurist/constants/buttons.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../Utilities/flutterToastUtilities.dart';
+import '../../constants/buttons.dart';
 
 class WriteReviewSubScreen1 extends StatefulWidget {
   const WriteReviewSubScreen1({super.key});

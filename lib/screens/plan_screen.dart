@@ -1,6 +1,8 @@
-import 'package:adventurist/screens/Tab_Bar_Screen/saved_Trip_Screen.dart';
-import 'package:adventurist/screens/Tab_Bar_Screen/trip_Screen.dart';
+
 import 'package:flutter/material.dart';
+
+import 'Tab_Bar_Screen/saved_Trip_Screen.dart';
+import 'Tab_Bar_Screen/trip_Screen.dart';
 
 class PlanScreen extends StatefulWidget {
   const PlanScreen({super.key});

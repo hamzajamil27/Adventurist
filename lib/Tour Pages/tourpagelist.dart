@@ -1,6 +1,8 @@
-import 'package:adventurist/BottomNavigationBar/navigationbar.dart';
-import 'package:adventurist/Tour%20Pages/detailProductScreen.dart';
+
 import 'package:flutter/material.dart';
+
+import '../BottomNavigationBar/navigationbar.dart';
+import 'detailProductScreen.dart';
 
 class Product {
   final String name;

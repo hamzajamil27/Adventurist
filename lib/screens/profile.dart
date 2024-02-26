@@ -157,8 +157,7 @@
 //     );
 //   }
 // }
-import 'package:adventurist/screens/homescreen.dart';
-import 'package:adventurist/screens/signin_Screen.dart';
+import 'package:Adventurist/screens/signin_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

@@ -1,7 +1,9 @@
-import 'package:adventurist/Tour%20Pages/ImageSlider.dart/ImageSlider.dart';
-import 'package:adventurist/Tour%20Pages/tourpagelist.dart';
+
+import 'package:Adventurist/Tour%20Pages/tourpagelist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
+import 'ImageSlider.dart/ImageSlider.dart';
 
 class DetailProductScreen extends StatefulWidget {
   final Product product;

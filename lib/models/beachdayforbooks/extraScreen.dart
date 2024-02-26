@@ -1,5 +1,6 @@
-import 'package:adventurist/models/beachdayforbooks/beachday.dart';
 import 'package:flutter/material.dart';
+
+import 'beachday.dart';
 
 class ExtraScreen extends StatefulWidget {
    final Beachdayitemmodel items;

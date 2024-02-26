@@ -1,9 +1,10 @@
 // ignore_for_file: file_names
 
-import 'package:adventurist/BottomNavigationBar/navigationbar.dart';
-import 'package:adventurist/welcomescreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../BottomNavigationBar/navigationbar.dart';
+import '../welcomescreen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -43,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return  Scaffold(
       body: Container( height: double.infinity,
       decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage("assets/Adventurist Splash Screen.png"), fit: BoxFit.cover)
+        image: DecorationImage(image: AssetImage("assets/SplashScreen.png"), fit: BoxFit.cover)
       ),
       ),
     );

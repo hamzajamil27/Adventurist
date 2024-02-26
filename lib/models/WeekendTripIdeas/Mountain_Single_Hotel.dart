@@ -1,9 +1,10 @@
-import 'package:adventurist/models/WeekendTripIdeas/weekendtripideas.dart';
-import 'package:adventurist/screens/signin_Screen.dart';
+
+import 'package:Adventurist/models/WeekendTripIdeas/weekendtripideas.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/buttons.dart';
+import '../../screens/signin_Screen.dart';
 import '../../url_Function.dart';
 
 class MountainSingleHotel extends StatefulWidget {

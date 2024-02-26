@@ -1,19 +1,19 @@
-import 'package:adventurist/RestaurantsCard/restaurants.dart';
-import 'package:adventurist/hotels.dart';
-import 'package:adventurist/restaurants.dart';
-import 'package:adventurist/screens/Hotels_ThingsToDo_Restaurant_Forums_Screens%20and%20Subscreens/firstSimpleScreen.dart';
-import 'package:adventurist/screens/Muree_Blog.dart';
-import 'package:adventurist/screens/cholistan_blog.dart';
-import 'package:adventurist/screens/khujerabNationalPark.dart';
-import 'package:adventurist/screens/profile.dart';
+import 'package:Adventurist/screens/profile.dart';
 import '../Discover_More_in_Karachi/Discover_More_in_Karachi.dart';
+import '../RestaurantsCard/restaurants.dart';
+import '../constants/colors/fontcolors.dart';
+import '../hotels.dart';
 import '../models/WeekendTripIdeas/weekendtripideas.dart';
 import '../models/beachdayforbooks/beachday.dart';
 import '../models/beyondthebeach/beyondthebeach.dart';
-import 'package:adventurist/constants/colors/fontcolors.dart';
+
 import 'package:flutter/material.dart';
 import '../constants/buttons.dart';
 import '../models/summer_vacations/SummerVacation.dart';
+import '../restaurants.dart';
+import 'Muree_Blog.dart';
+import 'cholistan_blog.dart';
+import 'khujerabNationalPark.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

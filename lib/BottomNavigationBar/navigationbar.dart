@@ -1,10 +1,11 @@
-import 'package:adventurist/screens/AccountScreen_and_SubScreens/account_Screen.dart';
-import 'package:adventurist/screens/homescreen.dart';
-import 'package:adventurist/screens/plan_screen.dart';
-import 'package:adventurist/screens/reviewScreen.dart';
-import 'package:adventurist/screens/search_screen.dart';
+import 'package:Adventurist/screens/supportScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
+import '../screens/AccountScreen_and_SubScreens/account_Screen.dart';
+import '../screens/homescreen.dart';
+import '../screens/reviewScreen.dart';
+
 
 
 
@@ -21,10 +22,11 @@ class _NavigatorBarState extends State<NavigatorBar> {
   int _currentIndex=0;
    final List<Widget> _screens = [
    const HomeScreen(),
-   const SearchScreen(),
-   const PlanScreen(),
+  // const SearchScreen(),
+   //const PlanScreen(),
    const ReviewScreen(),
    const AccountScreen(),
+     const SupportScreen(),
  ];
 
   @override
@@ -44,17 +46,17 @@ class _NavigatorBarState extends State<NavigatorBar> {
             ),
 
             /// Likes
-            SalomonBottomBarItem(
-              icon: const Icon(Icons.search),
-              title: const Text("Search"),
-              selectedColor: Colors.pink,
-            ),
-           
-            SalomonBottomBarItem(
-              icon: const Icon(Icons.favorite_border),
-              title: const Text("Plan"),
-              selectedColor: Colors.pink,
-            ),
+            // SalomonBottomBarItem(
+            //   icon: const Icon(Icons.search),
+            //   title: const Text("Search"),
+            //   selectedColor: Colors.pink,
+            // ),
+            //
+            // SalomonBottomBarItem(
+            //   icon: const Icon(Icons.favorite_border),
+            //   title: const Text("Plan"),
+            //   selectedColor: Colors.pink,
+            // ),
 
            SalomonBottomBarItem(
             icon: const Icon(Icons.rate_review), 
@@ -68,6 +70,12 @@ class _NavigatorBarState extends State<NavigatorBar> {
               title: const Text("Account"),
               selectedColor: Colors.teal,
             ),
+            SalomonBottomBarItem(
+              icon: const Icon(Icons.headset_mic_outlined),
+              title: const Text("Support"),
+              selectedColor: Colors.red,
+            ),
+
 
           ],
         ),
