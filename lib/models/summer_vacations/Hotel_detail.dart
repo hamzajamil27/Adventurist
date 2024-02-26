@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../constants/buttons.dart';
+import '../../screens/signin_Screen.dart';
 import '../../url_Function.dart';
 import 'SummerVacation.dart';
 
@@ -13,13 +15,29 @@ class HotelDetailScreen extends StatefulWidget {
 }
 
 class _HotelDetailScreenState extends State<HotelDetailScreen> {
+
+  final auth = FirebaseAuth.instance;
+  final user = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height* 1;
     final width = MediaQuery.of(context).size.width* 1;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hotel detail"),
+        title: Center(child: Text("Hotel Detail")),
+        actions: [ (user == null) ? TextButton( onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+              const SignInScreen(),
+            ),
+          );
+        },  child: Text("Login"),)
+            :
+        Text(""),
+        ] ,
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -96,7 +114,7 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
 
                   SizedBox(height: 30),
                   Center(
-                    child: CustomButton(                  //  calling a button from buttons.dart
+                    child: (user == null ) ? Text("For Booking, Login yourself please") : CustomButton(                  //  calling a button from buttons.dart
                       backgroundColor: Colors.black,
                       borderColor: Colors.white,
                       textColor: Colors.white,
@@ -139,13 +157,27 @@ class HotelDetailScreenTwo extends StatefulWidget {
 }
 
 class _HotelDetailScreenTwoState extends State<HotelDetailScreenTwo> {
+  final auth = FirebaseAuth.instance;
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height* 1;
     final width = MediaQuery.of(context).size.width* 1;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hotel detail"),
+        title: Center(child: Text("Hotel Detail")),
+        actions : [(user == null) ? TextButton( onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+              const SignInScreen(),
+            ),
+          );
+        },  child: Text("Login"),)
+            :
+        Text(""),
+        ],
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -222,7 +254,7 @@ class _HotelDetailScreenTwoState extends State<HotelDetailScreenTwo> {
 
                   SizedBox(height: 30),
                   Center(
-                    child: CustomButton(                  //  calling a button from buttons.dart
+                    child: (user == null ) ? Text("For Booking, Login yourself please") : CustomButton(                  //  calling a button from buttons.dart
                       backgroundColor: Colors.black,
                       borderColor: Colors.white,
                       textColor: Colors.white,
@@ -267,13 +299,27 @@ class HotelDetailScreenThree extends StatefulWidget {
 }
 
 class _HotelDetailScreenThreeState extends State<HotelDetailScreenThree> {
+  final auth = FirebaseAuth.instance;
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height* 1;
     final width = MediaQuery.of(context).size.width* 1;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hotel detail"),
+        title: Center(child: Text("Hotel Detail")),
+        actions:  [ (user == null) ? TextButton( onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+              const SignInScreen(),
+            ),
+          );
+        },  child: Text("Login"),)
+            :
+        Text(""),
+        ],
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -350,7 +396,7 @@ class _HotelDetailScreenThreeState extends State<HotelDetailScreenThree> {
 
                   SizedBox(height: 30),
                   Center(
-                    child: CustomButton(                  //  calling a button from buttons.dart
+                    child: (user == null ) ? Text("For Booking, Login yourself please") :  CustomButton(                  //  calling a button from buttons.dart
                       backgroundColor: Colors.black,
                       borderColor: Colors.white,
                       textColor: Colors.white,

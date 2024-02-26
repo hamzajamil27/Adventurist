@@ -5,6 +5,7 @@ import 'package:adventurist/screens/Hotels_ThingsToDo_Restaurant_Forums_Screens%
 import 'package:adventurist/screens/Muree_Blog.dart';
 import 'package:adventurist/screens/cholistan_blog.dart';
 import 'package:adventurist/screens/khujerabNationalPark.dart';
+import 'package:adventurist/screens/profile.dart';
 import '../Discover_More_in_Karachi/Discover_More_in_Karachi.dart';
 import '../models/WeekendTripIdeas/weekendtripideas.dart';
 import '../models/beachdayforbooks/beachday.dart';
@@ -48,28 +49,33 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment:
                         MainAxisAlignment.end, // Circle Avatar Profile Pic
                     children: [
-                      Container(
-                        height:
-                            50, // creating a container for circle avatar to give black borders
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 2.0,
+                      InkWell( onTap : (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfileScreen()),
+                        );
+                      },
+                        child: Container(
+                          height:
+                              50, // creating a container for circle avatar to give black borders
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 2.0,
 
-                            // Set the border width
+                              // Set the border width
+                            ),
+                          ),
+                          child: CircleAvatar(
+                            child: Icon(Icons.person),
+                            // backgroundImage: NetworkImage("https://images.pexels.com/photos/5384445/pexels-photo-5384445.jpeg?auto=compress&cs=tinysrgb&w=600"),
                           ),
                         ),
-                        child: CircleAvatar(
-                          child: Icon(Icons.person),
-                          // backgroundImage: NetworkImage("https://images.pexels.com/photos/5384445/pexels-photo-5384445.jpeg?auto=compress&cs=tinysrgb&w=600"),
-                        ),
                       ),
-                      const Padding(
-                        // Cart icon using flexi_cart_updater 1.0.3
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(Icons.shopping_cart),
-                      ),
+                      SizedBox(width: 30,)
+
                     ],
                   ),
                   const Padding(
@@ -474,7 +480,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Text(
-                "Explore some Famous Cities of Pakistan",
+                "Looking for Hotels?",
                 style: TextStyle(
                   fontFamily: Medium,
                   fontSize: 22,
@@ -495,7 +501,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "Make your best Memories in these City",
+                    "Find the best hotels in these cities",
                     style: TextStyle(
                       fontFamily: Medium,
                       fontSize: 16,

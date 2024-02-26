@@ -157,8 +157,14 @@
 //     );
 //   }
 // }
+import 'package:adventurist/screens/homescreen.dart';
+import 'package:adventurist/screens/signin_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import '../BottomNavigationBar/navigationbar.dart';
+import '../Utilities/flutterToastUtilities.dart';
+import '../constants/buttons.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -187,32 +193,94 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         title: Text('Profile'),
       ),
-      body: Center(
-        child: _user != null
-            ? Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            CircleAvatar(
-              radius: 50,
-             child: Icon(Icons.person),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Name: ${_user!.displayName}',
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Email: ${_user!.email}',
-              style: TextStyle(fontSize: 20),
-            ),
-          ],
-        )
-            : Text(
-          'User not found',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: _user != null
+          ? Column(
+            children: [
+              SizedBox(height: 40,),
+              Center(
+                child: Container(
+                  child: Column(
+                          children: <Widget>[
+                  CircleAvatar(
+                    radius: 50,
+                   child: Icon(Icons.person, size: 80,),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Email: ${_user!.email}',
+                    style: TextStyle(fontSize: 20),
+                  ),
+
+                  SizedBox(height: 200),
+                  CustomButton(
+                    //  calling a button from buttons.dart
+                    borderColor: Colors.black,
+                    backgroundColor: Colors.black,
+                    icon: Icon(
+                      Icons.logout_outlined,
+                      color: Colors.white,
+                    ),
+                    text: 'Signout',
+                    textColor: Colors.white,
+                    onPressed: () {
+                      FirebaseAuth.instance.signOut().then((value) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const NavigatorBar()),
+                          ),
+                        );
+                      }).onError((error, stackTrace) {
+                        FlutterToastUtils().toastMessage(error.toString());
+                      });
+                    },
+                    buttonWidth:
+                    250, // Set the desired width for the button
+                    buttonHeight:
+                    50, // Set the desired height for the button
+                  ),
+                          ],
+                        ),
+                ),
+              ),
+            ],
+          )
+
+          : Column( mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text(
+                        'You are not Logged in. Please login yourself',
+                        style: TextStyle(fontSize: 16),
+                      ),
+              ),
+              SizedBox(height: 20,),
+              CustomButton(
+                //  calling a button from buttons.dart
+                borderColor: Colors.black,
+                backgroundColor: Colors.black,
+                icon: Icon(
+                  Icons.login_outlined,
+                  color: Colors.white,
+                ),
+                text: 'Sign in',
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: ((context) =>
+                      const SignInScreen()),
+                    ),
+                  );
+                },
+                buttonWidth:
+                250, // Set the desired width for the button
+                buttonHeight:
+                50, // Set the desired height for the button
+              ),
+            ],
+          ),
     );
   }
 }

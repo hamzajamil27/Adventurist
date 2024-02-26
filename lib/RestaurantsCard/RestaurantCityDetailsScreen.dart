@@ -78,9 +78,9 @@ class _RestaurantCityDetailsScreenState extends State<RestaurantCityDetailsScree
                             Column( crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(height: height*0.01,),
-                                Text(widget.restaurant.cityRestaurantNameLa),
+                                Text(widget.restaurant.cityRestaurantNameLa, style: TextStyle(fontWeight: FontWeight.bold), softWrap: true,),
                                 SizedBox(height: height*0.015,),
-                                Text(widget.restaurant.priceLa),
+                                Text("Click for description"),
                               ],
                             ),
                           ],
@@ -95,14 +95,14 @@ class _RestaurantCityDetailsScreenState extends State<RestaurantCityDetailsScree
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: InkWell( onTap: (){
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => RestaurantCityDetailsScreen(
-                    //         cityrestaurant: widget.cityrestaurant
-                    //     ),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RestaurantDetailTwo(
+                            restaurant: widget.restaurant
+                        ),
+                      ),
+                    );
                   },
                     child: Container(
                         height: height * .17,
@@ -130,9 +130,10 @@ class _RestaurantCityDetailsScreenState extends State<RestaurantCityDetailsScree
                             Column( crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(height: height*0.01,),
-                                Text(widget.restaurant.cityRestaurantNametwoLa),
-                                SizedBox(height: height*0.015,),
-                                Text(widget.restaurant.pricetwoLa),
+                                Text(widget.restaurant.cityRestaurantNametwoLa, style: TextStyle(fontWeight: FontWeight.bold), softWrap: true,
+                    ),
+                    SizedBox(height: height*0.015,),
+                    Text("Click for description"),
                               ],
                             ),
                           ],
@@ -148,14 +149,14 @@ class _RestaurantCityDetailsScreenState extends State<RestaurantCityDetailsScree
                   Padding(
                   padding: const EdgeInsets.only(top: 20),
           child: InkWell( onTap: (){
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => RestaurantCityDetailsScreen(
-            //         cityrestaurant: widget.cityrestaurant
-            //     ),
-            //   ),
-            // );
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => RestaurantDetailThree(
+                    restaurant: widget.restaurant
+                ),
+              ),
+            );
           },
             child: Container(
                 height: height * .17,
@@ -183,9 +184,10 @@ class _RestaurantCityDetailsScreenState extends State<RestaurantCityDetailsScree
                     Column( crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: height*0.01,),
-                        Text(widget.restaurant.cityRestaurantNamethreeLa),
+                        Text(widget.restaurant.cityRestaurantNamethreeLa, style: TextStyle(fontWeight: FontWeight.bold), softWrap: true,
+                         ),
                         SizedBox(height: height*0.015,),
-                        Text(widget.restaurant.pricethreeLa),
+                        Text("Click for description"),
                       ],
                     ),
                   ],

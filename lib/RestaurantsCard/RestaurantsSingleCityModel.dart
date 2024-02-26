@@ -1,7 +1,10 @@
 import 'package:adventurist/RestaurantsCard/restaurants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/buttons.dart';
+import '../screens/signin_Screen.dart';
+import '../url_Function.dart';
 
 class RestaurantDetail extends StatefulWidget {
   final RestaurantModels restaurant;
@@ -12,11 +15,26 @@ class RestaurantDetail extends StatefulWidget {
 }
 
 class _RestaurantDetailState extends State<RestaurantDetail> {
+  final auth = FirebaseAuth.instance;
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text('Restaurant Detail'),
+          actions: [ (user == null) ? TextButton( onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                const SignInScreen(),
+              ),
+            );
+          },  child: Text("Login"),)
+              :
+          Text(""),
+          ] ,
+          elevation: 30,
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -43,6 +61,16 @@ class _RestaurantDetailState extends State<RestaurantDetail> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    SizedBox(height: 12),
+
+                    Text(
+                     "Details about the restaurant",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
                     SizedBox(height: 8),
                     Text(
                       widget.restaurant.description,
@@ -54,20 +82,24 @@ class _RestaurantDetailState extends State<RestaurantDetail> {
               SizedBox(height: 16),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: CustomButton(                  //  calling a button from buttons.dart
+                child: (user == null ) ? Text("For visiting website, Login yourself please") :   CustomButton(                  //  calling a button from buttons.dart
                   backgroundColor: Colors.black,
                   borderColor: Colors.white,
                   textColor: Colors.white,
                   // icon: const Icon(Icons.forum, color: Colors.black,),
-                  text: 'Order now',
+                  text: 'Visit Website',
                   onPressed: () {
-                    // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                    // );
+                    try {
+                      launchURL(widget.restaurant.linkOne); // Example usage
+                    } catch (e) {
+                      print('Error launching URL: $e');
+                    }
                   },
                   buttonWidth: 100, // Set the desired width for the button
                   buttonHeight: 60, // Set the desired height for the button
                 ),
               ),
+              SizedBox(height: 40,)
             ],
           ),
         ),
@@ -90,11 +122,26 @@ class RestaurantDetailTwo extends StatefulWidget {
 }
 
 class _RestaurantDetailTwoState extends State<RestaurantDetailTwo> {
+  final auth = FirebaseAuth.instance;
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Restaurant Detail'),
+        actions: [ (user == null) ? TextButton( onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+              const SignInScreen(),
+            ),
+          );
+        },  child: Text("Login"),)
+            :
+        Text(""),
+        ] ,
+        elevation: 30,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -121,6 +168,15 @@ class _RestaurantDetailTwoState extends State<RestaurantDetailTwo> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  SizedBox(height: 12),
+
+                  Text(
+                    "Details about the restaurant",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   SizedBox(height: 8),
                   Text(
                     widget.restaurant.descriptiontwo,
@@ -132,20 +188,24 @@ class _RestaurantDetailTwoState extends State<RestaurantDetailTwo> {
             SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: CustomButton(                  //  calling a button from buttons.dart
+              child: (user == null ) ? Text("For visiting website, Login yourself please") : CustomButton(                  //  calling a button from buttons.dart
                 backgroundColor: Colors.black,
                 borderColor: Colors.white,
                 textColor: Colors.white,
                 // icon: const Icon(Icons.forum, color: Colors.black,),
-                text: 'Order now',
+                text: 'Visit Website',
                 onPressed: () {
-                  // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                  // );
+                  try {
+                    launchURL(widget.restaurant.linkTwo); // Example usage
+                  } catch (e) {
+                    print('Error launching URL: $e');
+                  }
                 },
                 buttonWidth: 100, // Set the desired width for the button
                 buttonHeight: 60, // Set the desired height for the button
               ),
             ),
+            SizedBox(height: 40,)
           ],
         ),
       ),
@@ -171,11 +231,26 @@ class RestaurantDetailThree extends StatefulWidget {
 }
 
 class _RestaurantDetailThreeState extends State<RestaurantDetailThree> {
+  final auth = FirebaseAuth.instance;
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Restaurant Detail'),
+        actions: [ (user == null) ? TextButton( onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+              const SignInScreen(),
+            ),
+          );
+        },  child: Text("Login"),)
+            :
+        Text(""),
+        ] ,
+        elevation: 30,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -202,6 +277,17 @@ class _RestaurantDetailThreeState extends State<RestaurantDetailThree> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+
+                  SizedBox(height: 12),
+
+                  Text(
+                    "Details about the restaurant",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
                   SizedBox(height: 8),
                   Text(
                     widget.restaurant.descriptionthree,
@@ -213,20 +299,24 @@ class _RestaurantDetailThreeState extends State<RestaurantDetailThree> {
             SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: CustomButton(                  //  calling a button from buttons.dart
+              child: (user == null ) ? Text("For visiting website, Login yourself please") : CustomButton(                  //  calling a button from buttons.dart
               backgroundColor: Colors.black,
               borderColor: Colors.white,
               textColor: Colors.white,
               // icon: const Icon(Icons.forum, color: Colors.black,),
-              text: 'Order now',
+              text: 'Visit Website',
               onPressed: () {
-                // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                // );
+                try {
+                  launchURL(widget.restaurant.linkThree); // Example usage
+                } catch (e) {
+                  print('Error launching URL: $e');
+                }
               },
               buttonWidth: 100, // Set the desired width for the button
               buttonHeight: 60, // Set the desired height for the button
             ),
             ),
+            SizedBox(height: 40,)
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/buttons.dart';
+import '../url_Function.dart';
 import 'HotelsInKarachi_Model.dart';
 
 class HotelDetailsKarachi extends StatefulWidget {
@@ -35,7 +36,7 @@ class _HotelDetailsKarachiState extends State<HotelDetailsKarachi> {
                     width: width * 0.98,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(widget.karachiHotel.ImagePath),
+                        image: NetworkImage(widget.karachiHotel.hotelsImage),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -83,15 +84,15 @@ class _HotelDetailsKarachiState extends State<HotelDetailsKarachi> {
                   Text("Booking.com", style: TextStyle(fontSize: 20,color: Colors.blueAccent),),
 
                   SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Text("Price Ranges from:  ", style: TextStyle(fontSize: 18),),
-                      Text(
-                        "${widget.karachiHotel.price}",
-                        style: TextStyle(fontSize: 18, color: Colors.blueAccent),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   children: [
+                  //     Text("Price Ranges from:  ", style: TextStyle(fontSize: 18),),
+                  //     Text(
+                  //       "${widget.karachiHotel.price}",
+                  //       style: TextStyle(fontSize: 18, color: Colors.blueAccent),
+                  //     ),
+                  //   ],
+                  // ),
 
                   SizedBox(height: 30),
                   Center(
@@ -102,8 +103,11 @@ class _HotelDetailsKarachiState extends State<HotelDetailsKarachi> {
                       // icon: const Icon(Icons.forum, color: Colors.black,),
                       text: 'Book Now',
                       onPressed: () {
-                        // Navigator.push( context, MaterialPageRoute(builder: (context) =>   HotelDetailScreen(summerVacation: widget.summerVacation)),
-                        // );
+                        try {
+                          launchURL(widget.karachiHotel.linkOne); // Example usage
+                        } catch (e) {
+                          print('Error launching URL: $e');
+                        }
                       },
                       buttonWidth: 155, // Set the desired width for the button
                       buttonHeight: 60, // Set the desired height for the button

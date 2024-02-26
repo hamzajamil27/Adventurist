@@ -58,7 +58,7 @@ class _DiscoverMoreinKarachiScreenState extends State<DiscoverMoreinKarachiScree
               ),
               SizedBox(height: 20),
               SizedBox(
-                height: height *.44,                 // ListView.Builder for Summer
+                height: height *.48,                 // ListView.Builder for Summer
 
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,

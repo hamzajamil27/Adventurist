@@ -1,4 +1,6 @@
 import 'package:adventurist/models/WeekendTripIdeas/weekendtripideas.dart';
+import 'package:adventurist/screens/signin_Screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/buttons.dart';
@@ -13,6 +15,8 @@ class MountainSingleHotel extends StatefulWidget {
 }
 
 class _MountainSingleHotelState extends State<MountainSingleHotel> {
+  final auth = FirebaseAuth.instance;
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height* 1;
@@ -20,6 +24,17 @@ class _MountainSingleHotelState extends State<MountainSingleHotel> {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("Hotel Detail")),
+        actions: [(user == null) ? TextButton( onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                const SignInScreen(),
+            ),
+          );
+        },  child: Text("Login"),)
+        :
+            Text(""),],
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -96,7 +111,7 @@ class _MountainSingleHotelState extends State<MountainSingleHotel> {
 
                   SizedBox(height: 30),
                   Center(
-                    child: CustomButton(                  //  calling a button from buttons.dart
+                    child: (user == null ) ? Text("For Booking, Login yourself please") : CustomButton(                  //  calling a button from buttons.dart
                       backgroundColor: Colors.black,
                       borderColor: Colors.white,
                       textColor: Colors.white,
@@ -138,6 +153,8 @@ class MountainSingleHotelTwo extends StatefulWidget {
 }
 
 class _MountainSingleHotelTwoState extends State<MountainSingleHotelTwo> {
+  final auth = FirebaseAuth.instance;
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height* 1;
@@ -145,6 +162,18 @@ class _MountainSingleHotelTwoState extends State<MountainSingleHotelTwo> {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("Hotel Detail")),
+        actions: [(user == null) ? TextButton( onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+              const SignInScreen(),
+            ),
+          );
+        },  child: Text("Login"),)
+            :
+        Text(""),
+        ],
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -221,7 +250,7 @@ class _MountainSingleHotelTwoState extends State<MountainSingleHotelTwo> {
 
                   SizedBox(height: 30),
                   Center(
-                    child: CustomButton(                  //  calling a button from buttons.dart
+                    child: (user == null ) ? Text("For Booking, Login yourself please") : CustomButton(                  //  calling a button from buttons.dart
                       backgroundColor: Colors.black,
                       borderColor: Colors.white,
                       textColor: Colors.white,
@@ -263,6 +292,8 @@ class MountainSingleHotelThree extends StatefulWidget {
 }
 
 class _MountainSingleHotelThreeState extends State<MountainSingleHotelThree> {
+  final auth = FirebaseAuth.instance;
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height* 1;
@@ -270,6 +301,18 @@ class _MountainSingleHotelThreeState extends State<MountainSingleHotelThree> {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("Hotel Detail")),
+        actions: [(user == null) ? TextButton( onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+              const SignInScreen(),
+            ),
+          );
+        },  child: Text("Login"),)
+            :
+        Text(""),
+        ],
         elevation: 30,
       ),
       body: SingleChildScrollView(
@@ -346,7 +389,7 @@ class _MountainSingleHotelThreeState extends State<MountainSingleHotelThree> {
 
                   SizedBox(height: 30),
                   Center(
-                    child: CustomButton(                  //  calling a button from buttons.dart
+                    child: (user == null ) ? Text("For Booking, Login yourself please") : CustomButton(                  //  calling a button from buttons.dart
                       backgroundColor: Colors.black,
                       borderColor: Colors.white,
                       textColor: Colors.white,

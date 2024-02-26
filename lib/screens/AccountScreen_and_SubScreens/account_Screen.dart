@@ -159,7 +159,28 @@ class _AccountScreenState extends State<AccountScreen> {
                       // ),
                       //
                       // SizedBox(height: height * .02),
-
+                      ListTile(
+                        leading: const Icon(
+                          Icons.person,
+                          color: Colors.black,
+                        ),
+                        title: const Text(
+                          "Profile",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: const Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProfileScreen(),
+                              ));
+                        },
+                      ),
                       ListTile(
                         leading: const Icon(
                           Icons.headset_mic_outlined,
@@ -179,6 +200,7 @@ class _AccountScreenState extends State<AccountScreen> {
                         }
 
                       ),
+
                       ListTile(
                           leading: const Icon(
                             Icons.notifications_active,
@@ -228,7 +250,30 @@ class _AccountScreenState extends State<AccountScreen> {
                       SizedBox(
                         height: height * .05,
                       ),
+                      ListTile(
+                        leading: const Icon(
+                          Icons.person,
+                          color: Colors.black,
+                        ),
+                        title: const Text(
+                          "Profile",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: const Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProfileScreen(),
+                              ));
+                        },
+                      ),
 
+                      SizedBox(height: height * .02),
                       ListTile(
                         leading: const Icon(
                           Icons.rate_review,
@@ -280,28 +325,7 @@ class _AccountScreenState extends State<AccountScreen> {
 
                       SizedBox(height: height * .02),
 
-                      ListTile(
-                        leading: const Icon(
-                          Icons.person,
-                          color: Colors.black,
-                        ),
-                        title: const Text(
-                          "Profile",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        trailing: const Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.black,
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProfileScreen(),
-                              ));
-                        },
-                      ),
+
                       ListTile(
                           leading: const Icon(
                             Icons.notifications_active,
