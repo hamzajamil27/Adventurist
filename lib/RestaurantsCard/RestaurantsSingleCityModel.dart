@@ -82,7 +82,7 @@ class _RestaurantDetailState extends State<RestaurantDetail> {
               SizedBox(height: 16),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: (user == null ) ? Text("For visiting website, Login yourself please") :   CustomButton(                  //  calling a button from buttons.dart
+                child: (user == null ) ? Center(child: Text("For visiting website, Login yourself please", style: TextStyle(color: Colors.red),)) :   CustomButton(                  //  calling a button from buttons.dart
                   backgroundColor: Colors.black,
                   borderColor: Colors.white,
                   textColor: Colors.white,
@@ -188,7 +188,7 @@ class _RestaurantDetailTwoState extends State<RestaurantDetailTwo> {
             SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: (user == null ) ? Text("For visiting website, Login yourself please") : CustomButton(                  //  calling a button from buttons.dart
+              child: (user == null ) ? Center(child: Text("For visiting website, Login yourself please", style: TextStyle(color: Colors.red),)) : CustomButton(                  //  calling a button from buttons.dart
                 backgroundColor: Colors.black,
                 borderColor: Colors.white,
                 textColor: Colors.white,
@@ -299,7 +299,7 @@ class _RestaurantDetailThreeState extends State<RestaurantDetailThree> {
             SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: (user == null ) ? Text("For visiting website, Login yourself please") : CustomButton(                  //  calling a button from buttons.dart
+              child: (user == null ) ? Center(child: Text("For visiting website, Login yourself please", style: TextStyle(color: Colors.red),)) : CustomButton(                  //  calling a button from buttons.dart
               backgroundColor: Colors.black,
               borderColor: Colors.white,
               textColor: Colors.white,
