@@ -1,7 +1,12 @@
+import 'package:Adventurist/screens/homescreen.dart';
 import 'package:Adventurist/screens/splashScreen.dart';
+import 'package:Adventurist/welcomescreen.dart';
 import 'package:connection_notifier/connection_notifier.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'BottomNavigationBar/navigationbar.dart';
 
 
 
@@ -21,7 +26,37 @@ class Adventurist extends StatefulWidget {
 }
 
 class _AdventuristState extends State<Adventurist> {
+
+  @override
+  void initState() {
+    super.initState();
+    isLogin();
+  }
+
   bool _isConnected = true;
+
+  Future<bool> checkAuthentication(BuildContext context) async {
+    final auth = FirebaseAuth.instance;
+    final user = auth.currentUser;
+    return user != null;
+  }
+  void isLogin(){
+    final auth = FirebaseAuth.instance;
+    final user = auth.currentUser;
+
+    if(user != null){                                       // If user is Signin then naviagate to NavigatorBar
+      Future.delayed(const Duration(seconds: 5), () {
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => const NavigatorBar()),),
+        );
+      });
+    }
+    else {                                                // If user is not signin then naviagate to WelcomeScreen
+      Future.delayed(const Duration(seconds: 5), () {
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => const WelcomeScreen()),),
+        );
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +67,24 @@ class _AdventuristState extends State<Adventurist> {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
          theme: ThemeData( primarySwatch: Colors.teal),
-
-        initialRoute: '/splash',
-        routes: {
-          '/splash': (context) => const SplashScreen(),
-          // Add your other routes here
-        },
-
+        home: FutureBuilder(
+          // Check the authentication state here
+          future: checkAuthentication(context),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              if (snapshot.data == true) {
+                // User is logged in, navigate to Available screen
+                return NavigatorBar();
+              } else {
+                // User is not logged in, navigate to Login screen
+                return WelcomeScreen();
+              }
+            } else {
+              // Show a loading indicator while checking authentication
+              return const CircularProgressIndicator();
+            }
+          },
+        ),
       ),
     );
   }

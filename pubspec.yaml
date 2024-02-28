@@ -52,6 +52,18 @@ dependencies:
   app_settings: ^5.1.1
   url_launcher: ^6.2.5
   flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.10
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+  background_image: "assets/SplashScreen.png"
+  android_12:
+    image: assets/SplashScreen.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/SplashScreen.png
+    icon_background_color_dark: "#121212"
 
   
 

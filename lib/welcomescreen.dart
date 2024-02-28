@@ -70,7 +70,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
               child: InkWell( onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) => const PageTwo()),),
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => const PageTwo()),),
                 );
               },
                 child: const Text("Skip", 
